@@ -3,7 +3,9 @@
  */
 package by.zyablov.airlinecompany.tools;
 
+import by.zyablov.airlinecompany.beans.CargoAircraft;
 import by.zyablov.airlinecompany.measures.*;
+import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
 
 public class RunnerClass {
 
@@ -19,7 +21,9 @@ public class RunnerClass {
 		}else{
 			System.out.println("No!");
 		}
+		
 
+		
 	}
 
 }

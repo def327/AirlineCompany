@@ -3,8 +3,9 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-
-import by.zyablov.airlinecompany.measures.CubicMeters1;
+import by.zyablov.airlinecompany.measures.CubicMeters;
+import by.zyablov.airlinecompany.measures.Tons;
+import by.zyablov.airlinecompany.techdata.AircraftIdName;
 import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
 
 /**
@@ -12,25 +13,47 @@ import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
  *
  */
 public class CargoAircraft extends Aircraft {
-	
+
 	private CubicMeters cargoDepartmentSize;
 	private boolean canTransprtDangerGoods;
 
 	/**
-	 * @param cargoAircraftType
-	 * @param cargoDepartmentSize
-	 * @param canTransprtDangerGoods
+	 * @param nameID
+	 * @param specification
 	 */
-	public CargoAircraft(int id, String name, SpecificationAircraft specification,
-						 	CubicMeters cargoSizeDepartment, boolean canTransprtDangerGoods) {
-
-		super(id, name, specification);
+	public CargoAircraft(AircraftIdName nameID, SpecificationAircraft specification, CubicMeters cargoDepartmentSize,
+			boolean canTransprtDangerGoods) {
+		super(nameID, specification);
+		this.cargoDepartmentSize = cargoDepartmentSize;
+		this.canTransprtDangerGoods = canTransprtDangerGoods;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+
+		if (!(super.equals(obj))) {
+			return false;
+		}
+
+		if (obj == this) {
+			return true;
+		}
+
+		if (obj == null) {
+			return false;
+		}
+
+		if (!(obj instanceof CargoAircraft)) {
+			return false;
+		}
+
+		if (super.equals(obj)) {
+			return false;
+		}
+
+		CargoAircraft other = (CargoAircraft) obj;
+		return ((this.cargoDepartmentSize.equals(other.cargoDepartmentSize))
+					&& (this.canTransprtDangerGoods == other.canTransprtDangerGoods));
 	}
 
 	@Override

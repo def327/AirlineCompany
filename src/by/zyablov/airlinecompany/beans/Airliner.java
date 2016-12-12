@@ -3,6 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans;
 
+import by.zyablov.airlinecompany.techdata.AircraftIdName;
 import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
 
 /**
@@ -15,24 +16,44 @@ public class Airliner extends Aircraft {
 	private boolean havBusinesClass;
 
 	/**
-	 * @param id
-	 * @param name
+	 * @param nameID
 	 * @param specification
 	 */
-	public Airliner(int id, String name, SpecificationAircraft specification,
-					String airlinerType, boolean havBusinesClass ) {
-		//TODO
-		super(id, name, specification);
+	public Airliner(AircraftIdName nameID, SpecificationAircraft specification, String airlinerType,
+			boolean havBusinesClass) {
+		super(nameID, specification);
 		this.airlinerType = airlinerType;
 		this.havBusinesClass = havBusinesClass;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+
+		if (!(super.equals(obj))) {
+			return false;
+		}
+
+		if (obj == this) {
+			return true;
+		}
+
+		if (obj == null) {
+			return false;
+		}
+
+		if (!(obj instanceof Airliner)) {
+			return false;
+		}
+
+		if (super.equals(obj)) {
+			return false;
+		}
+
+		Airliner other = (Airliner) obj;
+		return ((this.airlinerType.equals(other.airlinerType)) 
+					&& (this.havBusinesClass == other.havBusinesClass));
 	}
-	
+
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
