@@ -3,7 +3,7 @@
  */
 package by.zyablov.airlinecompany.measures;
 
-
+import by.zyablov.airlinecompany.interfaces.Measureable;
 
 /**
  * @author Дмитрий
@@ -16,6 +16,10 @@ public class Tons extends Measure {
 	 */
 	public Tons(int tonsValue) {
 		super(tonsValue + " tons");
+	}
+
+	public Tons() {
+		super(0 + " tons");
 	}
 
 	@Override
@@ -49,7 +53,7 @@ public class Tons extends Measure {
 
 	@Override
 	public String toString() {
-		return measureValue;
+		return "tonsValue = " + measureValue;
 	}
 
 }

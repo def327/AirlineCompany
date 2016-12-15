@@ -10,16 +10,65 @@ import by.zyablov.airlinecompany.techdata.*;
  *
  */
 public abstract class Aircraft {
-	private AircraftIdName nameId;
-	private SpecificationAircraft specification;
 
+	private int id;
+	private String name;
+	private TechSpecificationAircraft specification;
+	
+	
 	/**
 	 * @param id
 	 * @param name
 	 * @param specification
 	 */
-	public Aircraft(AircraftIdName nameID, SpecificationAircraft specification) {
-		this.nameId = nameID;
+	public Aircraft(int id, String name, TechSpecificationAircraft specification) {
+		this.id = id;
+		this.name = name;
+		this.specification = specification;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the specification
+	 */
+	public TechSpecificationAircraft getSpecification() {
+		return specification;
+	}
+
+	/**
+	 * @param specification
+	 *            the specification to set
+	 */
+	public void setSpecification(TechSpecificationAircraft specification) {
 		this.specification = specification;
 	}
 
@@ -38,12 +87,13 @@ public abstract class Aircraft {
 		}
 
 		Aircraft other = (Aircraft) obj;
-		return ((this.nameId.equals(other.nameId)) && (this.specification.equals(other.specification)));
+		return ((this.id == other.id) && this.name.equals(other.name)
+				&& (this.specification.equals(other.specification)));
 	}
 	
 	@Override
-	public String toString() {
-		return nameId.toString()+ " " + specification.toString();
-	}	
+	public String toString() {		
+		return "id = " + id + "\n" + "name = " + name + "\n" + specification.toString();
+	}
 
 }

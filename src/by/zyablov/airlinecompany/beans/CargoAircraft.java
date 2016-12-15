@@ -3,10 +3,8 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-import by.zyablov.airlinecompany.measures.CubicMeters;
-import by.zyablov.airlinecompany.measures.Tons;
-import by.zyablov.airlinecompany.techdata.AircraftIdName;
-import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
+import by.zyablov.airlinecompany.measures.CubicMeter;
+import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 /**
  * @author Дмитрий
@@ -14,27 +12,60 @@ import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
  */
 public class CargoAircraft extends Aircraft {
 
-	private CubicMeters cargoDepartmentSize;
+	private CubicMeter cargoDepartmentSize;
+	
 	private boolean canTransprtDangerGoods;
-
+	
 	/**
-	 * @param nameID
+	 * @param id
+	 * @param name
 	 * @param specification
+	 * @param cargoDepartmentSize
+	 * @param canTransprtDangerGoods
 	 */
-	public CargoAircraft(AircraftIdName nameID, SpecificationAircraft specification, CubicMeters cargoDepartmentSize,
+	public CargoAircraft(int id, String name, TechSpecificationAircraft specification, CubicMeter cargoDepartmentSize,
 			boolean canTransprtDangerGoods) {
-		super(nameID, specification);
+		super(id, name, specification);
 		this.cargoDepartmentSize = cargoDepartmentSize;
 		this.canTransprtDangerGoods = canTransprtDangerGoods;
 	}
+	
+	public CargoAircraft(){
+		super(0,null,null);
+		this.cargoDepartmentSize = null;
+		this.canTransprtDangerGoods = false;
+	}
 
+	/**
+	 * @return the cargoDepartmentSize
+	 */
+	public CubicMeter getCargoDepartmentSize() {
+		return cargoDepartmentSize;
+	}
+
+	/**
+	 * @param cargoDepartmentSize the cargoDepartmentSize to set
+	 */
+	public void setCargoDepartmentSize(CubicMeter cargoDepartmentSize) {
+		this.cargoDepartmentSize = cargoDepartmentSize;
+	}
+
+	/**
+	 * @return the canTransprtDangerGoods
+	 */
+	public boolean isCanTransprtDangerGoods() {
+		return canTransprtDangerGoods;
+	}
+
+	/**
+	 * @param canTransprtDangerGoods the canTransprtDangerGoods to set
+	 */
+	public void setCanTransprtDangerGoods(boolean canTransprtDangerGoods) {
+		this.canTransprtDangerGoods = canTransprtDangerGoods;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
-
-		if (!(super.equals(obj))) {
-			return false;
-		}
-
 		if (obj == this) {
 			return true;
 		}
@@ -43,29 +74,24 @@ public class CargoAircraft extends Aircraft {
 			return false;
 		}
 
-		if (!(obj instanceof CargoAircraft)) {
+		if (!(obj instanceof Aircraft)) {
 			return false;
 		}
 
-		if (super.equals(obj)) {
+		if (!super.equals(obj)) {
 			return false;
 		}
 
 		CargoAircraft other = (CargoAircraft) obj;
-		return ((this.cargoDepartmentSize.equals(other.cargoDepartmentSize))
-					&& (this.canTransprtDangerGoods == other.canTransprtDangerGoods));
+		return ((this.canTransprtDangerGoods == other.canTransprtDangerGoods) && (this.cargoDepartmentSize.equals(other.cargoDepartmentSize)));
 	}
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
-	}
-
+	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return (super.toString() + "\n" + "canTransprtDangerGoods = " + canTransprtDangerGoods + "\n" + "cargoDepartmentSize = "
+				+ cargoDepartmentSize);
 	}
+
+	
 
 }

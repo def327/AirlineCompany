@@ -3,9 +3,11 @@
  */
 package by.zyablov.airlinecompany.tools;
 
+import by.zyablov.airlinecompany.beans.Aircraft;
+import by.zyablov.airlinecompany.beans.Airliner;
 import by.zyablov.airlinecompany.beans.CargoAircraft;
 import by.zyablov.airlinecompany.measures.*;
-import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
+import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 public class RunnerClass {
 
@@ -13,16 +15,12 @@ public class RunnerClass {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CubicMeters a = new CubicMeters(34);
-		CubicMeters b = new CubicMeters(21);
-
-		if (a.equals(b)) {
-			System.out.println("Yes!");
-		}else{
-			System.out.println("No!");
-		}
 		
-
+		Aircraft plane = new CargoAircraft(44,"TU - 154",
+				new TechSpecificationAircraft(new Tons(234),new FuelSpendTonPerKm(2500), new KilometerPerHour(800)),
+				new CubicMeter(50),false);
+		
+		Aircraft
 		
 	}
 

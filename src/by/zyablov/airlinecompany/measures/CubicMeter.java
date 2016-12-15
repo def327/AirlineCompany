@@ -7,13 +7,18 @@ package by.zyablov.airlinecompany.measures;
  * @author Дмитрий
  *
  */
-public class Kilometers extends Measure {
+public class CubicMeter extends Measure {
 
 	/**
 	 * @param measureValue
 	 */
-	public Kilometers(int kilometrsValue) {
-		super(kilometrsValue + " km");		
+	public CubicMeter(int cubicMetersValue) {
+		super(cubicMetersValue + " M^3");
+		// TODO Auto-generated constructor stub
+	}
+	
+	public CubicMeter(){
+		super(0 + " M^3");
 	}
 
 	/* (non-Javadoc)
@@ -28,9 +33,8 @@ public class Kilometers extends Measure {
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int kilometrsValue) {
-		this.measureValue = kilometrsValue + " km";
-
+	public void setMeasureValue(int cubicMetersValue) {
+		this.measureValue = cubicMetersValue +cubicMetersValue + " M^3";
 	}
 	
 	@Override
@@ -43,17 +47,18 @@ public class Kilometers extends Measure {
 			return false;
 		}
 
-		if (!(obj instanceof Kilometers)) {
+		if (!(obj instanceof CubicMeter)) {
 			return false;
 		}
 
-		Kilometers other = (Kilometers) obj;
+		CubicMeter other = (CubicMeter) obj;
 		return (this.measureValue.equals(other.measureValue));
 	}
 	
 	@Override
 	public String toString() {
-		return this.measureValue;
+		// TODO Auto-generated method stub
+		return "cubicMetersValue = " + measureValue;
 	}
 
 }

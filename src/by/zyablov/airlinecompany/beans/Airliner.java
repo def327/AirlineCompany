@@ -3,8 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-import by.zyablov.airlinecompany.techdata.AircraftIdName;
-import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
+import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 /**
  * @author Дмитрий
@@ -13,26 +12,56 @@ import by.zyablov.airlinecompany.techdata.SpecificationAircraft;
 public class Airliner extends Aircraft {
 
 	private String airlinerType;
+
 	private boolean havBusinesClass;
 
+
+
 	/**
-	 * @param nameID
+	 * @param id
+	 * @param name
 	 * @param specification
+	 * @param airlinerType
+	 * @param havBusinesClass
 	 */
-	public Airliner(AircraftIdName nameID, SpecificationAircraft specification, String airlinerType,
+	public Airliner(int id, String name, TechSpecificationAircraft specification, String airlinerType,
 			boolean havBusinesClass) {
-		super(nameID, specification);
+		super(id, name, specification);
 		this.airlinerType = airlinerType;
+		this.havBusinesClass = havBusinesClass;
+	}
+
+	public Airliner() {
+		super(0, null, null);
+		this.airlinerType = null;
+		this.havBusinesClass = false;
+	}
+
+	/**
+	 * @return the airlinerType
+	 */
+	public String getAirlinerType() {
+		return airlinerType;
+	}
+
+	/**
+	 * @param airlinerType
+	 *            the airlinerType to set
+	 */
+	public void setAirlinerType(String airlinerType) {
+		this.airlinerType = airlinerType;
+	}
+
+	/**
+	 * @param havBusinesClass
+	 *            the havBusinesClass to set
+	 */
+	public void setHavBusinesClass(boolean havBusinesClass) {
 		this.havBusinesClass = havBusinesClass;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-
-		if (!(super.equals(obj))) {
-			return false;
-		}
-
 		if (obj == this) {
 			return true;
 		}
@@ -41,28 +70,22 @@ public class Airliner extends Aircraft {
 			return false;
 		}
 
-		if (!(obj instanceof Airliner)) {
+		if (!(obj instanceof Aircraft)) {
 			return false;
 		}
 
-		if (super.equals(obj)) {
+		if (!super.equals(obj)) {
 			return false;
 		}
 
 		Airliner other = (Airliner) obj;
-		return ((this.airlinerType.equals(other.airlinerType)) 
-					&& (this.havBusinesClass == other.havBusinesClass));
-	}
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		return ((this.havBusinesClass == other.havBusinesClass) && (this.airlinerType.equals(other.airlinerType)));
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return (super.toString() + "\n" + "airlinerType = " + airlinerType + "\n" + "havBusinesClass = "
+					+ havBusinesClass);
 	}
+
 }

@@ -6,7 +6,7 @@ package by.zyablov.airlinecompany.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-import by.zyablov.airlinecompany.measures.KilometersPerHour;
+import by.zyablov.airlinecompany.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.measures.Tons;
 
 /**

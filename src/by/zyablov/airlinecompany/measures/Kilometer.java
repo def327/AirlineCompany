@@ -7,14 +7,17 @@ package by.zyablov.airlinecompany.measures;
  * @author Дмитрий
  *
  */
-public class KilometersPerHour extends Measure {
+public class Kilometer extends Measure {
 
 	/**
 	 * @param measureValue
 	 */
-	public KilometersPerHour(int kilometrsPerHourValue) {
-		super(kilometrsPerHourValue + " km/h");
-		// TODO Auto-generated constructor stub
+	public Kilometer(int kilometrsValue) {
+		super(kilometrsValue + " km");		
+	}
+	
+	public Kilometer(){
+		super(0 + " km");	
 	}
 
 	/* (non-Javadoc)
@@ -29,8 +32,9 @@ public class KilometersPerHour extends Measure {
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int kilometrsPerHourValue) {		
-		this.measureValue = kilometrsPerHourValue + " km/h";
+	public void setMeasureValue(int kilometrsValue) {
+		this.measureValue = kilometrsValue + " km";
+
 	}
 	
 	@Override
@@ -43,18 +47,17 @@ public class KilometersPerHour extends Measure {
 			return false;
 		}
 
-		if (!(obj instanceof KilometersPerHour)) {
+		if (!(obj instanceof Kilometer)) {
 			return false;
 		}
 
-		KilometersPerHour other = (KilometersPerHour) obj;
+		Kilometer other = (Kilometer) obj;
 		return (this.measureValue.equals(other.measureValue));
 	}
 	
 	@Override
-	public String toString() {		
-		return this.measureValue;
+	public String toString() {
+		return "kilometrsValue = " + measureValue;
 	}
-	
 
 }

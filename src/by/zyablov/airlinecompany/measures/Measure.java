@@ -3,11 +3,14 @@
  */
 package by.zyablov.airlinecompany.measures;
 
+import by.zyablov.airlinecompany.interfaces.Measureable;
+
 /**
  * @author Дмитрий
  *
  */
-public abstract class Measure {
+public abstract class Measure implements Measureable {
+
 	protected String measureValue;
 
 	/**
@@ -16,9 +19,5 @@ public abstract class Measure {
 	protected Measure(String measureValue) {
 		this.measureValue = measureValue;
 	}
-
-	public abstract String getMeasureValue();
-
-	public abstract void setMeasureValue(int measureValue);
 
 }
