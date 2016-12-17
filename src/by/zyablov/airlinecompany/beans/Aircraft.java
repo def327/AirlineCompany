@@ -26,6 +26,19 @@ public abstract class Aircraft {
 		this.name = name;
 		this.specification = specification;
 	}
+	
+	
+
+	/**
+	 * 
+	 */
+	public Aircraft() {
+		id = 0;
+		name = null;
+		specification = new TechSpecificationAircraft();
+	}
+
+
 
 	/**
 	 * @return the id

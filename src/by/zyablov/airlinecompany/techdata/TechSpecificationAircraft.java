@@ -39,9 +39,9 @@ public class TechSpecificationAircraft {
 	 * @param midVelocity
 	 */
 	public TechSpecificationAircraft() {
-		this.maxWeigthCapacity = null;
-		this.fuelSpending = null;
-		this.midVelocity = null;
+		this.maxWeigthCapacity = new Tons();
+		this.fuelSpending = new FuelSpendTonPerKm();
+		this.midVelocity = new KilometerPerHour();
 	}
 
 	/**

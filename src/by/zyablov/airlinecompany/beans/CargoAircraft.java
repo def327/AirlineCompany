@@ -30,8 +30,15 @@ public class CargoAircraft extends Aircraft {
 		this.canTransprtDangerGoods = canTransprtDangerGoods;
 	}
 	
+	
+	/**
+	 * 
+	 * @param cargoDepartmentSize
+	 * @param canTransprtDangerGoods
+	 * 
+	 */
 	public CargoAircraft(){
-		super(0,null,null);
+		super();
 		this.cargoDepartmentSize = null;
 		this.canTransprtDangerGoods = false;
 	}

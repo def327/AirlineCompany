@@ -31,8 +31,13 @@ public class Airliner extends Aircraft {
 		this.havBusinesClass = havBusinesClass;
 	}
 
+	/**
+	 * @param airlinerType
+	 * @param havBusinesClass
+	 * 
+	 */
 	public Airliner() {
-		super(0, null, null);
+		super();
 		this.airlinerType = null;
 		this.havBusinesClass = false;
 	}

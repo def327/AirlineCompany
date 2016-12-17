@@ -3,7 +3,6 @@
  */
 package by.zyablov.airlinecompany.measures;
 
-import by.zyablov.airlinecompany.interfaces.Measureable;
 
 /**
  * @author Дмитрий

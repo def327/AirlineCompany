@@ -3,11 +3,8 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-
-import by.zyablov.airlinecompany.measures.KilometerPerHour;
-import by.zyablov.airlinecompany.measures.Tons;
 
 /**
  * @author Дмитрий
@@ -22,7 +19,7 @@ public class AircraftPark {
 	 * @param amountOfAircraft
 	 */
 	public AircraftPark() {
-		this.listAircrafts = new ArrayList<>();
+		this.listAircrafts = new LinkedList<>();
 		this.amountOfAircraft = 0;
 	}
 
@@ -45,17 +42,38 @@ public class AircraftPark {
 		}
 	}
 
-	public void sortListAircrafts() {
-		// TODO
-	}
-
 	public int getAmountOfAircraft() {
 		return amountOfAircraft;
 	}
 
-	public Aircraft findAircraft(Aircraft searchAircraft) {
-		// TODO by FUELCAPACITY, SPEED and FLIGTDESTINATION 
-		return null;
+	public List<Aircraft> getListOfAircrafts() {
+		return listAircrafts;
 	}
+
+	// *добавить в другой класс который будет искать*
+	//
+	//
+	// public List<Aircraft> findAircraftByFuelSpend(int FuelSpending) {
+	//
+	// FuelSpendTonPerKm compareValue = new FuelSpendTonPerKm(FuelSpending);
+	// List<Aircraft> findListAircraft = new LinkedList<>();
+	//
+	// for (Iterator<Aircraft> iterator = listAircrafts.iterator();
+	// iterator.hasNext();) {
+	//
+	// Aircraft aircraft = (Aircraft) iterator.next();
+	//
+	// if (compareValue.equals(aircraft.getSpecification().getFuelSpending())) {
+	// findListAircraft.add(aircraft);
+	// }
+	//
+	// }
+	//
+	// return findListAircraft;
+	// }
+	
+	//	public void sortListAircrafts() {
+	//	// TODO
+	//}
 
 }
