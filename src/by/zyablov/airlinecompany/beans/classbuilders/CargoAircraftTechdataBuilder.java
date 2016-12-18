@@ -1,10 +1,10 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.classbuilders;
+package by.zyablov.airlinecompany.beans.classbuilders;
 
-import by.zyablov.airlinecompany.measures.CubicMeter;
-import by.zyablov.airlinecompany.techdata.CargoAircraftTechdata;
+import by.zyablov.airlinecompany.beans.measures.CubicMeter;
+import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
 
 /**
  * @author Дмитрий

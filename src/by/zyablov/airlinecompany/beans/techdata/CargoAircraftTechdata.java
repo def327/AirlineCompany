@@ -1,6 +1,6 @@
-package by.zyablov.airlinecompany.techdata;
+package by.zyablov.airlinecompany.beans.techdata;
 
-import by.zyablov.airlinecompany.measures.CubicMeter;
+import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 
 public class CargoAircraftTechdata {
 

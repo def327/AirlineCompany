@@ -6,6 +6,8 @@ package by.zyablov.airlinecompany.beans;
 import java.util.LinkedList;
 import java.util.List;
 
+import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
+
 /**
  * @author Дмитрий
  *

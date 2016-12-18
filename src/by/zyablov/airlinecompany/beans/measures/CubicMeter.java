@@ -1,22 +1,22 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.measures;
+package by.zyablov.airlinecompany.beans.measures;
 
 /**
  * @author Дмитрий
  *
  */
-public class KilometerPerHour extends Measure {
+public class CubicMeter extends Measure {
 
 	/**
 	 * @param measureValue
 	 */
-	public KilometerPerHour(int kilometrsPerHourValue) {
-		super(kilometrsPerHourValue);		
+	public CubicMeter(int cubicMetersValue) {
+		super(cubicMetersValue);		
 	}
 	
-	public KilometerPerHour(){
+	public CubicMeter(){
 		super(0);
 	}
 	
@@ -30,15 +30,15 @@ public class KilometerPerHour extends Measure {
 	 */
 	@Override
 	public String getMeasureValueInString() {		
-		return this.measureValue + " km/h";
+		return this.measureValue + " M^3";
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureIntValue(int kilometrsPerHourValue) {		
-		this.measureValue = kilometrsPerHourValue;
+	public void setMeasureIntValue(int cubicMetersValue) {
+		this.measureValue = cubicMetersValue;
 	}
 	
 	@Override
@@ -51,18 +51,18 @@ public class KilometerPerHour extends Measure {
 			return false;
 		}
 
-		if (!(obj instanceof KilometerPerHour)) {
+		if (!(obj instanceof CubicMeter)) {
 			return false;
 		}
 
-		KilometerPerHour other = (KilometerPerHour) obj;
+		CubicMeter other = (CubicMeter) obj;
 		return (this.measureValue == other.measureValue);
 	}
 	
 	@Override
-	public String toString() {		
-		return "kilometrsPerHourValue = " + measureValue + " km/h";
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "cubicMetersValue = " + measureValue + " M^3";
 	}
-	
 
 }

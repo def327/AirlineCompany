@@ -3,8 +3,8 @@
  */
 package by.zyablov.airlinecompany.interfaces;
 
-import by.zyablov.airlinecompany.beans.Aircraft;
-import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
+import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
+import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
 
 /**
  * @author Дмитрий

@@ -1,9 +1,9 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.classbuilders;
+package by.zyablov.airlinecompany.beans.classbuilders;
 
-import by.zyablov.airlinecompany.techdata.AirlinerTechData;
+import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
 
 /**
  * @author Дмитрий

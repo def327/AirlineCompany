@@ -1,9 +1,11 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans;
+package by.zyablov.airlinecompany.beans.company;
 
 import java.util.Date;
+
+import by.zyablov.airlinecompany.beans.AircraftPark;
 
 /**
  * @author Дмитрий
@@ -30,12 +32,27 @@ public class AirlineCompany extends Company {
 	 */
 	public AirlineCompany() {
 		super();
-		aircraftPark = null;
+		aircraftPark = new AircraftPark();
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "\n" + "amountOfAircraft = " + aircraftPark.getAmountOfAircraft();
+		return (super.toString() + "\n" + "amountOfAircraft = " + aircraftPark.getAmountOfAircraft());
 	}
 
+	/**
+	 * @return the aircraftPark
+	 */
+	public AircraftPark getAircraftPark() {
+		return aircraftPark;
+	}
+
+	/**
+	 * @param aircraftPark the aircraftPark to set
+	 */
+	public void setAircraftPark(AircraftPark aircraftPark) {
+		this.aircraftPark = aircraftPark;
+	}
+
+	
 }

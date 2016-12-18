@@ -1,12 +1,12 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.classbuilders;
+package by.zyablov.airlinecompany.beans.classbuilders;
 
-import by.zyablov.airlinecompany.beans.*;
+import by.zyablov.airlinecompany.beans.aircrafts.Airliner;
+import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
+import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
 import by.zyablov.airlinecompany.interfaces.AircraftBuilder;
-import by.zyablov.airlinecompany.techdata.AirlinerTechData;
-import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 /**
  * @author Дмитрий

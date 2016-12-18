@@ -4,22 +4,21 @@
 package by.zyablov.airlinecompany.tools;
 
 
-import java.util.GregorianCalendar;
 
-import by.zyablov.airlinecompany.classbuilders.AirlinerBuilder;
-import by.zyablov.airlinecompany.classbuilders.AirlinerTechDataBuilder;
-import by.zyablov.airlinecompany.classbuilders.CargoAircraftBuilder;
-import by.zyablov.airlinecompany.classbuilders.CargoAircraftTechdataBuilder;
-import by.zyablov.airlinecompany.classbuilders.TechSpecificationBuilder;
-import by.zyablov.airlinecompany.measures.CubicMeter;
-import by.zyablov.airlinecompany.measures.FuelSpendTonPerKm;
-import by.zyablov.airlinecompany.measures.Kilometer;
-import by.zyablov.airlinecompany.measures.KilometerPerHour;
-import by.zyablov.airlinecompany.measures.PeopleCapacity;
-import by.zyablov.airlinecompany.measures.Tons;
-import by.zyablov.airlinecompany.techdata.AirlinerTechData;
-import by.zyablov.airlinecompany.techdata.CargoAircraftTechdata;
-import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
+import java.util.Date;
+
+import by.zyablov.airlinecompany.beans.classbuilders.AirlinerBuilder;
+import by.zyablov.airlinecompany.beans.measures.CubicMeter;
+import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
+import by.zyablov.airlinecompany.beans.measures.Kilometer;
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
+import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
+import by.zyablov.airlinecompany.beans.measures.Tons;
+import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
+import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
+import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
+
+import sun.util.resources.cldr.CalendarData;
 
 public class RunnerClass {
 
@@ -45,28 +44,29 @@ public class RunnerClass {
 //		
 //		System.out.println(p1);
 		
-		TechSpecificationBuilder b = new TechSpecificationBuilder();
-		b.setFuelSpending(56);
-		b.setMaxWeigthCapacity(560);
-		b.setMidVelocity(900);
-		b.setPeopleCapacity(350);
-		
-		CargoAircraftTechdataBuilder t = new CargoAircraftTechdataBuilder();
-		t.setCanTransprtDangerGoods(true);
-		t.setCargoDepartmentSize(50);
-		
-		CargoAircraftBuilder plane = new CargoAircraftBuilder();
-		plane.setId(56);
-		plane.setName("TU - 545");		
-		plane.setCargoAircraftTechdata(t.getResult());
-		plane.setTechSpecificationAircraft(b.getResult());
-		
-		System.out.println(plane.getResult());
-		
-		
-		
-		
-
+//		TechSpecificationBuilder b = new TechSpecificationBuilder();
+//		b.setFuelSpending(56);
+//		b.setMaxWeigthCapacity(560);
+//		b.setMidVelocity(900);
+//		b.setPeopleCapacity(350);
+//		
+//		CargoAircraftTechdataBuilder t = new CargoAircraftTechdataBuilder();
+//		t.setCanTransprtDangerGoods(true);
+//		t.setCargoDepartmentSize(50);
+//		
+//		CargoAircraftBuilder plane = new CargoAircraftBuilder();
+//		plane.setId(56);
+//		plane.setName("TU - 545");		
+//		plane.setCargoAircraftTechdata(t.getResult());
+//		plane.setTechSpecificationAircraft(b.getResult());
+//		
+//		System.out.println(plane.getResult());
+//		
+//		AirlineCompanyBuilder b = new AirlineCompanyBuilder();
+//		b.setCompanyEmail("belavia@mail.by");
+//		b.setCompanyFoundDate(new Date());
+//		b.setCompanyId(1);
+//		b.setCompanyName("Belavia");
 		
 	}
 

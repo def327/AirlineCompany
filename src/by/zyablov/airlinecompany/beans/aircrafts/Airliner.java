@@ -1,10 +1,10 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans;
+package by.zyablov.airlinecompany.beans.aircrafts;
 
-import by.zyablov.airlinecompany.techdata.AirlinerTechData;
-import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
+import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
+import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
 
 /**
  * @author Дмитрий

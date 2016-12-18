@@ -1,12 +1,12 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.techdata;
+package by.zyablov.airlinecompany.beans.techdata;
 
-import by.zyablov.airlinecompany.measures.FuelSpendTonPerKm;
-import by.zyablov.airlinecompany.measures.KilometerPerHour;
-import by.zyablov.airlinecompany.measures.PeopleCapacity;
-import by.zyablov.airlinecompany.measures.Tons;
+import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
+import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
+import by.zyablov.airlinecompany.beans.measures.Tons;
 
 /**
  * @author Дмитрий

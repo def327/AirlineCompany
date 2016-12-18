@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.techdata;
+package by.zyablov.airlinecompany.beans.techdata;
 
 /**
  * @author Дмитрий
