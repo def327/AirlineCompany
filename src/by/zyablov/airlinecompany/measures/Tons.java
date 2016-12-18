@@ -14,21 +14,26 @@ public class Tons extends Measure {
 	 * @param measureValue
 	 */
 	public Tons(int tonsValue) {
-		super(tonsValue + " tons");
+		super(tonsValue);		
 	}
 
 	public Tons() {
-		super(0 + " tons");
+		super(0);
+	}
+	
+	@Override
+	public int getMeasureValueInInt() {
+		return measureValue;
 	}
 
 	@Override
-	public String getMeasureValue() {
-		return this.measureValue;
+	public String getMeasureValueInString() {
+		return this.measureValue + " tons";
 	}
 
 	@Override
-	public void setMeasureValue(int tonsValue) {
-		this.measureValue = tonsValue + " tons";
+	public void setMeasureIntValue(int tonsValue) {
+		this.measureValue = tonsValue;
 
 	}
 
@@ -47,12 +52,12 @@ public class Tons extends Measure {
 		}
 
 		Tons other = (Tons) obj;
-		return (this.measureValue.equals(other.measureValue));
+		return (this.measureValue == other.measureValue);
 	}
 
 	@Override
 	public String toString() {
-		return "tonsValue = " + measureValue;
+		return "tonsValue = " + measureValue + " tons";
 	}
 
 }

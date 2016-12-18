@@ -2,8 +2,10 @@ package by.zyablov.airlinecompany.interfaces;
 
 public interface Measureable {
 
-	public abstract String getMeasureValue();
+	public abstract String getMeasureValueInString();
 
-	public abstract void setMeasureValue(int measureValue);
+	public abstract void setMeasureIntValue(int measureValue);
+	
+	public abstract int getMeasureValueInInt();
 
 }

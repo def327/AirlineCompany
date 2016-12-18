@@ -13,28 +13,32 @@ public class KilometerPerHour extends Measure {
 	 * @param measureValue
 	 */
 	public KilometerPerHour(int kilometrsPerHourValue) {
-		super(kilometrsPerHourValue + " km/h");
-		// TODO Auto-generated constructor stub
+		super(kilometrsPerHourValue);		
 	}
 	
 	public KilometerPerHour(){
-		super(0 + " km/h");
+		super(0);
+	}
+	
+	@Override
+	public int getMeasureValueInInt() {		
+		return measureValue;
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#getMeasureValue()
 	 */
 	@Override
-	public String getMeasureValue() {		
-		return this.measureValue;
+	public String getMeasureValueInString() {		
+		return this.measureValue + " km/h";
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int kilometrsPerHourValue) {		
-		this.measureValue = kilometrsPerHourValue + " km/h";
+	public void setMeasureIntValue(int kilometrsPerHourValue) {		
+		this.measureValue = kilometrsPerHourValue;
 	}
 	
 	@Override
@@ -52,12 +56,12 @@ public class KilometerPerHour extends Measure {
 		}
 
 		KilometerPerHour other = (KilometerPerHour) obj;
-		return (this.measureValue.equals(other.measureValue));
+		return (this.measureValue == other.measureValue);
 	}
 	
 	@Override
 	public String toString() {		
-		return "kilometrsPerHourValue = " + measureValue;
+		return "kilometrsPerHourValue = " + measureValue + " km/h";
 	}
 	
 

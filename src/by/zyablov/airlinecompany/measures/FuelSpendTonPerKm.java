@@ -14,27 +14,32 @@ public class FuelSpendTonPerKm extends Measure {
 	 * @param measureValue
 	 */
 	public FuelSpendTonPerKm(int fuelSpendTonPerKm) {
-		super(fuelSpendTonPerKm + " tons / 1000km");		
+		super(fuelSpendTonPerKm);		
 	}
 	
 	public FuelSpendTonPerKm(){
-		super(0 + " tons / 1000km");
+		super(0);
+	}
+	
+	@Override
+	public int getMeasureValueInInt() {		
+		return measureValue;
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.interfaces.Measureable#getMeasureValue()
 	 */
 	@Override
-	public String getMeasureValue() {
-		return this.measureValue;
+	public String getMeasureValueInString() {
+		return this.measureValue + " tons / 1000km";
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.interfaces.Measureable#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int fuelSpendTonPerKm) {
-		super.measureValue = fuelSpendTonPerKm + " tons / 1000km";
+	public void setMeasureIntValue(int fuelSpendTonPerKm) {
+		super.measureValue = fuelSpendTonPerKm;
 	}
 	
 	@Override
@@ -52,12 +57,12 @@ public class FuelSpendTonPerKm extends Measure {
 		}
 
 		FuelSpendTonPerKm other = (FuelSpendTonPerKm) obj;
-		return (this.measureValue.equals(other.measureValue));
+		return (this.measureValue == other.measureValue);
 	}
 	
 	@Override
 	public String toString() {
-		return "fuelSpendTonPerKm = " + measureValue;
+		return "fuelSpendTonPerKm = " + measureValue + " tons / 1000km";
 	}
 	
 	

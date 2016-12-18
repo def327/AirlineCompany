@@ -13,28 +13,32 @@ public class CubicMeter extends Measure {
 	 * @param measureValue
 	 */
 	public CubicMeter(int cubicMetersValue) {
-		super(cubicMetersValue + " M^3");
-		// TODO Auto-generated constructor stub
+		super(cubicMetersValue);		
 	}
 	
 	public CubicMeter(){
-		super(0 + " M^3");
+		super(0);
+	}
+	
+	@Override
+	public int getMeasureValueInInt() {		
+		return measureValue;
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#getMeasureValue()
 	 */
 	@Override
-	public String getMeasureValue() {		
-		return this.measureValue;
+	public String getMeasureValueInString() {		
+		return this.measureValue + " M^3";
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int cubicMetersValue) {
-		this.measureValue = cubicMetersValue +cubicMetersValue + " M^3";
+	public void setMeasureIntValue(int cubicMetersValue) {
+		this.measureValue = cubicMetersValue;
 	}
 	
 	@Override
@@ -52,13 +56,13 @@ public class CubicMeter extends Measure {
 		}
 
 		CubicMeter other = (CubicMeter) obj;
-		return (this.measureValue.equals(other.measureValue));
+		return (this.measureValue == other.measureValue);
 	}
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "cubicMetersValue = " + measureValue;
+		return "cubicMetersValue = " + measureValue + " M^3";
 	}
 
 }

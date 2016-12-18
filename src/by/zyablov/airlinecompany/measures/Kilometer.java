@@ -13,27 +13,32 @@ public class Kilometer extends Measure {
 	 * @param measureValue
 	 */
 	public Kilometer(int kilometrsValue) {
-		super(kilometrsValue + " km");		
+		super(kilometrsValue);		
 	}
 	
 	public Kilometer(){
-		super(0 + " km");	
+		super(0);	
+	}
+	
+	@Override
+	public int getMeasureValueInInt() {
+		return measureValue;
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#getMeasureValue()
 	 */
 	@Override
-	public String getMeasureValue() {		
-		return this.measureValue;
+	public String getMeasureValueInString() {		
+		return this.measureValue + " km";
 	}
 
 	/* (non-Javadoc)
 	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
 	 */
 	@Override
-	public void setMeasureValue(int kilometrsValue) {
-		this.measureValue = kilometrsValue + " km";
+	public void setMeasureIntValue(int kilometrsValue) {
+		this.measureValue = kilometrsValue;
 
 	}
 	
@@ -52,12 +57,12 @@ public class Kilometer extends Measure {
 		}
 
 		Kilometer other = (Kilometer) obj;
-		return (this.measureValue.equals(other.measureValue));
+		return (this.measureValue == other.measureValue);
 	}
 	
 	@Override
 	public String toString() {
-		return "kilometrsValue = " + measureValue;
+		return "kilometrsValue = " + measureValue + " km";
 	}
 
 }

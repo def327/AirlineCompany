@@ -5,6 +5,7 @@ package by.zyablov.airlinecompany.techdata;
 
 import by.zyablov.airlinecompany.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.measures.KilometerPerHour;
+import by.zyablov.airlinecompany.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.measures.Tons;
 
 /**
@@ -15,10 +16,9 @@ import by.zyablov.airlinecompany.measures.Tons;
 public class TechSpecificationAircraft {
 
 	private Tons maxWeigthCapacity;
-
 	private FuelSpendTonPerKm fuelSpending;
-
 	private KilometerPerHour midVelocity;
+	private PeopleCapacity peopleCapacity;
 
 	/**
 	 * @param maxWeigthCapacity
@@ -26,11 +26,12 @@ public class TechSpecificationAircraft {
 	 * @param midVelocity
 	 */
 	public TechSpecificationAircraft(Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending,
-			KilometerPerHour midVelocity) {
+			KilometerPerHour midVelocity, PeopleCapacity peopleCapacity) {
 
 		this.maxWeigthCapacity = maxWeigthCapacity;
 		this.fuelSpending = fuelSpending;
 		this.midVelocity = midVelocity;
+		this.peopleCapacity = peopleCapacity;
 	}
 
 	/**
@@ -42,6 +43,7 @@ public class TechSpecificationAircraft {
 		this.maxWeigthCapacity = new Tons();
 		this.fuelSpending = new FuelSpendTonPerKm();
 		this.midVelocity = new KilometerPerHour();
+		this.peopleCapacity = new PeopleCapacity();
 	}
 
 	/**
@@ -95,6 +97,21 @@ public class TechSpecificationAircraft {
 		this.midVelocity = midVelocity;
 	}
 
+	/**
+	 * @return the peopleCapacity
+	 */
+	public PeopleCapacity getPeopleCapacity() {
+		return peopleCapacity;
+	}
+
+	/**
+	 * @param peopleCapacity
+	 *            the peopleCapacity to set
+	 */
+	public void setPeopleCapacity(PeopleCapacity peopleCapacity) {
+		this.peopleCapacity = peopleCapacity;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 
@@ -111,13 +128,13 @@ public class TechSpecificationAircraft {
 		}
 
 		TechSpecificationAircraft other = (TechSpecificationAircraft) obj;
-		return (this.fuelSpending.equals(other.fuelSpending) && (this.maxWeigthCapacity.equals(other.maxWeigthCapacity))
-				&& (this.midVelocity.equals(other.midVelocity)) );
+		return ((this.fuelSpending.equals(other.fuelSpending)) && (this.maxWeigthCapacity.equals(other.maxWeigthCapacity))
+				&& (this.midVelocity.equals(other.midVelocity)) && (this.peopleCapacity.equals(other.peopleCapacity)));
 	}
 
 	@Override
 	public String toString() {
-		return fuelSpending.toString() + "\n" + maxWeigthCapacity + "\n" + midVelocity;
+		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.midVelocity + "\n" + this.peopleCapacity);
 	}
 
 }

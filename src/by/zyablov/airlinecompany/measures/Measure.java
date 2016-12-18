@@ -11,12 +11,12 @@ import by.zyablov.airlinecompany.interfaces.Measureable;
  */
 public abstract class Measure implements Measureable {
 
-	protected String measureValue;
+	protected int measureValue;	
 
 	/**
 	 * @param measureValue
 	 */
-	protected Measure(String measureValue) {
+	protected Measure(int measureValue) {
 		this.measureValue = measureValue;
 	}
 
