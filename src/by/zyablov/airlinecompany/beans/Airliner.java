@@ -3,6 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans;
 
+import by.zyablov.airlinecompany.techdata.AirlinerTechData;
 import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 /**
@@ -11,24 +12,18 @@ import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
  */
 public class Airliner extends Aircraft {
 
-	private String airlinerType;
-
-	private boolean havBusinesClass;
-
+	private AirlinerTechData airlinerTechData;
 
 
 	/**
 	 * @param id
 	 * @param name
 	 * @param specification
-	 * @param airlinerType
-	 * @param havBusinesClass
+	 * @param airlinerTechData
 	 */
-	public Airliner(int id, String name, TechSpecificationAircraft specification, String airlinerType,
-			boolean havBusinesClass) {
+	public Airliner(int id, String name, TechSpecificationAircraft specification, AirlinerTechData airlinerTechData) {
 		super(id, name, specification);
-		this.airlinerType = airlinerType;
-		this.havBusinesClass = havBusinesClass;
+		this.airlinerTechData = airlinerTechData;
 	}
 
 	/**
@@ -38,35 +33,28 @@ public class Airliner extends Aircraft {
 	 */
 	public Airliner() {
 		super();
-		this.airlinerType = null;
-		this.havBusinesClass = false;
+		this.airlinerTechData = new AirlinerTechData();
+	}
+
+	
+
+	/**
+	 * @return the airlinerTechData
+	 */
+	public AirlinerTechData getAirlinerTechData() {
+		return airlinerTechData;
 	}
 
 	/**
-	 * @return the airlinerType
+	 * @param airlinerTechData the airlinerTechData to set
 	 */
-	public String getAirlinerType() {
-		return airlinerType;
-	}
-
-	/**
-	 * @param airlinerType
-	 *            the airlinerType to set
-	 */
-	public void setAirlinerType(String airlinerType) {
-		this.airlinerType = airlinerType;
-	}
-
-	/**
-	 * @param havBusinesClass
-	 *            the havBusinesClass to set
-	 */
-	public void setHavBusinesClass(boolean havBusinesClass) {
-		this.havBusinesClass = havBusinesClass;
+	public void setAirlinerTechData(AirlinerTechData airlinerTechData) {
+		this.airlinerTechData = airlinerTechData;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (obj == this) {
 			return true;
 		}
@@ -84,13 +72,12 @@ public class Airliner extends Aircraft {
 		}
 
 		Airliner other = (Airliner) obj;
-		return ((this.havBusinesClass == other.havBusinesClass) && (this.airlinerType.equals(other.airlinerType)));
+		return (this.airlinerTechData.equals(other.airlinerTechData));
 	}
 
 	@Override
 	public String toString() {
-		return (super.toString() + "\n" + "airlinerType = " + airlinerType + "\n" + "havBusinesClass = "
-					+ havBusinesClass);
+		return (super.toString() + "\n" + this.airlinerTechData.toString());
 	}
 
 }

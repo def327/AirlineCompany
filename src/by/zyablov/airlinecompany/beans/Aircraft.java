@@ -21,7 +21,7 @@ public abstract class Aircraft {
 	 * @param name
 	 * @param specification
 	 */
-	public Aircraft(int id, String name, TechSpecificationAircraft specification) {
+	protected Aircraft(int id, String name, TechSpecificationAircraft specification) {
 		this.id = id;
 		this.name = name;
 		this.specification = specification;
@@ -32,7 +32,7 @@ public abstract class Aircraft {
 	/**
 	 * 
 	 */
-	public Aircraft() {
+	protected Aircraft() {
 		id = 0;
 		name = null;
 		specification = new TechSpecificationAircraft();

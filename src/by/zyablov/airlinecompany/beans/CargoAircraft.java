@@ -3,7 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-import by.zyablov.airlinecompany.measures.CubicMeter;
+import by.zyablov.airlinecompany.techdata.CargoAircraftTechdata;
 import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
 
 /**
@@ -12,67 +12,36 @@ import by.zyablov.airlinecompany.techdata.TechSpecificationAircraft;
  */
 public class CargoAircraft extends Aircraft {
 
-	private CubicMeter cargoDepartmentSize;
+	private CargoAircraftTechdata cargoAircraftTechdata; 
 	
-	private boolean canTransprtDangerGoods;
-	
+
 	/**
 	 * @param id
 	 * @param name
 	 * @param specification
-	 * @param cargoDepartmentSize
-	 * @param canTransprtDangerGoods
+	 * @param cargoAircraftTechdata
 	 */
-	public CargoAircraft(int id, String name, TechSpecificationAircraft specification, CubicMeter cargoDepartmentSize,
-			boolean canTransprtDangerGoods) {
+	public CargoAircraft(int id, String name, TechSpecificationAircraft specification,
+			CargoAircraftTechdata cargoAircraftTechdata) {
 		super(id, name, specification);
-		this.cargoDepartmentSize = cargoDepartmentSize;
-		this.canTransprtDangerGoods = canTransprtDangerGoods;
+		this.cargoAircraftTechdata = cargoAircraftTechdata;
 	}
-	
-	
+
 	/**
 	 * 
-	 * @param cargoDepartmentSize
-	 * @param canTransprtDangerGoods
+	 * @param cargoAircraftTechdata
 	 * 
 	 */
 	public CargoAircraft(){
 		super();
-		this.cargoDepartmentSize = null;
-		this.canTransprtDangerGoods = false;
+		this.cargoAircraftTechdata = new CargoAircraftTechdata();
 	}
 
-	/**
-	 * @return the cargoDepartmentSize
-	 */
-	public CubicMeter getCargoDepartmentSize() {
-		return cargoDepartmentSize;
-	}
-
-	/**
-	 * @param cargoDepartmentSize the cargoDepartmentSize to set
-	 */
-	public void setCargoDepartmentSize(CubicMeter cargoDepartmentSize) {
-		this.cargoDepartmentSize = cargoDepartmentSize;
-	}
-
-	/**
-	 * @return the canTransprtDangerGoods
-	 */
-	public boolean isCanTransprtDangerGoods() {
-		return canTransprtDangerGoods;
-	}
-
-	/**
-	 * @param canTransprtDangerGoods the canTransprtDangerGoods to set
-	 */
-	public void setCanTransprtDangerGoods(boolean canTransprtDangerGoods) {
-		this.canTransprtDangerGoods = canTransprtDangerGoods;
-	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (obj == this) {
 			return true;
 		}
@@ -90,14 +59,29 @@ public class CargoAircraft extends Aircraft {
 		}
 
 		CargoAircraft other = (CargoAircraft) obj;
-		return ((this.canTransprtDangerGoods == other.canTransprtDangerGoods) && (this.cargoDepartmentSize.equals(other.cargoDepartmentSize)));
+		return (this.cargoAircraftTechdata.equals(other.cargoAircraftTechdata));
 	}
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "\n" + "canTransprtDangerGoods = " + canTransprtDangerGoods + "\n" + "cargoDepartmentSize = "
-				+ cargoDepartmentSize);
+		return (super.toString() + "\n" + this.cargoAircraftTechdata.toString());
 	}
+
+	/**
+	 * @return the cargoAircraftTechdata
+	 */
+	public CargoAircraftTechdata getCargoAircraftTechdata() {
+		return cargoAircraftTechdata;
+	}
+
+	/**
+	 * @param cargoAircraftTechdata the cargoAircraftTechdata to set
+	 */
+	public void setCargoAircraftTechdata(CargoAircraftTechdata cargoAircraftTechdata) {
+		this.cargoAircraftTechdata = cargoAircraftTechdata;
+	}
+	
+	
 
 	
 

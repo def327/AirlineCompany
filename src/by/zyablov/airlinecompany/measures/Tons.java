@@ -39,6 +39,7 @@ public class Tons extends Measure {
 
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (obj == this) {
 			return true;
 		}
