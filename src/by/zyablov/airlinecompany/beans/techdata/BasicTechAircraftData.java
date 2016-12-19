@@ -13,7 +13,7 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
  *
  */
 
-public class TechSpecificationAircraft {
+public class BasicTechAircraftData {
 
 	private Tons maxWeigthCapacity;
 	private FuelSpendTonPerKm fuelSpending;
@@ -25,7 +25,7 @@ public class TechSpecificationAircraft {
 	 * @param fuelSpending
 	 * @param midVelocity
 	 */
-	public TechSpecificationAircraft(Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending,
+	public BasicTechAircraftData(Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending,
 			KilometerPerHour midVelocity, PeopleCapacity peopleCapacity) {
 
 		this.maxWeigthCapacity = maxWeigthCapacity;
@@ -39,7 +39,7 @@ public class TechSpecificationAircraft {
 	 * @param fuelSpending
 	 * @param midVelocity
 	 */
-	public TechSpecificationAircraft() {
+	public BasicTechAircraftData() {
 		this.maxWeigthCapacity = new Tons();
 		this.fuelSpending = new FuelSpendTonPerKm();
 		this.midVelocity = new KilometerPerHour();
@@ -123,11 +123,11 @@ public class TechSpecificationAircraft {
 			return false;
 		}
 
-		if (!(obj instanceof TechSpecificationAircraft)) {
+		if (!(obj instanceof BasicTechAircraftData)) {
 			return false;
 		}
 
-		TechSpecificationAircraft other = (TechSpecificationAircraft) obj;
+		BasicTechAircraftData other = (BasicTechAircraftData) obj;
 		return ((this.fuelSpending.equals(other.fuelSpending)) && (this.maxWeigthCapacity.equals(other.maxWeigthCapacity))
 				&& (this.midVelocity.equals(other.midVelocity)) && (this.peopleCapacity.equals(other.peopleCapacity)));
 	}

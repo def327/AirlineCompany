@@ -16,7 +16,8 @@ import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
-import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
+import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
+import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 import sun.util.resources.cldr.CalendarData;
 
@@ -68,6 +69,7 @@ public class RunnerClass {
 //		b.setCompanyId(1);
 //		b.setCompanyName("Belavia");
 		
+		AircraftBuilderBehavior p;
 	}
 
 }

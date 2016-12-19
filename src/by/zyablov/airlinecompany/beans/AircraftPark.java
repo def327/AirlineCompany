@@ -13,6 +13,7 @@ import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
  *
  */
 public class AircraftPark {
+
 	private List<Aircraft> listAircrafts;
 	private int amountOfAircraft;
 
@@ -32,6 +33,7 @@ public class AircraftPark {
 			return true;
 		} else {
 			return false;
+			// Genereate exceptions can't add new aircraft to list
 		}
 	}
 
@@ -51,31 +53,5 @@ public class AircraftPark {
 	public List<Aircraft> getListOfAircrafts() {
 		return listAircrafts;
 	}
-
-	// *добавить в другой класс который будет искать*
-	//
-	//
-	// public List<Aircraft> findAircraftByFuelSpend(int FuelSpending) {
-	//
-	// FuelSpendTonPerKm compareValue = new FuelSpendTonPerKm(FuelSpending);
-	// List<Aircraft> findListAircraft = new LinkedList<>();
-	//
-	// for (Iterator<Aircraft> iterator = listAircrafts.iterator();
-	// iterator.hasNext();) {
-	//
-	// Aircraft aircraft = (Aircraft) iterator.next();
-	//
-	// if (compareValue.equals(aircraft.getSpecification().getFuelSpending())) {
-	// findListAircraft.add(aircraft);
-	// }
-	//
-	// }
-	//
-	// return findListAircraft;
-	// }
-	
-	//	public void sortListAircrafts() {
-	//	// TODO
-	//}
 
 }

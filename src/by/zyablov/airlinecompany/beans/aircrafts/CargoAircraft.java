@@ -4,7 +4,7 @@
 package by.zyablov.airlinecompany.beans.aircrafts;
 
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
-import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
+import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 /**
  * @author Дмитрий
@@ -14,18 +14,18 @@ public class CargoAircraft extends Aircraft {
 
 	private CargoAircraftTechdata cargoAircraftTechdata; 
 	
-
 	/**
-	 * @param id
-	 * @param name
-	 * @param specification
+	 * @param idAircraft
+	 * @param nameAircraft
+	 * @param basicTechAircraftData
 	 * @param cargoAircraftTechdata
 	 */
-	public CargoAircraft(int id, String name, TechSpecificationAircraft specification,
+	public CargoAircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData,
 			CargoAircraftTechdata cargoAircraftTechdata) {
-		super(id, name, specification);
+		super(idAircraft, nameAircraft, basicTechAircraftData);
 		this.cargoAircraftTechdata = cargoAircraftTechdata;
 	}
+
 
 	/**
 	 * 

@@ -3,8 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans.aircrafts;
 
-import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
-import by.zyablov.airlinecompany.techdata.*;
+import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 /**
  * @author Дмитрий
@@ -12,79 +11,86 @@ import by.zyablov.airlinecompany.techdata.*;
  */
 public abstract class Aircraft {
 
-	private int id;
-	private String name;
-	private TechSpecificationAircraft specification;
-	
+	private int idAircraft;
+	private String nameAircraft;
+	private BasicTechAircraftData basicTechAircraftData;
 	
 	/**
-	 * @param id
-	 * @param name
-	 * @param specification
+	 * @param idAircraft
+	 * @param nameAircraft
+	 * @param basicTechAircraftData
 	 */
-	protected Aircraft(int id, String name, TechSpecificationAircraft specification) {
-		this.id = id;
-		this.name = name;
-		this.specification = specification;
+	public Aircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData) {
+		this.idAircraft = idAircraft;
+		this.nameAircraft = nameAircraft;
+		this.basicTechAircraftData = basicTechAircraftData;
 	}
-	
-	
+
+
 
 	/**
 	 * 
 	 */
-	protected Aircraft() {
-		id = 0;
-		name = null;
-		specification = new TechSpecificationAircraft();
+	public Aircraft() {
+		idAircraft = 0;
+		nameAircraft = null;
+		basicTechAircraftData = new BasicTechAircraftData();
+	}
+
+
+	/**
+	 * @return the idAircraft
+	 */
+	public int getIdAircraft() {
+		return idAircraft;
 	}
 
 
 
 	/**
-	 * @return the id
+	 * @param idAircraft the idAircraft to set
 	 */
-	public int getId() {
-		return id;
+	public void setIdAircraft(int idAircraft) {
+		this.idAircraft = idAircraft;
 	}
 
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+
 
 	/**
-	 * @return the name
+	 * @return the nameAircraft
 	 */
-	public String getName() {
-		return name;
+	public String getNameAircraft() {
+		return nameAircraft;
 	}
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+
 
 	/**
-	 * @return the specification
+	 * @param nameAircraft the nameAircraft to set
 	 */
-	public TechSpecificationAircraft getSpecification() {
-		return specification;
+	public void setNameAircraft(String nameAircraft) {
+		this.nameAircraft = nameAircraft;
 	}
 
+
+
 	/**
-	 * @param specification
-	 *            the specification to set
+	 * @return the basicTechAircraftData
 	 */
-	public void setSpecification(TechSpecificationAircraft specification) {
-		this.specification = specification;
+	public BasicTechAircraftData getBasicTechAircraftData() {
+		return basicTechAircraftData;
 	}
+
+
+
+	/**
+	 * @param basicTechAircraftData the basicTechAircraftData to set
+	 */
+	public void setBasicTechAircraftData(BasicTechAircraftData basicTechAircraftData) {
+		this.basicTechAircraftData = basicTechAircraftData;
+	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -101,13 +107,13 @@ public abstract class Aircraft {
 		}
 
 		Aircraft other = (Aircraft) obj;
-		return ((this.id == other.id) && this.name.equals(other.name)
-				&& (this.specification.equals(other.specification)));
+		return ((this.idAircraft == other.idAircraft) && this.nameAircraft.equals(other.nameAircraft)
+				&& (this.basicTechAircraftData.equals(other.basicTechAircraftData)));
 	}
 	
 	@Override
 	public String toString() {		
-		return "id = " + id + "\n" + "name = " + name + "\n" + specification.toString();
+		return "id = " + idAircraft + "\n" + "name = " + nameAircraft + "\n" + basicTechAircraftData.toString();
 	}
 
 }

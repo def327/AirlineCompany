@@ -4,12 +4,13 @@
 package by.zyablov.airlinecompany.beans.classbuilders;
 
 import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
+import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class AirlinerTechDataBuilder {
+public class AirlinerTechDataBuilder implements BuilderBehavior {
 	
 	private AirlinerTechData airlinerTechData;
 	

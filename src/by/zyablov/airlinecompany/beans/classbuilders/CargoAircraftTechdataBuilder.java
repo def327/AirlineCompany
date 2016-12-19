@@ -5,12 +5,13 @@ package by.zyablov.airlinecompany.beans.classbuilders;
 
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
+import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class CargoAircraftTechdataBuilder {
+public class CargoAircraftTechdataBuilder implements BuilderBehavior {
 	
 	private CargoAircraftTechdata cargoAircraftTechdata;
 	

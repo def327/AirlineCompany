@@ -6,13 +6,13 @@ package by.zyablov.airlinecompany.beans.classbuilders;
 import java.util.Date;
 
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
-import by.zyablov.airlinecompany.interfaces.CompanyBuilder;
+import by.zyablov.airlinecompany.interfaces.CompanyBuilderBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class AirlineCompanyBuilder implements CompanyBuilder {
+public class AirlineCompanyBuilder implements CompanyBuilderBehavior {
 	
 	private AirlineCompany airlineCompany;
 	

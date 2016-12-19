@@ -7,21 +7,22 @@ import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
-import by.zyablov.airlinecompany.beans.techdata.TechSpecificationAircraft;
+import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
+import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class TechSpecificationBuilder {
+public class TechSpecificationBuilder implements BuilderBehavior {
 
-	private TechSpecificationAircraft specification;
+	private BasicTechAircraftData specification;
 
 	/**
 	 * 
 	 */
 	public TechSpecificationBuilder() {
-		specification = new TechSpecificationAircraft();
+		specification = new BasicTechAircraftData();
 	}
 
 	public void setMaxWeigthCapacity(int maxWeigthCapacity) {
@@ -40,7 +41,7 @@ public class TechSpecificationBuilder {
 		specification.setPeopleCapacity(new PeopleCapacity(peopleCapacity));
 	}
 	
-	public TechSpecificationAircraft getResult(){
+	public BasicTechAircraftData getResult(){
 		return specification;
 	}
 
