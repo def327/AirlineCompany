@@ -137,4 +137,5 @@ public class BasicTechAircraftData {
 		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.midVelocity + "\n" + this.peopleCapacity);
 	}
 
+
 }

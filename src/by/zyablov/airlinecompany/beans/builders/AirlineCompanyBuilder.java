@@ -1,10 +1,11 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans.classbuilders;
+package by.zyablov.airlinecompany.beans.builders;
 
 import java.util.Date;
 
+import by.zyablov.airlinecompany.beans.AircraftPark;
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
 import by.zyablov.airlinecompany.interfaces.CompanyBuilderBehavior;
 
@@ -42,6 +43,10 @@ public class AirlineCompanyBuilder implements CompanyBuilderBehavior {
 	@Override
 	public void setCompanyFoundDate(Date companyFoundDate) {
 		airlineCompany.setCompanyFoundDate(companyFoundDate);		
+	}
+	
+	public void setAircraftPark(AircraftPark aircraftPark){
+		airlineCompany.setAircraftPark(aircraftPark);
 	}
 	
 	public AirlineCompany getResult(){

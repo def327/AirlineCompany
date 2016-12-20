@@ -7,7 +7,12 @@ package by.zyablov.airlinecompany.tools;
 
 import java.util.Date;
 
-import by.zyablov.airlinecompany.beans.classbuilders.AirlinerBuilder;
+import by.zyablov.airlinecompany.beans.AirlineManageSystem;
+import by.zyablov.airlinecompany.beans.builders.AircraftBuilder;
+import by.zyablov.airlinecompany.beans.builders.AirlineCompanyBuilder;
+import by.zyablov.airlinecompany.beans.builders.AirlinerBuilder;
+import by.zyablov.airlinecompany.beans.builders.AirlinerTechDataBuilder;
+import by.zyablov.airlinecompany.beans.builders.BasicTechAiracftBuilder;
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.Kilometer;
@@ -17,6 +22,7 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
 import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
 import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
+import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 import sun.util.resources.cldr.CalendarData;
@@ -28,48 +34,42 @@ public class RunnerClass {
 	 */
 	public static void main(String[] args) {
 		
-//		Aircraft plane = new CargoAircraft(44,"TU - 154",
-//				new TechSpecificationAircraft(new Tons(234),new FuelSpendTonPerKm(2500), new KilometerPerHour(800)),
-//				new CubicMeter(50),false);
+		AirlineManageSystem manager = new AirlineManageSystem();
 		
-//		Tons maxWeigthCapacity = new Tons(20);		
-//		FuelSpendTonPerKm fuelSpending = new FuelSpendTonPerKm(60);
-//		KilometerPerHour midVelocity = new KilometerPerHour(900);
-//		PeopleCapacity peopleCapacity = new PeopleCapacity(300);
-//		
-//		TechSpecificationAircraft specification = new TechSpecificationAircraft(maxWeigthCapacity , fuelSpending, midVelocity, peopleCapacity);
-//		
-//		CargoAircraftTechdata airlinerTechData = new CargoAircraftTechdata();
-//		
-//		Aircraft p1 = new CargoAircraft(1, "ТУ - 154", specification, airlinerTechData);
-//		
-//		System.out.println(p1);
+		//--1)Create AirlineCompany		
+		AirlineCompanyBuilder buildCompany = new AirlineCompanyBuilder();
+		buildCompany.setCompanyId(56);
+		buildCompany.setCompanyName("BELAVIA");
+		buildCompany.setCompanyEmail("belavia@gmail.com");
+		buildCompany.setCompanyFoundDate(new Date());
 		
-//		TechSpecificationBuilder b = new TechSpecificationBuilder();
-//		b.setFuelSpending(56);
-//		b.setMaxWeigthCapacity(560);
-//		b.setMidVelocity(900);
-//		b.setPeopleCapacity(350);
-//		
-//		CargoAircraftTechdataBuilder t = new CargoAircraftTechdataBuilder();
-//		t.setCanTransprtDangerGoods(true);
-//		t.setCargoDepartmentSize(50);
-//		
-//		CargoAircraftBuilder plane = new CargoAircraftBuilder();
-//		plane.setId(56);
-//		plane.setName("TU - 545");		
-//		plane.setCargoAircraftTechdata(t.getResult());
-//		plane.setTechSpecificationAircraft(b.getResult());
-//		
-//		System.out.println(plane.getResult());
-//		
-//		AirlineCompanyBuilder b = new AirlineCompanyBuilder();
-//		b.setCompanyEmail("belavia@mail.by");
-//		b.setCompanyFoundDate(new Date());
-//		b.setCompanyId(1);
-//		b.setCompanyName("Belavia");
+		manager.setAirlineCompany(buildCompany.getResult());
+		//-----------------------------------------------------------------------
 		
-		AircraftBuilderBehavior p;
+		
+		//--2)Add new Airliner to AircraftPark		
+		AircraftBuilder buildAircraft = new AirlinerBuilder();
+		buildAircraft.setId(128);
+		buildAircraft.setName("Embraer EMB 120 Brasilia;");
+			
+			//--a)Create basicTeachAircraftData
+			BasicTechAiracftBuilder techDataBuild = new BasicTechAiracftBuilder();
+			techDataBuild.setPeopleCapacity(30);
+			techDataBuild.setMidVelocity(552);
+			techDataBuild.setFuelSpending(3);
+			techDataBuild.setMaxWeigthCapacity(10);
+			
+		buildAircraft.setTechSpecificationAircraft(techDataBuild.getResult());
+		
+			//--b)Create AirlinerTechData
+			AirlinerTechDataBuilder buildAirlinerTechData = new AirlinerTechDataBuilder();
+			buildAirlinerTechData.setAirlinerType("LOCAL");
+			buildAirlinerTechData.setHavBusinesClass(true);
+			
+	    //buildAircraft.set
+		//System.out.println(airlinerBuild.getResult());
+		
+		
 	}
 
 }

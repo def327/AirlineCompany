@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans.classbuilders;
+package by.zyablov.airlinecompany.beans.builders;
 
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
@@ -11,11 +11,11 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  * @author Дмитрий
  *
  */
-public class CargoAircraftTechdataBuilder implements BuilderBehavior {
+public class CargoAircraftTechDataBuilder implements BuilderBehavior {
 	
 	private CargoAircraftTechdata cargoAircraftTechdata;
 	
-	public CargoAircraftTechdataBuilder(){
+	public CargoAircraftTechDataBuilder(){
 		cargoAircraftTechdata = new CargoAircraftTechdata();
 	}
 	

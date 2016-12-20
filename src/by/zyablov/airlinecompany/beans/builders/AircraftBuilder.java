@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans.classbuilders;
+package by.zyablov.airlinecompany.beans.builders;
 import by.zyablov.airlinecompany.beans.aircrafts.*;
 import by.zyablov.airlinecompany.beans.techdata.*;
 import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;

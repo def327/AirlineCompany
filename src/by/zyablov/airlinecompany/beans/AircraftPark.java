@@ -32,12 +32,12 @@ public class AircraftPark {
 			amountOfAircraft++;
 			return true;
 		} else {
-			return false;
-			// Genereate exceptions can't add new aircraft to list
+			return false;			
 		}
 	}
 
 	public boolean removeAircraft(Aircraft removingAircraft) {
+		
 		if (listAircrafts.remove(removingAircraft)) {
 			amountOfAircraft--;
 			return true;
@@ -52,6 +52,11 @@ public class AircraftPark {
 
 	public List<Aircraft> getListOfAircrafts() {
 		return listAircrafts;
+	}
+	
+	@Override
+	public String toString() {
+		return "amountOfAircraft" + this.amountOfAircraft;
 	}
 
 }

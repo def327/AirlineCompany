@@ -6,6 +6,7 @@ package by.zyablov.airlinecompany.beans.company;
 import java.util.Date;
 
 import by.zyablov.airlinecompany.beans.AircraftPark;
+import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
 /**
  * @author Дмитрий
@@ -33,6 +34,14 @@ public class AirlineCompany extends Company {
 	public AirlineCompany() {
 		super();
 		aircraftPark = new AircraftPark();
+	}
+	
+	/*
+	 * this method @return true if new aircraft will be added to park successfully
+	 *  else @return false
+	 */
+	public boolean addAircraftToPark(Aircraft newAircraft){
+		return aircraftPark.addAirCraft(newAircraft);
 	}
 
 	@Override

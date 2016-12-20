@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans.classbuilders;
+package by.zyablov.airlinecompany.beans.builders;
 
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
@@ -14,14 +14,14 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  * @author Дмитрий
  *
  */
-public class TechSpecificationBuilder implements BuilderBehavior {
+public class BasicTechAiracftBuilder implements BuilderBehavior {
 
 	private BasicTechAircraftData specification;
 
 	/**
 	 * 
 	 */
-	public TechSpecificationBuilder() {
+	public BasicTechAiracftBuilder() {
 		specification = new BasicTechAircraftData();
 	}
 
