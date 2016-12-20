@@ -7,6 +7,8 @@ import java.util.Date;
 
 import by.zyablov.airlinecompany.beans.AircraftPark;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
+import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
+import by.zyablov.airlinecompany.beans.measures.Tons;
 
 /**
  * @author Дмитрий
@@ -33,20 +35,47 @@ public class AirlineCompany extends Company {
 	 */
 	public AirlineCompany() {
 		super();
-		aircraftPark = new AircraftPark();
+		this.aircraftPark = new AircraftPark();
 	}
 	
 	/*
-	 * this method @return true if new aircraft will be added to park successfully
+	 * !!!
+	 * This method @return true if new aircraft will be added to park successfully
 	 *  else @return false
 	 */
 	public boolean addAircraftToPark(Aircraft newAircraft){
-		return aircraftPark.addAirCraft(newAircraft);
+		return this.aircraftPark.addAirCraft(newAircraft);
+	}
+	
+	/*
+	 * !!!
+	 * This method @return true if new aircraft will be removed to park successfully
+	 * else @return false
+	 */
+	public boolean removeAircraftFromPark(Aircraft removingAircraft){
+		return this.aircraftPark.removeAircraft(removingAircraft);
 	}
 
+	/*
+	 * !!!
+	 * This method calculate amount of all aircraft's people capacity
+	 * 
+	 */
+	public PeopleCapacity getTotalAircraftsPeopleCapacity(){
+		return this.aircraftPark.getTotalAmountPeopleCapacity();
+	}
+	
+	/*
+	 * !!!
+	 * This method calculate amount of all aircraft's maxWeightCapacity
+	 * 
+	 */	
+	public Tons getTotalAircraftsWeightCapacity(){
+		return this.aircraftPark.getTotalAmountWeigthCapacity();
+	}
 	@Override
 	public String toString() {
-		return (super.toString() + "\n" + "amountOfAircraft = " + aircraftPark.getAmountOfAircraft());
+		return (super.toString() + "\n" + "amountOfAircraft = " + aircraftPark.getTotalAmountOfAircraft());
 	}
 
 	/**

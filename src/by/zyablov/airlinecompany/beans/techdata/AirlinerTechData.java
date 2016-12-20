@@ -7,7 +7,7 @@ package by.zyablov.airlinecompany.beans.techdata;
  * @author Дмитрий
  *
  */
-public class AirlinerTechData {
+public class AirlinerTechData extends UniqueAircraftTechData{
 
 	private String airlinerType;
 	private boolean havBusinesClass;

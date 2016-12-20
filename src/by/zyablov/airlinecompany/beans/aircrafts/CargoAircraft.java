@@ -3,7 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans.aircrafts;
 
-import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
+import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechData;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 /**
@@ -12,29 +12,29 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  */
 public class CargoAircraft extends Aircraft {
 
-	private CargoAircraftTechdata cargoAircraftTechdata; 
+	private CargoAircraftTechData cargoAircraftTechData; 
 	
 	/**
 	 * @param idAircraft
 	 * @param nameAircraft
 	 * @param basicTechAircraftData
-	 * @param cargoAircraftTechdata
+	 * @param cargoAircraftTechData
 	 */
 	public CargoAircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData,
-			CargoAircraftTechdata cargoAircraftTechdata) {
+			CargoAircraftTechData cargoAircraftTechData) {
 		super(idAircraft, nameAircraft, basicTechAircraftData);
-		this.cargoAircraftTechdata = cargoAircraftTechdata;
+		this.cargoAircraftTechData = cargoAircraftTechData;
 	}
 
 
 	/**
 	 * 
-	 * @param cargoAircraftTechdata
+	 * @param cargoAircraftTechData
 	 * 
 	 */
 	public CargoAircraft(){
 		super();
-		this.cargoAircraftTechdata = new CargoAircraftTechdata();
+		this.cargoAircraftTechData = new CargoAircraftTechData();
 	}
 
 	
@@ -59,26 +59,26 @@ public class CargoAircraft extends Aircraft {
 		}
 
 		CargoAircraft other = (CargoAircraft) obj;
-		return (this.cargoAircraftTechdata.equals(other.cargoAircraftTechdata));
+		return (this.cargoAircraftTechData.equals(other.cargoAircraftTechData));
 	}
 	
 	@Override
 	public String toString() {
-		return (super.toString() + "\n" + this.cargoAircraftTechdata.toString());
+		return (super.toString() + "\n" + this.cargoAircraftTechData.toString());
 	}
 
 	/**
 	 * @return the cargoAircraftTechdata
 	 */
-	public CargoAircraftTechdata getCargoAircraftTechdata() {
-		return cargoAircraftTechdata;
+	public CargoAircraftTechData getCargoAircraftTechdata() {
+		return cargoAircraftTechData;
 	}
 
 	/**
-	 * @param cargoAircraftTechdata the cargoAircraftTechdata to set
+	 * @param cargoAircraftTechData the cargoAircraftTechdata to set
 	 */
-	public void setCargoAircraftTechdata(CargoAircraftTechdata cargoAircraftTechdata) {
-		this.cargoAircraftTechdata = cargoAircraftTechdata;
+	public void setCargoAircraftTechdata(CargoAircraftTechData cargoAircraftTechData) {
+		this.cargoAircraftTechData = cargoAircraftTechData;
 	}
 	
 	

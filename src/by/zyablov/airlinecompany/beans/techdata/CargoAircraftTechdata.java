@@ -2,7 +2,7 @@ package by.zyablov.airlinecompany.beans.techdata;
 
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 
-public class CargoAircraftTechdata {
+public class CargoAircraftTechData extends UniqueAircraftTechData {
 
 	private CubicMeter cargoDepartmentSize;
 	private boolean canTransprtDangerGoods;
@@ -11,12 +11,12 @@ public class CargoAircraftTechdata {
 	 * @param cargoDepartmentSize
 	 * @param canTransprtDangerGoods
 	 */
-	public CargoAircraftTechdata(CubicMeter cargoDepartmentSize, boolean canTransprtDangerGoods) {
+	public CargoAircraftTechData(CubicMeter cargoDepartmentSize, boolean canTransprtDangerGoods) {
 		this.cargoDepartmentSize = cargoDepartmentSize;
 		this.canTransprtDangerGoods = canTransprtDangerGoods;
 	}
 
-	public CargoAircraftTechdata() {
+	public CargoAircraftTechData() {
 		this.cargoDepartmentSize = new CubicMeter();
 		this.canTransprtDangerGoods = false;
 	}
@@ -32,11 +32,11 @@ public class CargoAircraftTechdata {
 			return false;
 		}
 
-		if (!(obj instanceof CargoAircraftTechdata)) {
+		if (!(obj instanceof CargoAircraftTechData)) {
 			return false;
 		}
 
-		CargoAircraftTechdata other = (CargoAircraftTechdata) obj;
+		CargoAircraftTechData other = (CargoAircraftTechData) obj;
 		return ((this.canTransprtDangerGoods == other.canTransprtDangerGoods) && (this.cargoDepartmentSize.equals(other.cargoDepartmentSize)));
 	}
 

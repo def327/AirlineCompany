@@ -27,6 +27,9 @@ public abstract class AircraftBuilder implements AircraftBuilderBehavior {
 		this.aircraft.setBasicTechAircraftData(basicTechAircraftData);
 	}
 	
+	public abstract void setUniqueAircraftTechData(final UniqueAircraftTechData uniqueAircraftTechData);
+	
+	
 	public abstract Aircraft getResult();
 
 }

@@ -13,19 +13,8 @@ import by.zyablov.airlinecompany.beans.builders.AirlineCompanyBuilder;
 import by.zyablov.airlinecompany.beans.builders.AirlinerBuilder;
 import by.zyablov.airlinecompany.beans.builders.AirlinerTechDataBuilder;
 import by.zyablov.airlinecompany.beans.builders.BasicTechAiracftBuilder;
-import by.zyablov.airlinecompany.beans.measures.CubicMeter;
-import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
-import by.zyablov.airlinecompany.beans.measures.Kilometer;
-import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
-import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
-import by.zyablov.airlinecompany.beans.measures.Tons;
-import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
-import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechdata;
-import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
-import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
-import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
-
-import sun.util.resources.cldr.CalendarData;
+import by.zyablov.airlinecompany.beans.builders.CargoAircraftBuilder;
+import by.zyablov.airlinecompany.beans.builders.CargoAircraftTechDataBuilder;
 
 public class RunnerClass {
 
@@ -50,11 +39,11 @@ public class RunnerClass {
 		//--2)Add new Airliner to AircraftPark		
 		AircraftBuilder buildAircraft = new AirlinerBuilder();
 		buildAircraft.setId(128);
-		buildAircraft.setName("Embraer EMB 120 Brasilia;");
+		buildAircraft.setName("Embraer EMB 120 Brasilia");
 			
 			//--a)Create basicTeachAircraftData
 			BasicTechAiracftBuilder techDataBuild = new BasicTechAiracftBuilder();
-			techDataBuild.setPeopleCapacity(30);
+			techDataBuild.setPeopleCapacity(35);
 			techDataBuild.setMidVelocity(552);
 			techDataBuild.setFuelSpending(3);
 			techDataBuild.setMaxWeigthCapacity(10);
@@ -66,8 +55,42 @@ public class RunnerClass {
 			buildAirlinerTechData.setAirlinerType("LOCAL");
 			buildAirlinerTechData.setHavBusinesClass(true);
 			
-	    //buildAircraft.set
-		//System.out.println(airlinerBuild.getResult());
+	    buildAircraft.setUniqueAircraftTechData(buildAirlinerTechData.getResult());
+	    
+	    manager.addAircraft(buildAircraft.getResult());
+	    //-----------------------------------------------------------------------------------------
+	    
+	    //--3)Add new CargoAircraft to AircraftPark
+		AircraftBuilder buildAircraft2 = new CargoAircraftBuilder();
+		buildAircraft2.setId(130);
+		buildAircraft2.setName("McDonnell Douglas MD-11");
+			
+			//--a)Create basicTeachAircraftData
+			BasicTechAiracftBuilder techDataBuild2 = new BasicTechAiracftBuilder();
+			techDataBuild2.setPeopleCapacity(40);
+			techDataBuild2.setMidVelocity(800);
+			techDataBuild2.setFuelSpending(1);
+			techDataBuild2.setMaxWeigthCapacity(280);
+		
+		buildAircraft2.setTechSpecificationAircraft(techDataBuild2.getResult());
+		
+			//--b)Create AirlinerTechData
+			CargoAircraftTechDataBuilder buildCargoTechData = new CargoAircraftTechDataBuilder();
+			buildCargoTechData.setCanTransprtDangerGoods(true);
+			buildCargoTechData.setCargoDepartmentSize(200);
+			
+		buildAircraft2.setUniqueAircraftTechData(buildCargoTechData.getResult());
+		
+		
+		manager.addAircraft(buildAircraft2.getResult());
+		//----------------------------------------------------------------------------------------
+		manager.removeAircraft(buildAircraft.getResult());
+		
+		System.out.println(manager.calculateTotalPeopleCapacity());
+		System.out.println(manager.calcTotalAircraftsWeigthCapacity());
+		
+		
+		System.out.println(manager.getAirlineCompany().getAircraftPark().getTotalAmountOfAircraft());
 		
 		
 	}

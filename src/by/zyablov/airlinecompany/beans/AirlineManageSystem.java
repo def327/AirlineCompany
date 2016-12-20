@@ -23,26 +23,56 @@ public class AirlineManageSystem {
 		this.airlineCompany = new AirlineCompany();
 	}
 
-	public void addAircraft(Aircraft newAircraft) {
-		this.airlineCompany.addAircraftToPark(newAircraft);
-	}
-
-	public void removeAircraft() {
-
-	}
-
-//	public PeopleCapacity calcTotalAircraftsPeopleCapacity() {
-//
-//	}
-//
-//	public Tons calcTotalAircraftsWeigthCapacity() {
-//			
-//	}
-//
-//	public Aircraft findAircrafByFuelSpending() {
-//
-//	}
+//	/*
+//	 * !!! Find a necessary aircraft by it's fuelSpending
+//	 * 
+//	 */
+//	 public Aircraft findAircrafByFuelSpending() {
+//	
+//	 }
+//	
+//	/*
+//	 * !!!Sort aircrafts by  their midVelocity 
+//	 * 
+//	 */
+//	 public Aircraft sortAircraftsByMidVelocity() {
+//	
+//	 }
 	
+	/*
+	 * !!! Add new aircraft to aircraft park of the airliner company
+	 * 
+	 */
+	public boolean addAircraft(Aircraft newAircraft) {
+		return this.airlineCompany.addAircraftToPark(newAircraft);
+	}
+
+	/*
+	 * !!! Remove existing aircraft from aircraft park of the airliner company
+	 * 
+	 */
+	public boolean removeAircraft(Aircraft removingAircraft) {
+		return this.airlineCompany.removeAircraftFromPark(removingAircraft);
+	}
+
+	/*
+	 * !!! Calculate a total amount people capacity of all aircrafts at the
+	 * Aircraft park of airline company
+	 * 
+	 */
+	public PeopleCapacity calculateTotalPeopleCapacity() {
+		return this.airlineCompany.getTotalAircraftsPeopleCapacity();
+	}
+
+	/*
+	 * !!! Calculate a total amount weight capacity of all aircrafts at the
+	 * Aircraft park of airline company
+	 * 
+	 */
+	public Tons calcTotalAircraftsWeigthCapacity() {
+		return this.airlineCompany.getTotalAircraftsWeightCapacity();
+	}
+
 	/**
 	 * @return the airlineCompany
 	 */
@@ -51,11 +81,11 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * @param airlineCompany the airlineCompany to set
+	 * @param airlineCompany
+	 *            the airlineCompany to set
 	 */
 	public void setAirlineCompany(AirlineCompany airlineCompany) {
 		this.airlineCompany = airlineCompany;
 	}
-	
 
 }
