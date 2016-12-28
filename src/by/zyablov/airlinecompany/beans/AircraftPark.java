@@ -3,8 +3,8 @@
  */
 package by.zyablov.airlinecompany.beans;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
@@ -16,15 +16,15 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
  */
 public class AircraftPark {
 
-	private List<Aircraft> listAircrafts;
+	private Set<Aircraft> aircraftListSet;
 	private int amountOfAircraft;
 
 	/**
-	 * @param listAircrafts
+	 * @param aircraftListSet
 	 * @param amountOfAircraft
 	 */
 	public AircraftPark() {
-		this.listAircrafts = new ArrayList<>();
+		this.aircraftListSet = new HashSet<>();
 		this.amountOfAircraft = 0;
 	}
 
@@ -34,8 +34,8 @@ public class AircraftPark {
 	 */
 	public boolean addAirCraft(Aircraft newAircraft) {
 
-		if (listAircrafts.add(newAircraft)) {
-			amountOfAircraft++;
+		if (aircraftListSet.add(newAircraft)) {
+			amountOfAircraft++;			//add counterAircraft from class Aircaft!!!
 			return true;
 		} else {
 			return false;
@@ -48,8 +48,8 @@ public class AircraftPark {
 	 */
 	public boolean removeAircraft(Aircraft removingAircraft) {
 
-		if (listAircrafts.remove(removingAircraft)) {
-			amountOfAircraft--;
+		if (aircraftListSet.remove(removingAircraft)) {
+			amountOfAircraft--;			//add counterAiracraft add counter from class Aircaft!!!
 			return true;
 		} else {
 			return false;
@@ -64,7 +64,7 @@ public class AircraftPark {
 	public PeopleCapacity getTotalAmountPeopleCapacity() {
 		int totalAmount = 0;
 	
-		for (Aircraft aircraft : listAircrafts) {
+		for (Aircraft aircraft : aircraftListSet) {
 			totalAmount = totalAmount + (int)aircraft.getBasicTechAircraftData().getPeopleCapacity().getMeasureValueInInt();
 		}
 		
@@ -80,7 +80,7 @@ public class AircraftPark {
 	public Tons getTotalAmountWeigthCapacity(){
 		int totalAmount = 0 ;
 		
-		for (Aircraft aircraft : listAircrafts) {
+		for (Aircraft aircraft : aircraftListSet) {
 			totalAmount = totalAmount + (int)aircraft.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInInt();
 		}
 		
@@ -89,21 +89,43 @@ public class AircraftPark {
 	}
 
 	/*
-	 * !!!
-	 * This method return a total amount of all aircrafts at the aircraft park
-	 * 
+	 * This method return a total value of all aicrafts at the aircraft park
 	 */
 	public int getTotalAmountOfAircraft() {
 		return this.amountOfAircraft;
 	}
 
-	public List<Aircraft> getListOfAircrafts() {
-		return this.listAircrafts;
+	/**
+	 * @return the aircraftListSet
+	 */
+	public Set<Aircraft> getAircraftListSet() {
+		return aircraftListSet;
+	}
+
+	/**
+	 * @param aircraftListSet the aircraftListSet to set
+	 */
+	public void setAircraftListSet(Set<Aircraft> aircraftListSet) {
+		this.aircraftListSet = aircraftListSet;
+	}
+
+	/**
+	 * @return the amountOfAircraft
+	 */
+	public int getAmountOfAircraft() {
+		return amountOfAircraft;
+	}
+
+	/**
+	 * @param amountOfAircraft the amountOfAircraft to set
+	 */
+	public void setAmountOfAircraft(int amountOfAircraft) {
+		this.amountOfAircraft = amountOfAircraft;
 	}
 
 	@Override
 	public String toString() {
-		return "amountOfAircraft" + this.amountOfAircraft;
+		return "amountOfAircraft" + (this.amountOfAircraft);
 	}
 
 }

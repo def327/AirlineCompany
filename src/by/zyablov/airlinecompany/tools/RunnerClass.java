@@ -6,15 +6,18 @@ package by.zyablov.airlinecompany.tools;
 
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import by.zyablov.airlinecompany.beans.AirlineManageSystem;
-import by.zyablov.airlinecompany.beans.builders.AircraftBuilder;
-import by.zyablov.airlinecompany.beans.builders.AirlineCompanyBuilder;
-import by.zyablov.airlinecompany.beans.builders.AirlinerBuilder;
-import by.zyablov.airlinecompany.beans.builders.AirlinerTechDataBuilder;
-import by.zyablov.airlinecompany.beans.builders.BasicTechAiracftBuilder;
-import by.zyablov.airlinecompany.beans.builders.CargoAircraftBuilder;
-import by.zyablov.airlinecompany.beans.builders.CargoAircraftTechDataBuilder;
+import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
+import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
+import by.zyablov.airlinecompany.beans.builders.BuilderAirlineCompany;
+import by.zyablov.airlinecompany.beans.builders.BuilderAirliner;
+import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerTechData;
+import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
+import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
+import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
 
 public class RunnerClass {
 
@@ -23,10 +26,12 @@ public class RunnerClass {
 	 */
 	public static void main(String[] args) {
 		
+	
+		
 		AirlineManageSystem manager = new AirlineManageSystem();
 		
 		//--1)Create AirlineCompany		
-		AirlineCompanyBuilder buildCompany = new AirlineCompanyBuilder();
+		BuilderAirlineCompany buildCompany = new BuilderAirlineCompany();
 		buildCompany.setCompanyId(56);
 		buildCompany.setCompanyName("BELAVIA");
 		buildCompany.setCompanyEmail("belavia@gmail.com");
@@ -37,12 +42,12 @@ public class RunnerClass {
 		
 		
 		//--2)Add new Airliner to AircraftPark		
-		AircraftBuilder buildAircraft = new AirlinerBuilder();
+		BuilderAircraft buildAircraft = new BuilderAirliner();
 		buildAircraft.setId(128);
 		buildAircraft.setName("Embraer EMB 120 Brasilia");
 			
 			//--a)Create basicTeachAircraftData
-			BasicTechAiracftBuilder techDataBuild = new BasicTechAiracftBuilder();
+			BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
 			techDataBuild.setPeopleCapacity(35);
 			techDataBuild.setMidVelocity(552);
 			techDataBuild.setFuelSpending(3);
@@ -51,7 +56,7 @@ public class RunnerClass {
 		buildAircraft.setTechSpecificationAircraft(techDataBuild.getResult());
 		
 			//--b)Create AirlinerTechData
-			AirlinerTechDataBuilder buildAirlinerTechData = new AirlinerTechDataBuilder();
+			BuilderAirlinerTechData buildAirlinerTechData = new BuilderAirlinerTechData();
 			buildAirlinerTechData.setAirlinerType("LOCAL");
 			buildAirlinerTechData.setHavBusinesClass(true);
 			
@@ -61,12 +66,12 @@ public class RunnerClass {
 	    //-----------------------------------------------------------------------------------------
 	    
 	    //--3)Add new CargoAircraft to AircraftPark
-		AircraftBuilder buildAircraft2 = new CargoAircraftBuilder();
+		BuilderAircraft buildAircraft2 = new BuilderCargoAircraft();
 		buildAircraft2.setId(130);
 		buildAircraft2.setName("McDonnell Douglas MD-11");
 			
 			//--a)Create basicTeachAircraftData
-			BasicTechAiracftBuilder techDataBuild2 = new BasicTechAiracftBuilder();
+			BuilderBasicTechAiracft techDataBuild2 = new BuilderBasicTechAiracft();
 			techDataBuild2.setPeopleCapacity(40);
 			techDataBuild2.setMidVelocity(800);
 			techDataBuild2.setFuelSpending(1);
@@ -75,7 +80,7 @@ public class RunnerClass {
 		buildAircraft2.setTechSpecificationAircraft(techDataBuild2.getResult());
 		
 			//--b)Create AirlinerTechData
-			CargoAircraftTechDataBuilder buildCargoTechData = new CargoAircraftTechDataBuilder();
+			BuilderCargoAircraftTechData buildCargoTechData = new BuilderCargoAircraftTechData();
 			buildCargoTechData.setCanTransprtDangerGoods(true);
 			buildCargoTechData.setCargoDepartmentSize(200);
 			
@@ -84,14 +89,18 @@ public class RunnerClass {
 		
 		manager.addAircraft(buildAircraft2.getResult());
 		//----------------------------------------------------------------------------------------
-		manager.removeAircraft(buildAircraft.getResult());
+		//manager.removeAircraft(buildAircraft.getResult());
 		
-		System.out.println(manager.calculateTotalPeopleCapacity());
-		System.out.println(manager.calcTotalAircraftsWeigthCapacity());
+//		System.out.println(manager.calculateTotalPeopleCapacity());
+//		System.out.println(manager.calcTotalAircraftsWeigthCapacity());
 		
 		
-		System.out.println(manager.getAirlineCompany().getAircraftPark().getTotalAmountOfAircraft());
+		List<Aircraft> lst = manager.getListOfSortAicraftByFuelSpending();
 		
+		for (Iterator<Aircraft> iterator = lst.iterator(); iterator.hasNext();) {
+			Aircraft aircraft = (Aircraft) iterator.next();
+			System.out.println(aircraft.getIdAircraft() + aircraft.getBasicTechAircraftData().getPeopleCapacity().toString());
+		}
 		
 	}
 

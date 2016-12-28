@@ -13,7 +13,7 @@ import by.zyablov.airlinecompany.interfaces.CompanyBuilderBehavior;
  * @author Дмитрий
  *
  */
-public class AirlineCompanyBuilder implements CompanyBuilderBehavior {
+public class BuilderAirlineCompany implements CompanyBuilderBehavior {
 	
 	private AirlineCompany airlineCompany;
 	
@@ -21,7 +21,7 @@ public class AirlineCompanyBuilder implements CompanyBuilderBehavior {
 	/**
 	 * @param airlineCompany
 	 */
-	public AirlineCompanyBuilder() {
+	public BuilderAirlineCompany() {
 		airlineCompany = new AirlineCompany();
 	}
 

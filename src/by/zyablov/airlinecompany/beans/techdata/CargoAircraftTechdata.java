@@ -1,8 +1,9 @@
 package by.zyablov.airlinecompany.beans.techdata;
 
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
+import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
-public class CargoAircraftTechData extends UniqueAircraftTechData {
+public class CargoAircraftTechData implements UniqueAircraftTechDataBehavior {
 
 	private CubicMeter cargoDepartmentSize;
 	private boolean canTransprtDangerGoods;

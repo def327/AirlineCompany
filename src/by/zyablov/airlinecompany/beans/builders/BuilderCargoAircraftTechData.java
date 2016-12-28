@@ -11,11 +11,11 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  * @author Дмитрий
  *
  */
-public class CargoAircraftTechDataBuilder implements BuilderBehavior {
+public class BuilderCargoAircraftTechData implements BuilderBehavior {
 	
 	private CargoAircraftTechData cargoAircraftTechData;
 	
-	public CargoAircraftTechDataBuilder(){
+	public BuilderCargoAircraftTechData(){
 		cargoAircraftTechData = new CargoAircraftTechData();
 	}
 	

@@ -5,12 +5,13 @@ package by.zyablov.airlinecompany.beans.builders;
 import by.zyablov.airlinecompany.beans.aircrafts.*;
 import by.zyablov.airlinecompany.beans.techdata.*;
 import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
+import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public abstract class AircraftBuilder implements AircraftBuilderBehavior {
+public abstract class BuilderAircraft implements AircraftBuilderBehavior {
 	
 	protected Aircraft aircraft;
 	
@@ -27,7 +28,7 @@ public abstract class AircraftBuilder implements AircraftBuilderBehavior {
 		this.aircraft.setBasicTechAircraftData(basicTechAircraftData);
 	}
 	
-	public abstract void setUniqueAircraftTechData(final UniqueAircraftTechData uniqueAircraftTechData);
+	public abstract void setUniqueAircraftTechData(final UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior);
 	
 	
 	public abstract Aircraft getResult();

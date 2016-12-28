@@ -5,15 +5,15 @@ package by.zyablov.airlinecompany.beans.builders;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Airliner;
 import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
-import by.zyablov.airlinecompany.beans.techdata.UniqueAircraftTechData;
+import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class AirlinerBuilder extends AircraftBuilder {
+public class BuilderAirliner extends BuilderAircraft {
 
-	public AirlinerBuilder() {
+	public BuilderAirliner() {
 		this.aircraft = new Airliner();
 	}
 	
@@ -27,8 +27,8 @@ public class AirlinerBuilder extends AircraftBuilder {
 	}
 
 	@Override
-	public void setUniqueAircraftTechData(UniqueAircraftTechData uniqueAircraftTechData) {
-		((Airliner)aircraft).setAirlinerTechData((AirlinerTechData)uniqueAircraftTechData);		
+	public void setUniqueAircraftTechData(UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior) {
+		((Airliner)aircraft).setAirlinerTechData((AirlinerTechData)uniqueAircraftTechDataBehavior);		
 	}
 
 }

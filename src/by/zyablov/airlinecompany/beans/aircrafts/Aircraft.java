@@ -3,17 +3,51 @@
  */
 package by.zyablov.airlinecompany.beans.aircrafts;
 
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
+import by.zyablov.airlinecompany.tools.HashMake;
 
 /**
  * @author Дмитрий
  *
  */
-public abstract class Aircraft {
+public abstract class Aircraft implements Comparable<Object> {
 
 	private int idAircraft;
 	private String nameAircraft;
 	private BasicTechAircraftData basicTechAircraftData;
+	
+	//Fix this static and create some function wi
+//	public static int aircraftsCounter;	
+//	
+//	static{
+//		aircraftsCounter = 0;
+//	}
+//	
+//	/**
+//	 * @return the aircraftsCounter
+//	 */
+//	public static int getAircraftsCounter() {
+//		return aircraftsCounter;
+//	}
+//	/**
+//	 * @param aircraftsCounter the aircraftsCounter to set
+//	 */
+//	public static void setAircraftsCounter(int aircraftsCounter) {
+//		Aircraft.aircraftsCounter = aircraftsCounter;
+//	}	
+//	
+//	//----------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/**
 	 * @param idAircraft
@@ -23,7 +57,7 @@ public abstract class Aircraft {
 	public Aircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData) {
 		this.idAircraft = idAircraft;
 		this.nameAircraft = nameAircraft;
-		this.basicTechAircraftData = basicTechAircraftData;
+		this.basicTechAircraftData = basicTechAircraftData;			
 	}
 
 
@@ -36,7 +70,6 @@ public abstract class Aircraft {
 		nameAircraft = null;
 		basicTechAircraftData = new BasicTechAircraftData();
 	}
-
 
 	/**
 	 * @return the idAircraft
@@ -90,7 +123,10 @@ public abstract class Aircraft {
 		this.basicTechAircraftData = basicTechAircraftData;
 	}
 
-
+	@Override
+	public int hashCode() {		
+		return HashMake.createHashValue(this.nameAircraft + this.idAircraft);
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -107,13 +143,25 @@ public abstract class Aircraft {
 		}
 
 		Aircraft other = (Aircraft) obj;
-		return ((this.idAircraft == other.idAircraft) && this.nameAircraft.equals(other.nameAircraft)
+		return ((this.idAircraft == other.idAircraft) && (this.nameAircraft.equals(other.nameAircraft))
 				&& (this.basicTechAircraftData.equals(other.basicTechAircraftData)));
 	}
 	
 	@Override
 	public String toString() {		
 		return "id = " + idAircraft + "\n" + "name = " + nameAircraft + "\n" + basicTechAircraftData.toString();
+	}
+	
+	
+	/**
+	 * !!! This method originaly compare aricrafts by their middle velocity
+	 */
+	@Override
+	public int compareTo(Object o) {	
+		Aircraft other = (Aircraft)o;
+		KilometerPerHour otherMidVelocity =  other.getBasicTechAircraftData().getMidVelocity();
+		
+		return ((KilometerPerHour) this.basicTechAircraftData.getMidVelocity()).compareTo(otherMidVelocity);
 	}
 
 }

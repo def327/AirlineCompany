@@ -14,14 +14,14 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  * @author Дмитрий
  *
  */
-public class BasicTechAiracftBuilder implements BuilderBehavior {
+public class BuilderBasicTechAiracft implements BuilderBehavior {
 
 	private BasicTechAircraftData specification;
 
 	/**
 	 * 
 	 */
-	public BasicTechAiracftBuilder() {
+	public BuilderBasicTechAiracft() {
 		specification = new BasicTechAircraftData();
 	}
 

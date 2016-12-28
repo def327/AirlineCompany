@@ -3,11 +3,13 @@
  */
 package by.zyablov.airlinecompany.beans.techdata;
 
+import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
+
 /**
  * @author Дмитрий
  *
  */
-public class AirlinerTechData extends UniqueAircraftTechData{
+public class AirlinerTechData implements UniqueAircraftTechDataBehavior{
 
 	private String airlinerType;
 	private boolean havBusinesClass;

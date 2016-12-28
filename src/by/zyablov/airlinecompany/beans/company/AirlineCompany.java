@@ -3,9 +3,15 @@
  */
 package by.zyablov.airlinecompany.beans.company;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import by.zyablov.airlinecompany.beans.AircraftPark;
+import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByFuelSpending;
+import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByMaxWeightCapacity;
+import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByPeopleCapacity;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
@@ -16,7 +22,7 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
  */
 public class AirlineCompany extends Company {
 
-	private AircraftPark aircraftPark;
+	private AircraftPark aircraftPark;	
 
 	/**
 	 * @param id
@@ -37,60 +43,112 @@ public class AirlineCompany extends Company {
 		super();
 		this.aircraftPark = new AircraftPark();
 	}
-	
-	/*
-	 * !!!
-	 * This method @return true if new aircraft will be added to park successfully
-	 *  else @return false
+
+	/**
+	 * !!! This method @return true if new aircraft will be added to park
+	 * successfully else @return false
 	 */
-	public boolean addAircraftToPark(Aircraft newAircraft){
+	public boolean addAircraftToPark(Aircraft newAircraft) {
 		return this.aircraftPark.addAirCraft(newAircraft);
 	}
-	
-	/*
-	 * !!!
-	 * This method @return true if new aircraft will be removed to park successfully
-	 * else @return false
+
+	/**
+	 * !!! This method @return true if new aircraft will be removed to park
+	 * successfully else @return false
 	 */
-	public boolean removeAircraftFromPark(Aircraft removingAircraft){
-		return this.aircraftPark.removeAircraft(removingAircraft);
+	public boolean removeAircraftFromPark(Aircraft removingAircraft) {
+		return (this.aircraftPark.removeAircraft(removingAircraft));
 	}
 
-	/*
-	 * !!!
-	 * This method calculate amount of all aircraft's people capacity
+	/**
+	 * !!! This method calculate amount of all aircraft's people capacity
 	 * 
 	 */
-	public PeopleCapacity getTotalAircraftsPeopleCapacity(){
-		return this.aircraftPark.getTotalAmountPeopleCapacity();
-	}
-	
-	/*
-	 * !!!
-	 * This method calculate amount of all aircraft's maxWeightCapacity
-	 * 
-	 */	
-	public Tons getTotalAircraftsWeightCapacity(){
-		return this.aircraftPark.getTotalAmountWeigthCapacity();
-	}
-	@Override
-	public String toString() {
-		return (super.toString() + "\n" + "amountOfAircraft = " + aircraftPark.getTotalAmountOfAircraft());
+	public PeopleCapacity getTotalAircraftsPeopleCapacity() {
+		return (this.aircraftPark.getTotalAmountPeopleCapacity());
 	}
 
+	/**
+	 * !!! This method calculate amount of all aircraft's maxWeightCapacity
+	 * 
+	 */
+	public Tons getTotalAircraftsWeightCapacity() {
+		return (this.aircraftPark.getTotalAmountWeigthCapacity());
+	}
+
+	/**
+	 * !!! This method return a total amount of all aircrafts at the aircraft
+	 * park
+	 * 
+	 */
+	public int getTotalAmountOfAircraft() {
+		return (this.aircraftPark.getTotalAmountOfAircraft());
+	}
+
+	/**
+	 * !!! This method return a sort list of aicrafts by their middle velocity
+	 * 
+	 * 
+	 */
+	public List<Aircraft> getListOfSortedAircraftsByMidVelocity(){
+		
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftListSet());
+		Collections.sort(listOfAircraft);		
+		return listOfAircraft;
+	}
+	
+	/**
+	 * !!! This method return a sort list of aicrafts by their people capacity
+	 * 
+	 */
+	public List<Aircraft> getListOfSortedAircraftByPeopleCapacity() {
+		
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftListSet());
+		Collections.sort(listOfAircraft,new AircraftComparatorByPeopleCapacity());	
+		return listOfAircraft ;
+	}
+
+	/**
+	 * !!! This method return a sort list of aicrafts by their fuel spending
+	 * 
+	 */
+	public List<Aircraft> getListOfSortedAircraftByFuelSpending() {
+		
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftListSet());
+		Collections.sort(listOfAircraft,new AircraftComparatorByFuelSpending());	
+		return listOfAircraft ;
+	}
+
+	/**
+	 * !!! This method return a sort list of aircrafts by their maximum fuel spending
+	 * 
+	 */
+	public List<Aircraft> getListOfSortedAircraftByMaxWeightCapacity() {
+		
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftListSet());
+		Collections.sort(listOfAircraft,new AircraftComparatorByMaxWeightCapacity());	
+		return listOfAircraft ;
+	}
+	
 	/**
 	 * @return the aircraftPark
 	 */
 	public AircraftPark getAircraftPark() {
-		return aircraftPark;
+		return this.aircraftPark;
 	}
 
 	/**
-	 * @param aircraftPark the aircraftPark to set
+	 * @param aircraftPark
+	 *            the aircraftPark to set
 	 */
 	public void setAircraftPark(AircraftPark aircraftPark) {
 		this.aircraftPark = aircraftPark;
 	}
-
 	
+	@Override
+	public String toString() {
+		return (super.toString() + "\n" + aircraftPark.toString());
+	}
+
+
 }
