@@ -25,13 +25,14 @@ public class AirlineManageSystem {
 		this.airlineCompany = new AirlineCompany();
 	}
 
-//	/*
-//	 * !!! Find a necessary aircraft by it's fuelSpending
-//	 * 
-//	 */
-//	 public Aircraft findAircrafByFuelSpending() {
-//	
-//	 }
+	/*
+	 * !!! Find a necessary aircraft by it's fuelSpending
+	 * 
+	 */
+	 public Aircraft findAircrafByFuelSpending() {
+		return null;
+	
+	 }
 	
 	/*
 	 * !!! Get the List of sort aircrafts by their middle velocity 
@@ -66,7 +67,7 @@ public class AirlineManageSystem {
 	 
 	  
 	 /**
-	  * 	FIX the method to remove and to delete aircraft
+	  * 	FIX methods to remove and to delete aircraft
 	  * 
 	  */
 	 
@@ -85,7 +86,10 @@ public class AirlineManageSystem {
 	public boolean removeAircraft(Aircraft removingAircraft) {
 		return this.airlineCompany.removeAircraftFromPark(removingAircraft);
 	}
-		
+	
+//---------------------------------------------------------------------------------		
+//---------------------------------------------------------------------------------
+	
 	/*
 	 * !!! Calculate a total amount people capacity of all aircrafts at the
 	 * Aircraft park of airline company
