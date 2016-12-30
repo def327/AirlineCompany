@@ -23,7 +23,7 @@ public abstract class Measure implements Measureable, Comparable<Object> {
 	@Override
 	public int compareTo(Object o) {
 		Measure other = (Measure)o;		
-		return this.getMeasureValueInInt() - other.getMeasureValueInInt();
+		return (this.getMeasureValueInInt() - other.getMeasureValueInInt());
 	}
 	
 }

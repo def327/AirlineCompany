@@ -1,12 +1,13 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans;
+package by.zyablov.airlinecompany.tools;
 
 import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
+import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 
@@ -29,9 +30,8 @@ public class AirlineManageSystem {
 	 * !!! Find a necessary aircraft by it's fuelSpending
 	 * 
 	 */
-	 public Aircraft findAircrafByFuelSpending() {
-		return null;
-	
+	 public List<Aircraft> getListOfFoundAircraftsByFuelSpendingRange(FuelSpendTonPerKm fromValue, FuelSpendTonPerKm toValue) {
+		return (this.airlineCompany.getListOfFoundAicraftsByFuelSpendingRange(fromValue,toValue));	
 	 }
 	
 	/*
@@ -67,7 +67,7 @@ public class AirlineManageSystem {
 	 
 	  
 	 /**
-	  * 	FIX methods to remove and to delete aircraft
+	  * !!!!!!!!!!!!!!!!!!!!!!!!!!	FIX methods to remove and to delete aircraft
 	  * 
 	  */
 	 
@@ -96,7 +96,7 @@ public class AirlineManageSystem {
 	 * 
 	 */
 	public PeopleCapacity calculateTotalPeopleCapacity() {
-		return this.airlineCompany.getTotalAircraftsPeopleCapacity();
+		return (this.airlineCompany.getTotalAircraftsPeopleCapacity());
 	}
 
 	/*
@@ -105,7 +105,7 @@ public class AirlineManageSystem {
 	 * 
 	 */
 	public Tons calcTotalAircraftsWeigthCapacity() {
-		return this.airlineCompany.getTotalAircraftsWeightCapacity();
+		return (this.airlineCompany.getTotalAircraftsWeightCapacity());
 	}
 
 	/**

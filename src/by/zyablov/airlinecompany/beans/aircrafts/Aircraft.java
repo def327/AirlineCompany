@@ -5,7 +5,7 @@ package by.zyablov.airlinecompany.beans.aircrafts;
 
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
-import by.zyablov.airlinecompany.tools.HashMake;
+import by.zyablov.airlinecompany.tools.HashMakeManager;
 
 /**
  * @author Дмитрий
@@ -17,36 +17,29 @@ public abstract class Aircraft implements Comparable<Object> {
 	private String nameAircraft;
 	private BasicTechAircraftData basicTechAircraftData;
 	
-	//Fix this static and create some function wi
-//	public static int aircraftsCounter;	
-//	
-//	static{
-//		aircraftsCounter = 0;
-//	}
-//	
-//	/**
-//	 * @return the aircraftsCounter
-//	 */
-//	public static int getAircraftsCounter() {
-//		return aircraftsCounter;
-//	}
-//	/**
-//	 * @param aircraftsCounter the aircraftsCounter to set
-//	 */
-//	public static void setAircraftsCounter(int aircraftsCounter) {
-//		Aircraft.aircraftsCounter = aircraftsCounter;
-//	}	
-//	
-//	//----------------------------------------------------------------------
 	
 	
+//!!! Fix this static and create some function wi
+	public static int aircraftsCounter;	
 	
+	static{
+		aircraftsCounter = 0;
+	}
 	
+	/**
+	 * @return the aircraftsCounter
+	 */
+	public static int getAircraftsCounter() {
+		return aircraftsCounter;
+	}
+	/**
+	 * @param aircraftsCounter the aircraftsCounter to set
+	 */
+	public static void setAircraftsCounter(int aircraftsCounter) {
+		Aircraft.aircraftsCounter = aircraftsCounter;
+	}		
 	
-	
-	
-	
-	
+//------------------------------------------------------------------------	
 	
 	
 	/**
@@ -125,7 +118,7 @@ public abstract class Aircraft implements Comparable<Object> {
 
 	@Override
 	public int hashCode() {		
-		return HashMake.createHashValue(this.nameAircraft + this.idAircraft);
+		return HashMakeManager.createHashValue(this.nameAircraft + this.idAircraft);
 	}
 
 	@Override

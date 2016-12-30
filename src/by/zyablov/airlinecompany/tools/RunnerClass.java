@@ -5,11 +5,10 @@ package by.zyablov.airlinecompany.tools;
 
 
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 
-import by.zyablov.airlinecompany.beans.AirlineManageSystem;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderAirlineCompany;
@@ -18,6 +17,7 @@ import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerTechData;
 import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
+import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 
 public class RunnerClass {
 
@@ -35,7 +35,7 @@ public class RunnerClass {
 		buildCompany.setCompanyId(56);
 		buildCompany.setCompanyName("BELAVIA");
 		buildCompany.setCompanyEmail("belavia@gmail.com");
-		buildCompany.setCompanyFoundDate(new Date());
+		buildCompany.setCompanyFoundDate(new GregorianCalendar());
 		
 		manager.setAirlineCompany(buildCompany.getResult());
 		//-----------------------------------------------------------------------
@@ -92,15 +92,20 @@ public class RunnerClass {
 		//manager.removeAircraft(buildAircraft.getResult());
 		
 //		System.out.println(manager.calculateTotalPeopleCapacity());
-//		System.out.println(manager.calcTotalAircraftsWeigthCapacity());
+//		System.out.println(manager.calcTotalAircraftsWeigthCapacity());	
 		
 		
-		List<Aircraft> lst = manager.getListOfSortAicraftByFuelSpending();
+		FuelSpendTonPerKm fromValue  = new FuelSpendTonPerKm();
+		FuelSpendTonPerKm toValue = new FuelSpendTonPerKm();
+		
+		List<Aircraft> lst = manager.getListOfFoundAircraftsByFuelSpendingRange(fromValue, toValue);
 		
 		for (Iterator<Aircraft> iterator = lst.iterator(); iterator.hasNext();) {
 			Aircraft aircraft = (Aircraft) iterator.next();
-			System.out.println(aircraft.getIdAircraft() + aircraft.getBasicTechAircraftData().getPeopleCapacity().toString());
+			System.out.println(aircraft.getIdAircraft() + " " + aircraft.getBasicTechAircraftData().getFuelSpending());
 		}
+		
+		
 		
 	}
 

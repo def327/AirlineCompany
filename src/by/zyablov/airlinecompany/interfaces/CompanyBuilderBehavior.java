@@ -1,6 +1,6 @@
 package by.zyablov.airlinecompany.interfaces;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 import by.zyablov.airlinecompany.beans.company.Company;
 
@@ -12,7 +12,7 @@ public interface CompanyBuilderBehavior extends BuilderBehavior {
 
 	void setCompanyEmail(String companyEmail);
 
-	void setCompanyFoundDate(Date companyFoundDate);
+	void setCompanyFoundDate(GregorianCalendar companyFoundDate);
 
 	Company getResult();
 

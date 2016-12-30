@@ -7,7 +7,7 @@ package by.zyablov.airlinecompany.tools;
  * @author Дмитрий
  *
  */
-public class HashMake {
+public class HashMakeManager {
 	
 	public static int createHashValue(String hashingString){
 		

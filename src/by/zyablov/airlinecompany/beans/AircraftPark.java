@@ -16,16 +16,16 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
  */
 public class AircraftPark {
 
-	private Set<Aircraft> aircraftListSet;
-	private int amountOfAircraft;
+	private Set<Aircraft> aircraftSet;
+	private int aircraftsAmount;
 
 	/**
-	 * @param aircraftListSet
-	 * @param amountOfAircraft
+	 * @param aircraftSet
+	 * @param aircraftsAmount
 	 */
 	public AircraftPark() {
-		this.aircraftListSet = new HashSet<>();
-		this.amountOfAircraft = 0;
+		this.aircraftSet = new HashSet<>();
+		this.aircraftsAmount = 0;
 	}
 
 	/*
@@ -34,8 +34,8 @@ public class AircraftPark {
 	 */
 	public boolean addAirCraft(Aircraft newAircraft) {
 
-		if (aircraftListSet.add(newAircraft)) {
-			amountOfAircraft++;			//add counterAircraft from class Aircaft!!!
+		if (aircraftSet.add(newAircraft)) {
+			aircraftsAmount++;
 			return true;
 		} else {
 			return false;
@@ -48,8 +48,8 @@ public class AircraftPark {
 	 */
 	public boolean removeAircraft(Aircraft removingAircraft) {
 
-		if (aircraftListSet.remove(removingAircraft)) {
-			amountOfAircraft--;			//add counterAiracraft add counter from class Aircaft!!!
+		if (aircraftSet.remove(removingAircraft)) {
+			aircraftsAmount--;
 			return true;
 		} else {
 			return false;
@@ -57,75 +57,71 @@ public class AircraftPark {
 	}
 
 	/*
-	 * !!!
-	 * This method return an amount value of all aircraft's peopleCapacity
+	 * !!! This method return an amount value of all aircraft's peopleCapacity
 	 * 
 	 */
 	public PeopleCapacity getTotalAmountPeopleCapacity() {
-		int totalAmount = 0;
-	
-		for (Aircraft aircraft : aircraftListSet) {
-			totalAmount = totalAmount + (int)aircraft.getBasicTechAircraftData().getPeopleCapacity().getMeasureValueInInt();
+		int totalAmountPeopleCapacityInt = 0;
+
+		for (Aircraft aircraft : aircraftSet) {
+			totalAmountPeopleCapacityInt = totalAmountPeopleCapacityInt
+					+ (int) aircraft.getBasicTechAircraftData().getPeopleCapacity().getMeasureValueInInt();
 		}
-		
-		PeopleCapacity totalAmountPeopleCpacity = new PeopleCapacity(totalAmount);
+
+		PeopleCapacity totalAmountPeopleCpacity = new PeopleCapacity(totalAmountPeopleCapacityInt);
 		return totalAmountPeopleCpacity;
-	}
-	
-	/*
-	 * !!!
-	 * This method return a total amount value of all aircraft's maxWeigthCapacity
-	 * 
-	 */	
-	public Tons getTotalAmountWeigthCapacity(){
-		int totalAmount = 0 ;
-		
-		for (Aircraft aircraft : aircraftListSet) {
-			totalAmount = totalAmount + (int)aircraft.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInInt();
-		}
-		
-		Tons totalAmountMaxWeigthCapacity = new Tons(totalAmount);
-		return totalAmountMaxWeigthCapacity;
 	}
 
 	/*
-	 * This method return a total value of all aicrafts at the aircraft park
+	 * !!! This method return a total amount value of all aircraft's
+	 * maxWeigthCapacity
+	 * 
 	 */
-	public int getTotalAmountOfAircraft() {
-		return this.amountOfAircraft;
+	public Tons getTotalAmountWeigthCapacity() {
+		int totalAmountWieghtCapacityInt = 0;
+
+		for (Aircraft aircraft : aircraftSet) {
+			totalAmountWieghtCapacityInt = totalAmountWieghtCapacityInt
+					+ (int) aircraft.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInInt();
+		}
+
+		Tons totalAmountMaxWeigthCapacity = new Tons(totalAmountWieghtCapacityInt);
+		return totalAmountMaxWeigthCapacity;
 	}
 
 	/**
 	 * @return the aircraftListSet
 	 */
-	public Set<Aircraft> getAircraftListSet() {
-		return aircraftListSet;
+	public Set<Aircraft> getAircraftSet() {
+		return aircraftSet;
 	}
 
 	/**
-	 * @param aircraftListSet the aircraftListSet to set
+	 * @param aircraftListSet
+	 *            the aircraftListSet to set
 	 */
-	public void setAircraftListSet(Set<Aircraft> aircraftListSet) {
-		this.aircraftListSet = aircraftListSet;
+	public void setAircraftSet(Set<Aircraft> aircraftSet) {
+		this.aircraftSet = aircraftSet;
 	}
 
 	/**
 	 * @return the amountOfAircraft
 	 */
-	public int getAmountOfAircraft() {
-		return amountOfAircraft;
+	public int getAicraftsAmount() {
+		return this.aircraftsAmount;
 	}
 
 	/**
-	 * @param amountOfAircraft the amountOfAircraft to set
+	 * @param amountOfAircraft
+	 *            the amountOfAircraft to set
 	 */
-	public void setAmountOfAircraft(int amountOfAircraft) {
-		this.amountOfAircraft = amountOfAircraft;
+	public void setAicraftsAmount(int amountOfAircraft) {
+		this.aircraftsAmount = amountOfAircraft;
 	}
 
 	@Override
 	public String toString() {
-		return "amountOfAircraft" + (this.amountOfAircraft);
+		return "amountOfAircraft" + (this.aircraftsAmount);
 	}
 
 }

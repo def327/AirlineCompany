@@ -4,7 +4,7 @@
 package by.zyablov.airlinecompany.beans.company;
 
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * @author Дмитрий
@@ -15,7 +15,7 @@ public abstract class Company {
 	private int companyId;
 	private String companyName;
 	private String companyEmail;
-	private Date companyFoundDate; 
+	private GregorianCalendar companyFoundDate; 
 
 	/**
 	 * @param id
@@ -23,7 +23,7 @@ public abstract class Company {
 	 * @param email
 	 * @param foundDate
 	 */
-	public Company(int id, String name, String email, Date foundDate) {
+	public Company(int id, String name, String email, GregorianCalendar foundDate) {
 		this.companyId = id;
 		this.companyName = name;
 		this.companyEmail = email;
@@ -109,14 +109,14 @@ public abstract class Company {
 	/**
 	 * @return the companyFoundDate
 	 */
-	public Date getCompanyFoundDate() {
+	public GregorianCalendar getCompanyFoundDate() {
 		return companyFoundDate;
 	}
 
 	/**
 	 * @param companyFoundDate the companyFoundDate to set
 	 */
-	public void setCompanyFoundDate(Date companyFoundDate) {
+	public void setCompanyFoundDate(GregorianCalendar companyFoundDate) {
 		this.companyFoundDate = companyFoundDate;
 	}
 

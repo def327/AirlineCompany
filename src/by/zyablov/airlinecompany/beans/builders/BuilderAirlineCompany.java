@@ -3,7 +3,7 @@
  */
 package by.zyablov.airlinecompany.beans.builders;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 import by.zyablov.airlinecompany.beans.AircraftPark;
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
@@ -41,7 +41,7 @@ public class BuilderAirlineCompany implements CompanyBuilderBehavior {
 	}
 
 	@Override
-	public void setCompanyFoundDate(Date companyFoundDate) {
+	public void setCompanyFoundDate(GregorianCalendar companyFoundDate) {
 		airlineCompany.setCompanyFoundDate(companyFoundDate);		
 	}
 	
@@ -52,5 +52,7 @@ public class BuilderAirlineCompany implements CompanyBuilderBehavior {
 	public AirlineCompany getResult(){
 		return airlineCompany;
 	}
+
+
 	
 }
