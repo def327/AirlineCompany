@@ -5,7 +5,7 @@ package by.zyablov.airlinecompany.beans.builders;
 
 import java.util.GregorianCalendar;
 
-import by.zyablov.airlinecompany.beans.AircraftPark;
+import by.zyablov.airlinecompany.beans.aircraftpark.AircraftPark;
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
 import by.zyablov.airlinecompany.interfaces.CompanyBuilderBehavior;
 

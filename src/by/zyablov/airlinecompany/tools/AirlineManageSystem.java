@@ -8,6 +8,7 @@ import java.util.List;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.company.AirlineCompany;
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 
@@ -25,13 +26,24 @@ public class AirlineManageSystem {
 	public AirlineManageSystem() {
 		this.airlineCompany = new AirlineCompany();
 	}
-
+	
 	/*
-	 * !!! Find a necessary aircraft by it's fuelSpending
+	 * !!!  Get the List of aircrafts  from airline comapany park, which middle velocity parameter
+	 * are included in the range  formed by values fromValueMidVelocity and toValueMidVelocity
 	 * 
 	 */
-	 public List<Aircraft> getListOfFoundAircraftsByFuelSpendingRange(FuelSpendTonPerKm fromValue, FuelSpendTonPerKm toValue) {
-		return (this.airlineCompany.getListOfFoundAicraftsByFuelSpendingRange(fromValue,toValue));	
+	public List<Aircraft> getListOfFoundAircraftsByMidVelocityRange(KilometerPerHour fromValueMidVelocity, KilometerPerHour toValueMidVelocity ){
+		return (this.airlineCompany.getListOfFoundAicraftsByMidVelocityRange(fromValueMidVelocity, toValueMidVelocity));		
+	}
+	 
+
+	/*
+	 * !!!  Get the List of aircrafts  from airline comapany park, which fuelspending parameter
+	 * are included in the range  formed by values fromValueFuelSpending and toValueFuelSpending
+	 * 
+	 */
+	 public List<Aircraft> getListOfFoundAircraftsByFuelSpendingRange(FuelSpendTonPerKm fromValueFuelSpending, FuelSpendTonPerKm toValueFuelSpending) {
+		return (this.airlineCompany.getListOfFoundAicraftsByFuelSpendingRange(fromValueFuelSpending,toValueFuelSpending));	
 	 }
 	
 	/*
@@ -65,11 +77,12 @@ public class AirlineManageSystem {
 		 return (this.airlineCompany.getListOfSortedAircraftByMaxWeightCapacity());
 	 }
 	 
-	  
-	 /**
-	  * !!!!!!!!!!!!!!!!!!!!!!!!!!	FIX methods to remove and to delete aircraft
-	  * 
+	 /*
+	  * !!! Get aircraft  from airline company park
 	  */
+	 public Aircraft getAircraftkById(int idAircraft){
+		return (this.airlineCompany.getAircraftFormAircraftParkById(idAircraft));		 
+	 }
 	 
 	/*
 	 * !!! Add new aircraft to aircraft park of the airliner company
@@ -86,9 +99,6 @@ public class AirlineManageSystem {
 	public boolean removeAircraft(Aircraft removingAircraft) {
 		return this.airlineCompany.removeAircraftFromPark(removingAircraft);
 	}
-	
-//---------------------------------------------------------------------------------		
-//---------------------------------------------------------------------------------
 	
 	/*
 	 * !!! Calculate a total amount people capacity of all aircrafts at the

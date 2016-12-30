@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans.aircraftcomparators;
+package by.zyablov.airlinecompany.beans.aircrafts.aircraftcomparators;
 
 import java.util.Comparator;
 

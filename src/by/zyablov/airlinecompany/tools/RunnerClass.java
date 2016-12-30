@@ -17,7 +17,7 @@ import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerTechData;
 import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
-import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 
 public class RunnerClass {
 
@@ -95,17 +95,17 @@ public class RunnerClass {
 //		System.out.println(manager.calcTotalAircraftsWeigthCapacity());	
 		
 		
-		FuelSpendTonPerKm fromValue  = new FuelSpendTonPerKm();
-		FuelSpendTonPerKm toValue = new FuelSpendTonPerKm();
+//		KilometerPerHour fromValue  = new KilometerPerHour(552);
+//		KilometerPerHour toValue = new KilometerPerHour();
+//		
+//		List<Aircraft> lst = manager.getListOfFoundAircraftsByMidVelocityRange(fromValue, toValue);
+//		
+//		for (Iterator<Aircraft> iterator = lst.iterator(); iterator.hasNext();) {
+//			Aircraft aircraft = (Aircraft) iterator.next();
+//			System.out.println(aircraft.getIdAircraft() + " " + aircraft.getBasicTechAircraftData().getMidVelocity());
+//		}
 		
-		List<Aircraft> lst = manager.getListOfFoundAircraftsByFuelSpendingRange(fromValue, toValue);
-		
-		for (Iterator<Aircraft> iterator = lst.iterator(); iterator.hasNext();) {
-			Aircraft aircraft = (Aircraft) iterator.next();
-			System.out.println(aircraft.getIdAircraft() + " " + aircraft.getBasicTechAircraftData().getFuelSpending());
-		}
-		
-		
+	
 		
 	}
 

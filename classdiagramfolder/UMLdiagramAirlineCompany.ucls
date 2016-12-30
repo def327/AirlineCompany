@@ -162,8 +162,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="by.zyablov.airlinecompany.beans.AircraftPark" project="AirlineCompany" 
-    file="/AirlineCompany/src/by/zyablov/airlinecompany/beans/AircraftPark.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="by.zyablov.airlinecompany.beans.aircraftpark.AircraftPark" 
+    project="AirlineCompany" file="/AirlineCompany/src/by/zyablov/airlinecompany/beans/aircraftpark/AircraftPark.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4939" y="473"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -287,278 +288,278 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
+  <realization id="29">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
   <association id="30">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="31" name="aircraft">        
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="31" name="fuelSpending">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="32" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="34" name="maxWeigthCapacity">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="35" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <realization id="37">    
+  <realization id="33">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <realization id="34">    
     <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="19"/>  
   </realization>  
-  <association id="38">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="39" name="aircraftSet">        
+  <association id="35">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="36" name="airlineCompany">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="40" minimum="0" maximum="2147483647">        
+      <multiplicity id="37" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="42" name="airlinerTechData">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="43" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="44">    
+  <generalization id="38">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="39">    
     <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="45" name="aircraftPark">        
+      <attribute id="40" name="aircraftPark">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="46" minimum="0" maximum="1">        
+      <multiplicity id="41" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="47">    
+  <generalization id="42">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="22"/>  
   </generalization>  
-  <association id="48">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="49" name="peopleCapacity">        
+  <association id="43">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="44" name="airlinerTechData">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="52" name="airlineCompany">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="54">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="21"/>  
-  </realization>  
-  <association id="55">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="56" name="airlineCompany">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="57" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="58">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="4"/>  
-  </realization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <association id="60">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="61" name="midVelocity">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="62" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="63">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="20"/>  
-  </realization>  
-  <association id="64">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="65" name="cargoAircraftTechData">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="66" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="67">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="68" name="cargoDepartmentSize">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="69" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <association id="71">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="72" name="basicTechAircraftData">        
-        <position height="0" width="0" x="12" y="-32"/>      
-      </attribute>      
-      <multiplicity id="73" minimum="0" maximum="1">        
-        <position height="0" width="0" x="12" y="-32"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="74">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <association id="75">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="76" name="airlinerTechData">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="77" minimum="0" maximum="1">        
+      <multiplicity id="45" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="78">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <generalization id="79">    
-    <end type="SOURCE" refId="7"/>    
+  <association id="46">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="47" name="maxWeigthCapacity">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
-  <realization id="80">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
-  </realization>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="22"/>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
   </generalization>  
-  <realization id="82">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="20"/>  
-  </realization>  
-  <generalization id="83">    
+  <association id="51">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="52" name="aircraftSet">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="54">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <generalization id="84">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
+  <realization id="55">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
   </generalization>  
-  <realization id="85">    
-    <end type="SOURCE" refId="12"/>    
+  <generalization id="57">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="58">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="59" name="cargoDepartmentSize">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="61">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
+  <association id="62">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="63" name="aircraft">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="65">    
+    <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="14"/>  
   </realization>  
-  <generalization id="86">    
+  <generalization id="66">    
     <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
-  <association id="87">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="88" name="cargoAircraftTechData">        
+  <generalization id="67">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <association id="69">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="70" name="peopleCapacity">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="89" minimum="0" maximum="1">        
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="73" name="airlineCompany">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="76">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <association id="77">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="78" name="midVelocity">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="79" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="80">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="81" name="airlinerTechData">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="82" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="83">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="86" name="cargoAircraftTechData">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="87" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="90">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="91" name="fuelSpending">        
+  <association id="88">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="89" name="cargoAircraftTechData">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="92" minimum="0" maximum="1">        
+      <multiplicity id="90" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="93">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="94" name="specification">        
+  <association id="91">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="92" name="basicTechAircraftData">        
         <position height="0" width="0" x="12" y="-32"/>      
       </attribute>      
-      <multiplicity id="95" minimum="0" maximum="1">        
+      <multiplicity id="93" minimum="0" maximum="1">        
         <position height="0" width="0" x="12" y="-32"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="96">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="20"/>  
-  </realization>  
+  <association id="94">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="95" name="specification">        
+        <position height="0" width="0" x="12" y="-32"/>      
+      </attribute>      
+      <multiplicity id="96" minimum="0" maximum="1">        
+        <position height="0" width="0" x="12" y="-32"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package by.zyablov.airlinecompany.beans;
+package by.zyablov.airlinecompany.beans.aircraftpark;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -88,6 +88,14 @@ public class AircraftPark {
 		Tons totalAmountMaxWeigthCapacity = new Tons(totalAmountWieghtCapacityInt);
 		return totalAmountMaxWeigthCapacity;
 	}
+	
+	/*
+	 * !!! This method return a total amount of aircrafts at the aircraft park
+	 * 
+	 */
+	public int getTotalAircraftsAmount() {
+		return this.aircraftsAmount;
+	}
 
 	/**
 	 * @return the aircraftListSet
@@ -123,5 +131,6 @@ public class AircraftPark {
 	public String toString() {
 		return "amountOfAircraft" + (this.aircraftsAmount);
 	}
+
 
 }

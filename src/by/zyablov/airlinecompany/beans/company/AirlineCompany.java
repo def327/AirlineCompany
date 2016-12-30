@@ -11,12 +11,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import by.zyablov.airlinecompany.beans.AircraftPark;
-import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByFuelSpending;
-import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByMaxWeightCapacity;
-import by.zyablov.airlinecompany.beans.aircraftcomparators.AircraftComparatorByPeopleCapacity;
+import by.zyablov.airlinecompany.beans.aircraftpark.AircraftPark;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
+import by.zyablov.airlinecompany.beans.aircrafts.aircraftcomparators.AircraftComparatorByFuelSpending;
+import by.zyablov.airlinecompany.beans.aircrafts.aircraftcomparators.AircraftComparatorByMaxWeightCapacity;
+import by.zyablov.airlinecompany.beans.aircrafts.aircraftcomparators.AircraftComparatorByPeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
+import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 
@@ -53,7 +54,7 @@ public class AirlineCompany extends Company {
 	 * successfully else @return false
 	 */
 	public boolean addAircraftToPark(Aircraft newAircraft) {
-		return this.aircraftPark.addAirCraft(newAircraft);
+		return (this.aircraftPark.addAirCraft(newAircraft));
 	}
 
 	/**
@@ -86,7 +87,7 @@ public class AirlineCompany extends Company {
 	 * 
 	 */
 	public int getTotalAmountOfAircraft() {
-		return (this.aircraftPark.getTotalAmountOfAircraft());
+		return (this.aircraftPark.getTotalAircraftsAmount());
 	}
 
 	/**
@@ -156,15 +157,15 @@ public class AirlineCompany extends Company {
 	}
 
 	/**
-	 * !!! This method return a list of found aicrafts, which fuelspend per kilometer enter the range 
-	 * 	fromValue to toValue
+	 * !!! This method return a list of found aircrafts, which fuel spending per
+	 * kilometer enter the range formed by parameters fromValue to toValue
 	 * 
-	 * @param fromValue
-	 * @param toValue
+	 * @param fromValueFuelSpending
+	 * @param toValueFuelSpending
 	 * @return listOfFoundAicrafts
 	 */
-	public List<Aircraft> getListOfFoundAicraftsByFuelSpendingRange(FuelSpendTonPerKm fromValue,
-			FuelSpendTonPerKm toValue) {
+	public List<Aircraft> getListOfFoundAicraftsByFuelSpendingRange(FuelSpendTonPerKm fromValueFuelSpending,
+			FuelSpendTonPerKm toValueFuelSpending) {
 
 		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
 		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();
@@ -174,11 +175,63 @@ public class AirlineCompany extends Company {
 
 			FuelSpendTonPerKm aicraftFuelSpend = (FuelSpendTonPerKm) aircraft.getBasicTechAircraftData()
 					.getFuelSpending();
-			if ((aicraftFuelSpend.compareTo(fromValue) >= 0) && (aicraftFuelSpend.compareTo(toValue) <= 0)) {
+			if ((aicraftFuelSpend.compareTo(fromValueFuelSpending) >= 0)
+					&& (aicraftFuelSpend.compareTo(toValueFuelSpending) <= 0)) {
 				listOfFoundAicrafts.add(aircraft);
 			}
 		}
 		return listOfFoundAicrafts;
 	}
+	
+	/**
+	 * !!! This method return a list of found aircrafts, which middle velocity 
+	 *  enter the range, formed by parameters fromValueMidVelocity to toValueMidVelocity
+	 * 
+	 * @param fromValueMidVelocity
+	 * @param toValueMidVelocity
+	 * @return listOfFoundAicrafts
+	 */
+	public List<Aircraft> getListOfFoundAicraftsByMidVelocityRange(KilometerPerHour fromValueMidVelocity,
+			KilometerPerHour toValueMidVelocity) {
+		
+		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
+		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();
+
+		for (Iterator<Aircraft> iterAircraftSet = aircraftSet.iterator(); iterAircraftSet.hasNext();) {
+			Aircraft aircraft = (Aircraft) iterAircraftSet.next();
+
+			KilometerPerHour aicraftMidVelocity = (KilometerPerHour) aircraft.getBasicTechAircraftData()
+					.getMidVelocity();
+			
+			if ((aicraftMidVelocity.compareTo(fromValueMidVelocity) >= 0)
+					&& (aicraftMidVelocity.compareTo(toValueMidVelocity) <= 0)) {
+				listOfFoundAicrafts.add(aircraft);
+			}
+		}
+		return listOfFoundAicrafts;
+		
+	}
+
+	/**
+	 * !!! This method find aircraft by unique aicraft's id and return this
+	 * <b>aircraft</b> from airline company park <i>if there isn't a suitable
+	 * aircraft at the park this method will return <b>null</b> </i>
+	 * 
+	 * @param idAircraft
+	 * @return Aicraft aircraft
+	 */
+	public Aircraft getAircraftFormAircraftParkById(int idAircraft) {
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
+
+		for (Iterator<Aircraft> iterAicraftList = listOfAircraft.iterator(); iterAicraftList.hasNext();) {
+			Aircraft aircraft = (Aircraft) iterAicraftList.next();
+
+			if (aircraft.getIdAircraft() == idAircraft) {
+				return aircraft;
+			}
+		}
+		return null;
+	}
+
 
 }
