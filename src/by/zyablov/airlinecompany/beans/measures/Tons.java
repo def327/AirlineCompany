@@ -11,6 +11,12 @@ package by.zyablov.airlinecompany.beans.measures;
 public class Tons extends Measure {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8363057548547864061L;
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public Tons(int tonsValue) {

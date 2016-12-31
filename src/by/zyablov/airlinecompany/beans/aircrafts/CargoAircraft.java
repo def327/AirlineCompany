@@ -12,6 +12,13 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  */
 public class CargoAircraft extends Aircraft {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7792314539883108495L;
+	
+	
+	
 	private CargoAircraftTechData cargoAircraftTechData; 
 	
 	/**

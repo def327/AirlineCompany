@@ -86,6 +86,7 @@ public class AirlineCompany extends Company {
 	 * park
 	 * 
 	 */
+	
 	public int getTotalAmountOfAircraft() {
 		return (this.aircraftPark.getTotalAircraftsAmount());
 	}

@@ -3,14 +3,23 @@
  */
 package by.zyablov.airlinecompany.beans.techdata;
 
+import java.io.Serializable;
+
 import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
 /**
  * @author Дмитрий
  *
  */
-public class AirlinerTechData implements UniqueAircraftTechDataBehavior{
+public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -375709814509627970L;
+	
+	
+	
 	private String airlinerType;
 	private boolean havBusinesClass;
 

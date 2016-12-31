@@ -1,10 +1,20 @@
 package by.zyablov.airlinecompany.beans.techdata;
 
+import java.io.Serializable;
+
 import by.zyablov.airlinecompany.beans.measures.CubicMeter;
 import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
-public class CargoAircraftTechData implements UniqueAircraftTechDataBehavior {
+public class CargoAircraftTechData implements UniqueAircraftTechDataBehavior,Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -291296523782820836L;
+	
+	
+	
+	
 	private CubicMeter cargoDepartmentSize;
 	private boolean canTransprtDangerGoods;
 

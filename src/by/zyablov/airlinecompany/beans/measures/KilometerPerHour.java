@@ -10,6 +10,13 @@ package by.zyablov.airlinecompany.beans.measures;
 public class KilometerPerHour extends Measure {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7246317486198153340L;
+	
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public KilometerPerHour(int kilometrsPerHourValue) {

@@ -10,6 +10,13 @@ package by.zyablov.airlinecompany.beans.measures;
 public class Kilometer extends Measure {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2846659323359916L;
+	
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public Kilometer(int kilometrsValue) {

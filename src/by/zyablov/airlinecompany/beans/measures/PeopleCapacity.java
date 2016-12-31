@@ -10,6 +10,13 @@ package by.zyablov.airlinecompany.beans.measures;
 public class PeopleCapacity extends Measure {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9174692227205197309L;
+	
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public PeopleCapacity(int peopleCapacityValue) {

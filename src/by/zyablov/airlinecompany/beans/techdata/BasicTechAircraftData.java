@@ -3,6 +3,8 @@
  */
 package by.zyablov.airlinecompany.beans.techdata;
 
+import java.io.Serializable;
+
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
@@ -13,8 +15,15 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
  *
  */
 
-public class BasicTechAircraftData {
+public class BasicTechAircraftData implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8074903153153914987L;
+	
+	
+	
 	private Tons maxWeigthCapacity;
 	private FuelSpendTonPerKm fuelSpending;
 	private KilometerPerHour midVelocity;

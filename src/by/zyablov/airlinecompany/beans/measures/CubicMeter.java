@@ -10,6 +10,13 @@ package by.zyablov.airlinecompany.beans.measures;
 public class CubicMeter extends Measure {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5102375310062773220L;
+	
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public CubicMeter(int cubicMetersValue) {

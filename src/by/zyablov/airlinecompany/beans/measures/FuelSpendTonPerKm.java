@@ -11,6 +11,14 @@ public class FuelSpendTonPerKm extends Measure {
 
 	
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6914592884036514919L;
+	
+	
+	
+
+	/**
 	 * @param measureValue
 	 */
 	public FuelSpendTonPerKm(int fuelSpendTonPerKm) {

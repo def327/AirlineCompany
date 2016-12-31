@@ -10,8 +10,14 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  * @author Дмитрий
  *
  */
-public class Airliner extends Aircraft {
+public class AirlinerAircraft extends Aircraft {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6664670089448551525L;
+	
+	
 	private AirlinerTechData airlinerTechData;
 
 	/**
@@ -20,7 +26,7 @@ public class Airliner extends Aircraft {
 	 * @param basicTechAircraftData
 	 * @param airlinerTechData
 	 */
-	public Airliner(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData,
+	public AirlinerAircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData,
 			AirlinerTechData airlinerTechData) {
 		super(idAircraft, nameAircraft, basicTechAircraftData);
 		this.airlinerTechData = airlinerTechData;
@@ -33,7 +39,7 @@ public class Airliner extends Aircraft {
 	 * @param havBusinesClass
 	 * 
 	 */
-	public Airliner() {
+	public AirlinerAircraft() {
 		super();
 		this.airlinerTechData = new AirlinerTechData();
 	}
@@ -73,7 +79,7 @@ public class Airliner extends Aircraft {
 			return false;
 		}
 
-		Airliner other = (Airliner) obj;
+		AirlinerAircraft other = (AirlinerAircraft) obj;
 		return (this.airlinerTechData.equals(other.airlinerTechData));
 	}
 

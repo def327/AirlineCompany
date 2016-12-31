@@ -89,7 +89,7 @@ public class AirlineManageSystem {
 	 * 
 	 */
 	public boolean addAircraft(Aircraft newAircraft) {
-		return this.airlineCompany.addAircraftToPark(newAircraft);
+		return (this.airlineCompany.addAircraftToPark(newAircraft));
 	}
 
 	/*
