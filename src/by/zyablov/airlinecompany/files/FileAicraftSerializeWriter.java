@@ -12,20 +12,18 @@ import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
+
 /**
  * @author Дмитрий
  *
  */
-public class FileAicraftsWriter {
+public class FileAicraftSerializeWriter{
 
-	public static void writeAircraftListToFile(List<Aircraft> aircraftsList) throws FileNotFoundException, IOException {
-		ObjectOutputStream out = null;
-		try {
-			File file = new File("datafiles/datalist.dat");
-			out = new ObjectOutputStream(new FileOutputStream(file));
+	public static void writeAircraftListToFile(List<Aircraft> aircraftsList) throws FileNotFoundException, IOException  {
+		try (ObjectOutputStream out = new ObjectOutputStream(
+				new FileOutputStream(new File("datafiles/datalist.dat")))) {
+			
 			out.writeObject(aircraftsList);
-		}finally {			
-			out.close();
 		}
 	}
 }

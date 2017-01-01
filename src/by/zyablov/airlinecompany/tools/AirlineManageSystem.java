@@ -28,7 +28,14 @@ public class AirlineManageSystem {
 	}
 	
 	/*
-	 * !!!  Get the List of aircrafts  from airline comapany park, which middle velocity parameter
+	 * !!! Get the list of all aircrafts from airline company park
+	 */
+	public List<Aircraft> getListOfAicrafts(){
+		return (this.airlineCompany.getListOfAircrafts());		
+	}
+	
+	/*
+	 * !!!  Get the List of aircrafts  from airline company park, which middle velocity parameter
 	 * are included in the range  formed by values fromValueMidVelocity and toValueMidVelocity
 	 * 
 	 */

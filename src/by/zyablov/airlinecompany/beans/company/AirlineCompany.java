@@ -156,6 +156,17 @@ public class AirlineCompany extends Company {
 	public String toString() {
 		return (super.toString() + "\n" + aircraftPark.toString());
 	}
+	
+	/**
+	 * !!! This method return a list of all aicrafts from airliner company park
+	 * @return listOfAircraft
+	 */
+	public List<Aircraft> getListOfAircrafts(){
+		
+		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
+		return listOfAircraft;
+	}
+	
 
 	/**
 	 * !!! This method return a list of found aircrafts, which fuel spending per

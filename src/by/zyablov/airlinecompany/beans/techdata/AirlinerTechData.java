@@ -21,7 +21,7 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 	
 	
 	private String airlinerType;
-	private boolean havBusinesClass;
+	private boolean haveBusinesClass;
 
 	/**
 	 * @param airlinerType
@@ -29,12 +29,12 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 	 */
 	public AirlinerTechData(String airlinerType, boolean havBusinesClass) {
 		this.airlinerType = airlinerType;
-		this.havBusinesClass = havBusinesClass;
+		this.haveBusinesClass = havBusinesClass;
 	}
 
 	public AirlinerTechData() {
 		this.airlinerType = null;
-		this.havBusinesClass = false;
+		this.haveBusinesClass = false;
 	}
 
 	@Override
@@ -53,12 +53,12 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 		}
 
 		AirlinerTechData other = (AirlinerTechData) obj;
-		return ((this.havBusinesClass == other.havBusinesClass) && (this.airlinerType.equals(other.airlinerType)));
+		return ((this.haveBusinesClass == other.haveBusinesClass) && (this.airlinerType.equals(other.airlinerType)));
 	}
 
 	@Override
 	public String toString() {
-		return "airlinerType = " + this.airlinerType + "\n" + "havBusinesClass = " + this.havBusinesClass;
+		return "airlinerType = " + this.airlinerType + "\n" + "havBusinesClass = " + this.haveBusinesClass;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 	 * @return the havBusinesClass
 	 */
 	public boolean isHavBusinesClass() {
-		return havBusinesClass;
+		return haveBusinesClass;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 	 *            the havBusinesClass to set
 	 */
 	public void setHavBusinesClass(boolean havBusinesClass) {
-		this.havBusinesClass = havBusinesClass;
+		this.haveBusinesClass = havBusinesClass;
 	}
 
 }
