@@ -20,6 +20,7 @@ import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
+import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 
 /**
  * @author Дмитрий
@@ -67,17 +68,19 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method calculate amount of all aircraft's people capacity
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
-	public PeopleCapacity getTotalAircraftsPeopleCapacity() {
+	public PeopleCapacity getTotalAircraftsPeopleCapacity() throws AircraftEmptyParkException {
 		return (this.aircraftPark.getTotalAmountPeopleCapacity());
 	}
 
 	/**
 	 * !!! This method calculate amount of all aircraft's maxWeightCapacity
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
-	public Tons getTotalAircraftsWeightCapacity() {
+	public Tons getTotalAircraftsWeightCapacity() throws AircraftEmptyParkException {
 		return (this.aircraftPark.getTotalAmountWeigthCapacity());
 	}
 
@@ -93,10 +96,15 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their middle velocity
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 * 
 	 */
-	public List<Aircraft> getListOfSortedAircraftsByMidVelocity() {
+	public List<Aircraft> getListOfSortedAircraftsByMidVelocity() throws AircraftEmptyParkException {
+		
+		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+			throw new AircraftEmptyParkException();
+		}
 
 		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
 		Collections.sort(listOfAircraft);
@@ -105,9 +113,14 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their people capacity
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
-	public List<Aircraft> getListOfSortedAircraftByPeopleCapacity() {
+	public List<Aircraft> getListOfSortedAircraftByPeopleCapacity() throws AircraftEmptyParkException {
+		
+		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+			throw new AircraftEmptyParkException();
+		}
 
 		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
 		Collections.sort(listOfAircraft, new AircraftComparatorByPeopleCapacity());
@@ -116,9 +129,14 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their fuel spending
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
-	public List<Aircraft> getListOfSortedAircraftByFuelSpending() {
+	public List<Aircraft> getListOfSortedAircraftByFuelSpending() throws AircraftEmptyParkException {
+		
+		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+			throw new AircraftEmptyParkException();
+		}
 
 		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
 		Collections.sort(listOfAircraft, new AircraftComparatorByFuelSpending());
@@ -128,9 +146,14 @@ public class AirlineCompany extends Company {
 	/**
 	 * !!! This method return a sort list of aircrafts by their maximum fuel
 	 * spending
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
-	public List<Aircraft> getListOfSortedAircraftByMaxWeightCapacity() {
+	public List<Aircraft> getListOfSortedAircraftByMaxWeightCapacity() throws AircraftEmptyParkException {
+		
+		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+			throw new AircraftEmptyParkException();
+		}
 
 		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
 		Collections.sort(listOfAircraft, new AircraftComparatorByMaxWeightCapacity());
@@ -175,9 +198,15 @@ public class AirlineCompany extends Company {
 	 * @param fromValueFuelSpending
 	 * @param toValueFuelSpending
 	 * @return listOfFoundAicrafts
+	 * @throws AircraftEmptyParkException 
 	 */
 	public List<Aircraft> getListOfFoundAicraftsByFuelSpendingRange(FuelSpendTonPerKm fromValueFuelSpending,
-			FuelSpendTonPerKm toValueFuelSpending) {
+			FuelSpendTonPerKm toValueFuelSpending) throws AircraftEmptyParkException {
+		
+		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+			throw new AircraftEmptyParkException();
+		}
+		
 
 		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
 		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();

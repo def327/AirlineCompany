@@ -38,7 +38,7 @@ public class BuilderBasicTechAiracft implements BuilderBehavior {
 	}
 
 	public void setPeopleCapacity(int peopleCapacity){
-		specification.setPeopleCapacity(new PeopleCapacity(peopleCapacity));
+		specification.setMaxPeopleCapacity(new PeopleCapacity(peopleCapacity));
 	}
 	
 	public BasicTechAircraftData getResult(){

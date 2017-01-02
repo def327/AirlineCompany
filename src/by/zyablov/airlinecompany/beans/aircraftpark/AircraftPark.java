@@ -9,6 +9,7 @@ import java.util.Set;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
+import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 
 /**
  * @author Дмитрий
@@ -60,12 +61,17 @@ public class AircraftPark {
 	 * !!! This method return an amount value of all aircraft's peopleCapacity
 	 * 
 	 */
-	public PeopleCapacity getTotalAmountPeopleCapacity() {
+	public PeopleCapacity getTotalAmountPeopleCapacity() throws AircraftEmptyParkException {
+		
+		if(this.aircraftsAmount == 0){
+			throw new AircraftEmptyParkException();
+		}
+		
 		int totalAmountPeopleCapacityInt = 0;
 
 		for (Aircraft aircraft : aircraftSet) {
 			totalAmountPeopleCapacityInt = totalAmountPeopleCapacityInt
-					+ (int) aircraft.getBasicTechAircraftData().getPeopleCapacity().getMeasureValueInInt();
+					+ (int) aircraft.getBasicTechAircraftData().getMaxPeopleCapacity().getMeasureValueInInt();
 		}
 
 		PeopleCapacity totalAmountPeopleCpacity = new PeopleCapacity(totalAmountPeopleCapacityInt);
@@ -77,7 +83,12 @@ public class AircraftPark {
 	 * maxWeigthCapacity
 	 * 
 	 */
-	public Tons getTotalAmountWeigthCapacity() {
+	public Tons getTotalAmountWeigthCapacity() throws AircraftEmptyParkException {
+		
+		if(this.aircraftsAmount == 0){
+			throw new AircraftEmptyParkException();
+		}
+		
 		int totalAmountWieghtCapacityInt = 0;
 
 		for (Aircraft aircraft : aircraftSet) {

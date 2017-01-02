@@ -4,7 +4,9 @@
 package by.zyablov.airlinecompany.beans.company;
 
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 /**
  * @author Дмитрий
@@ -118,6 +120,16 @@ public abstract class Company {
 	 */
 	public void setCompanyFoundDate(GregorianCalendar companyFoundDate) {
 		this.companyFoundDate = companyFoundDate;
+	}
+	
+	/**
+	 *  !!! This method return a company found date parsed to string
+	 * @return
+	 */
+	public String getFoundDataParsedToString(){
+		SimpleDateFormat simpleDataformat = new SimpleDateFormat("yyyy MMMM dd",new Locale("en","EN"));
+		String stringFoundData = simpleDataformat.format(this.companyFoundDate.getTime());
+		return stringFoundData;
 	}
 
 	

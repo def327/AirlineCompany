@@ -20,8 +20,8 @@ public class AircraftComparatorByPeopleCapacity implements Comparator<Object> {
 		Aircraft oneObj = (Aircraft) o1;
 		Aircraft twoObj = (Aircraft) o2;
 
-		PeopleCapacity oneObjPeopleCapacity = (PeopleCapacity) oneObj.getBasicTechAircraftData().getPeopleCapacity();
-		PeopleCapacity twoObjPeopleCapacity = (PeopleCapacity) twoObj.getBasicTechAircraftData().getPeopleCapacity();
+		PeopleCapacity oneObjPeopleCapacity = (PeopleCapacity) oneObj.getBasicTechAircraftData().getMaxPeopleCapacity();
+		PeopleCapacity twoObjPeopleCapacity = (PeopleCapacity) twoObj.getBasicTechAircraftData().getMaxPeopleCapacity();
 
 		return (oneObjPeopleCapacity.compareTo(twoObjPeopleCapacity));
 	}
