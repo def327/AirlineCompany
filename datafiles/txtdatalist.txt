@@ -1,2 +1,0 @@
-CargoAircraft|0|McDonnell Douglas MD-11|280|1|800|40|200|true
-AirlinerAircraft|0|Embraer EMB 120 Brasilia|10|3|552|35|LOCAL|true

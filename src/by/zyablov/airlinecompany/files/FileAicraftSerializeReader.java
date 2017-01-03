@@ -23,7 +23,7 @@ public class FileAicraftSerializeReader {
 
 	@SuppressWarnings("unchecked")
 	public static List<Aircraft> readAircraftListFromFile() throws FileNotFoundException, IOException, ClassNotFoundException {
-		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(new File("datafiles/datalist.dat")))) {
+		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(new File("src/datafiles/datalist.dat")))) {
 			
 			List<Aircraft> aircraftsList = new LinkedList<>();
 			aircraftsList = (List<Aircraft>) in.readObject();

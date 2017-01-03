@@ -21,7 +21,7 @@ public class FileAicraftSerializeWriter{
 
 	public static void writeAircraftListToFile(List<Aircraft> aircraftsList) throws FileNotFoundException, IOException  {
 		try (ObjectOutputStream out = new ObjectOutputStream(
-				new FileOutputStream(new File("datafiles/datalist.dat")))) {
+				new FileOutputStream(new File("src/datafiles/datalist.dat")))) {
 			
 			out.writeObject(aircraftsList);
 		}

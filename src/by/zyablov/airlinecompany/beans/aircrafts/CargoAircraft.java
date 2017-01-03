@@ -16,11 +16,32 @@ public class CargoAircraft extends Aircraft {
 	 * 
 	 */
 	private static final long serialVersionUID = 7792314539883108495L;
-	
-	
-	
-	private CargoAircraftTechData cargoAircraftTechData; 
-	
+
+	private CargoAircraftTechData cargoAircraftTechData;
+
+	@Override
+	public String getFullAircraftInformationDataToString() {
+
+		/* Get all cargo aircraft's fields */
+		String aircraftTYpe = "CARGO";
+		int idAircraft = this.idAircraft;
+		String nameAircraft = this.nameAircraft;
+		String fuelSpending = this.getBasicTechAircraftData().getFuelSpending().getMeasureValueInString();
+		String middleVelocity = this.getBasicTechAircraftData().getMidVelocity().getMeasureValueInString();
+		String maxPeopleCapacity = this.getBasicTechAircraftData().getMaxPeopleCapacity().getMeasureValueInString();
+		String maxWeightCapacity = this.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInString();
+		String cargoDepartmentSize = this.getCargoAircraftTechdata().getCargoDepartmentSize().getMeasureValueInString();
+		String canTransportDangerGoods = (this.getCargoAircraftTechdata().isCanTransprtDangerGoods()) ? "YES" : "NO";
+
+		String cargoAircraftDataString = ("AIRCRAFT TYPE: " + aircraftTYpe + "\n" + "ID Aircraft: " + idAircraft + "\n"
+				+ "NAME: " + nameAircraft + "\n" + "MAXIMUM FUEL SPEND: " + fuelSpending + "\n" + "MIDDLE VELOCITY: "
+				+ middleVelocity + "\n" + "MAX PEOPLE CAPACITY: " + maxPeopleCapacity + "\n" + "MAX WEIGHT CAPACITY: "
+				+ maxWeightCapacity + "\n" + "CARGO DEPARTMENT SIZE: " + cargoDepartmentSize + "\n"
+				+ "CAN TRANSPORT DANGER GOODS: " + canTransportDangerGoods);
+
+		return cargoAircraftDataString;
+	}
+
 	/**
 	 * @param idAircraft
 	 * @param nameAircraft
@@ -33,22 +54,19 @@ public class CargoAircraft extends Aircraft {
 		this.cargoAircraftTechData = cargoAircraftTechData;
 	}
 
-
 	/**
 	 * 
 	 * @param cargoAircraftTechData
 	 * 
 	 */
-	public CargoAircraft(){
+	public CargoAircraft() {
 		super();
 		this.cargoAircraftTechData = new CargoAircraftTechData();
 	}
 
-	
-	
 	@Override
 	public boolean equals(Object obj) {
-		
+
 		if (obj == this) {
 			return true;
 		}
@@ -68,7 +86,7 @@ public class CargoAircraft extends Aircraft {
 		CargoAircraft other = (CargoAircraft) obj;
 		return (this.cargoAircraftTechData.equals(other.cargoAircraftTechData));
 	}
-	
+
 	@Override
 	public String toString() {
 		return (super.toString() + "\n" + this.cargoAircraftTechData.toString());
@@ -82,14 +100,11 @@ public class CargoAircraft extends Aircraft {
 	}
 
 	/**
-	 * @param cargoAircraftTechData the cargoAircraftTechdata to set
+	 * @param cargoAircraftTechData
+	 *            the cargoAircraftTechdata to set
 	 */
 	public void setCargoAircraftTechdata(CargoAircraftTechData cargoAircraftTechData) {
 		this.cargoAircraftTechData = cargoAircraftTechData;
 	}
-	
-	
-
-	
 
 }

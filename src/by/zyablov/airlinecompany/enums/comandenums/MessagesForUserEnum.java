@@ -11,7 +11,12 @@ public enum MessagesForUserEnum {
 
 	WARNING_MESSAGE_NO_SUITABLE_AIRCRAFTS(
 			"There aren't any aircrafts at the park, which are suitable for search query!"),
-	
+
+	WARNING_MESSAGE_PROBLEM_WRITE_OR_READ_FILE(
+			"There are some problems with writing/reading data to/from a file, please wait for a new version of program with fix bugs)))"),
+
+	WARNING_MESSAGE_PROBLEM_EMPTY_AIRCRAFT_FILE("There are no aircrafts at the file! File is empty!"),
+
 	// ----Main menu actions messages
 	MESSAGE_CREATE_AIRLINE_COMPANY("----Enter '1' to create airline new airline company:"),
 
@@ -20,7 +25,8 @@ public enum MessagesForUserEnum {
 
 	MESSAGE_GET_SORT_AIRCRAFT_LIST("----Enter '3' to show aircrafts, which will be sorted by selected parametr:"),
 
-	MESSAGE_GET_AICRAFT_LIST_BY_PARAMETR_RANGE("----Enter '4' to show all aircrafts with suitable parameters, which are included in the range:"),
+	MESSAGE_GET_AICRAFT_LIST_BY_PARAMETR_RANGE(
+			"----Enter '4' to show all aircrafts with suitable parameters, which are included in the range:"),
 
 	MESSAGE_GET_FULL_AIRCRAFT_INFORMATION_FROM_BASE(
 			"----Enter '5' to get full information about aircraft from the airliner company park:"),
@@ -29,11 +35,13 @@ public enum MessagesForUserEnum {
 
 	MESSAGE_REMOVE_AIRCRAFT("----Enter '7' to remove a suitable aircraft from the airliner company park:"),
 
-	MESSAGE_SAVE_AIRCRAFTS_TO_FILE("----Enter '8' to save all aircrafts data information of airliner company park:"),
+	MESSAGE_SAVE_AIRCRAFTS_TO_FILE("----Enter '8' to save aircrafts information to data file:"),
 
-	MESSAGE_GET_FULL_INFORMATION_ABOUT_COMPANY("----Enter '9' to get full data information about airline company:"),
+	MESSAGE_READ_AICRAFTS_FROM_FILE("----Enter '9' to get aircrafts information from data file:"),
 
-	MESSAGE_EXIT_APPLICATION("----Enter '10' to exit the application:"),
+	MESSAGE_GET_FULL_INFORMATION_ABOUT_COMPANY("----Enter '10' to get full data information about airline company:"),
+
+	MESSAGE_EXIT_APPLICATION("----Enter '11' to exit the application:"),
 
 	// ---Special messages for action CALCULATE_TOTAL_BY_PARAMETR
 	MESSAGE_CHOSE_TOTAL_PEOPLE_CAPACITY(
@@ -92,6 +100,8 @@ public enum MessagesForUserEnum {
 				+ MESSAGE_REMOVE_AIRCRAFT + "\n"
 
 				+ MESSAGE_SAVE_AIRCRAFTS_TO_FILE + "\n"
+				
+				+ MESSAGE_READ_AICRAFTS_FROM_FILE + "\n"
 
 				+ MESSAGE_GET_FULL_INFORMATION_ABOUT_COMPANY + "\n"
 

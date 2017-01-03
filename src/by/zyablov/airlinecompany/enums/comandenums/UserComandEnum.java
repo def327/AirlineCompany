@@ -50,11 +50,13 @@ public enum UserComandEnum {
 		case "8": {
 			return SAVE_AIRCRAFTS_TO_FILE;
 		}
-		
 		case "9":{
+			return READ_AICRAFTS_FROM_FILE;
+		}
+		case "10":{
 			return GET_FULL_INFORMATION_ABOUT_COMPANY;
 		}
-		case "10": {
+		case "11": {
 			return EXIT_APPLICATION;
 		}
 		default: {
@@ -64,3 +66,16 @@ public enum UserComandEnum {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
