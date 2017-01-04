@@ -26,7 +26,7 @@ public class BasicTechAircraftData implements Serializable {
 	
 	private Tons maxWeigthCapacity;
 	private FuelSpendTonPerKm fuelSpending;
-	private KilometerPerHour midVelocity;
+	private KilometerPerHour middleVelocity;
 	private PeopleCapacity maxPeopleCapacity;
 
 	/**
@@ -39,19 +39,19 @@ public class BasicTechAircraftData implements Serializable {
 
 		this.maxWeigthCapacity = maxWeigthCapacity;
 		this.fuelSpending = fuelSpending;
-		this.midVelocity = midVelocity;
+		this.middleVelocity = midVelocity;
 		this.maxPeopleCapacity = peopleCapacity;
 	}
 
 	/**
 	 * @param maxWeigthCapacity
 	 * @param fuelSpending
-	 * @param midVelocity
+	 * @param middleVelocity
 	 */
 	public BasicTechAircraftData() {
 		this.maxWeigthCapacity = new Tons();
 		this.fuelSpending = new FuelSpendTonPerKm();
-		this.midVelocity = new KilometerPerHour();
+		this.middleVelocity = new KilometerPerHour();
 		this.maxPeopleCapacity = new PeopleCapacity();
 	}
 
@@ -88,27 +88,21 @@ public class BasicTechAircraftData implements Serializable {
 
 		this.fuelSpending = fuelSpending;
 	}
+	
 
 	/**
-	 * @return the midVelocity
+	 * @return the middleVelocity
 	 */
-	public KilometerPerHour getMidVelocity() {
-
-		return midVelocity;
+	public KilometerPerHour getMiddleVelocity() {
+		return middleVelocity;
 	}
 
 	/**
-	 * @param midVelocity
-	 *            the midVelocity to set
+	 * @param middleVelocity the middleVelocity to set
 	 */
-	public void setMidVelocity(KilometerPerHour midVelocity) {
-
-		this.midVelocity = midVelocity;
+	public void setMiddleVelocity(KilometerPerHour middleVelocity) {
+		this.middleVelocity = middleVelocity;
 	}
-
-
-
-
 
 	/**
 	 * @return the maxPeopleCapacity
@@ -141,12 +135,12 @@ public class BasicTechAircraftData implements Serializable {
 
 		BasicTechAircraftData other = (BasicTechAircraftData) obj;
 		return ((this.fuelSpending.equals(other.fuelSpending)) && (this.maxWeigthCapacity.equals(other.maxWeigthCapacity))
-				&& (this.midVelocity.equals(other.midVelocity)) && (this.maxPeopleCapacity.equals(other.maxPeopleCapacity)));
+				&& (this.middleVelocity.equals(other.middleVelocity)) && (this.maxPeopleCapacity.equals(other.maxPeopleCapacity)));
 	}
 
 	@Override
 	public String toString() {
-		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.midVelocity + "\n" + this.maxPeopleCapacity);
+		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.middleVelocity + "\n" + this.maxPeopleCapacity);
 	}
 
 

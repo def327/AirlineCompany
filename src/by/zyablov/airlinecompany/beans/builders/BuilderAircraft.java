@@ -24,13 +24,12 @@ public abstract class BuilderAircraft implements AircraftBuilderBehavior {
 
 	}
 
-	public void setTechSpecificationAircraft(final BasicTechAircraftData basicTechAircraftData) {
+	public void setBasicTechSpecificationAircraft(final BasicTechAircraftData basicTechAircraftData) {
 		this.aircraft.setBasicTechAircraftData(basicTechAircraftData);
 	}
 	
 	public abstract void setUniqueAircraftTechData(final UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior);
-	
-	
+		
 	public abstract Aircraft getResult();
 
 }

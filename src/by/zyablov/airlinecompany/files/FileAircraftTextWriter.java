@@ -71,7 +71,7 @@ public class FileAircraftTextWriter {
 		Tons maxWeigthCapacity = (Tons) airlinerAircraft.getBasicTechAircraftData().getMaxWeigthCapacity();
 		FuelSpendTonPerKm fuelSpending = (FuelSpendTonPerKm) airlinerAircraft.getBasicTechAircraftData()
 				.getFuelSpending();
-		KilometerPerHour midVelocity = (KilometerPerHour) airlinerAircraft.getBasicTechAircraftData().getMidVelocity();
+		KilometerPerHour midVelocity = (KilometerPerHour) airlinerAircraft.getBasicTechAircraftData().getMiddleVelocity();
 		PeopleCapacity peopleCapacity = (PeopleCapacity) airlinerAircraft.getBasicTechAircraftData()
 				.getMaxPeopleCapacity();
 
@@ -104,7 +104,7 @@ public class FileAircraftTextWriter {
 		String nameAircraft = cargoAircraft.getNameAircraft();
 		Tons maxWeigthCapacity = (Tons) cargoAircraft.getBasicTechAircraftData().getMaxWeigthCapacity();
 		FuelSpendTonPerKm fuelSpending = (FuelSpendTonPerKm) cargoAircraft.getBasicTechAircraftData().getFuelSpending();
-		KilometerPerHour midVelocity = (KilometerPerHour) cargoAircraft.getBasicTechAircraftData().getMidVelocity();
+		KilometerPerHour midVelocity = (KilometerPerHour) cargoAircraft.getBasicTechAircraftData().getMiddleVelocity();
 		PeopleCapacity peopleCapacity = (PeopleCapacity) cargoAircraft.getBasicTechAircraftData().getMaxPeopleCapacity();
 
 		// ---CargoAircraftTechData

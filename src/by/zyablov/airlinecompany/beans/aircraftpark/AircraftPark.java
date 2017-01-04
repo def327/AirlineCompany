@@ -29,8 +29,8 @@ public class AircraftPark {
 		this.aircraftsAmount = 0;
 	}
 
-	/*
-	 * This method add new aircraft to aircraftPark
+	/**
+	 * !!! This method add new aircraft to aircraftPark
 	 * 
 	 */
 	public boolean addAirCraft(Aircraft newAircraft) {
@@ -43,8 +43,8 @@ public class AircraftPark {
 		}
 	}
 
-	/*
-	 * This method remove existing aircraft from aircraftPark
+	/**
+	 * !!! This method remove existing aircraft from aircraftPark
 	 * 
 	 */
 	public boolean removeAircraft(Aircraft removingAircraft) {
@@ -57,7 +57,7 @@ public class AircraftPark {
 		}
 	}
 
-	/*
+	/**
 	 * !!! This method return an amount value of all aircraft's peopleCapacity
 	 * 
 	 */
@@ -78,7 +78,7 @@ public class AircraftPark {
 		return totalAmountPeopleCpacity;
 	}
 
-	/*
+	/**
 	 * !!! This method return a total amount value of all aircraft's
 	 * maxWeigthCapacity
 	 * 
@@ -100,7 +100,7 @@ public class AircraftPark {
 		return totalAmountMaxWeigthCapacity;
 	}
 	
-	/*
+	/**
 	 * !!! This method return a total amount of aircrafts at the aircraft park
 	 * 
 	 */

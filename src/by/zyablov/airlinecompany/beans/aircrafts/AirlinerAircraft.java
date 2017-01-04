@@ -27,7 +27,7 @@ public class AirlinerAircraft extends Aircraft {
 		int idAircraft = this.idAircraft;
 		String nameAircraft = this.nameAircraft;
 		String fuelSpending = this.getBasicTechAircraftData().getFuelSpending().getMeasureValueInString();
-		String middleVelocity = this.getBasicTechAircraftData().getMidVelocity().getMeasureValueInString();
+		String middleVelocity = this.getBasicTechAircraftData().getMiddleVelocity().getMeasureValueInString();
 		String maxPeopleCapacity = this.getBasicTechAircraftData().getMaxPeopleCapacity().getMeasureValueInString();
 		String maxWeightCapacity = this.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInString();
 		String airlinerType = this.getAirlinerTechData().getAirlinerType();

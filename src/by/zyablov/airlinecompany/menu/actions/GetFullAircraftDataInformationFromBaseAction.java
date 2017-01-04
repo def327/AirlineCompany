@@ -13,18 +13,20 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
-public class RemoveAircraftAction {
+public class GetFullAircraftDataInformationFromBaseAction {
+	
 	
 	/**
-	 *  !!! This method remove aircraft from airline company park
-	 * @param airlineCompanyManager
+	 * !!! This action show a full information about a certain aircraft from
+	 * airliner company park
+	 * 
 	 * @param consoleReader
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){		
+	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){
 		try {				
 			
-			Aircraft removedAircraft = getAircraftByIdFromAicraftPark(airlineCompanyManager, consoleReader);			
-			removeAircraftFromAirlineCompanyPark(airlineCompanyManager, removedAircraft);	
+			Aircraft foundAircraft = getAircraftByIdFromAicraftPark(airlineCompanyManager, consoleReader);
+		    showToUserConsoleFullAircraftInformationData(foundAircraft);
 			
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
@@ -32,26 +34,9 @@ public class RemoveAircraftAction {
 		} catch (AircraftEmptyParkException e) {
 			System.out.println(WARNING_MESSAGE_EMPTY_PARK);
 			return;
-		}	
+		}		
 	}
 
-	/**
-	 *  !!! This method  remove aircraft from airline company park
-	 * @param airlineCompanyManager
-	 * @param removedAircraft
-	 * @throws NoAirlineCompanyException
-	 */
-	private static void removeAircraftFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager,
-			Aircraft removedAircraft) throws NoAirlineCompanyException {
-		if(airlineCompanyManager.removeAircraft(removedAircraft)){
-			System.out.println("AIRCRAFT ID: " + removedAircraft.getIdAircraft() + "\n"
-					+ "AIRCRAFT NAME: " + removedAircraft.getNameAircraft() + "\n" 
-					+ "WAS REMOVED FROM AIRLINE COMPANY PARK !!! SUCCESSFULLY !!!");
-		}else{
-			System.out.println(" !!! FAIL TO REMOVE !!!");
-		}
-	}
-	
 	/** 
 	 *  !!! This method return an aircraft by id from airline company park
 	 *  
@@ -63,7 +48,6 @@ public class RemoveAircraftAction {
 	 */
 	private static Aircraft getAircraftByIdFromAicraftPark(AirlineManageSystem airlineCompanyManager, Scanner consoleReader)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
 		while (true) {
 			try {
 				
@@ -91,7 +75,15 @@ public class RemoveAircraftAction {
 			}
 		}
 	}
-	
+
+	/**
+	 *  !!! This method show to console aircraft's full data information 
+	 * @param foundAircraft
+	 */
+	private static void showToUserConsoleFullAircraftInformationData(Aircraft foundAircraft) {
+		System.out.println(foundAircraft.getFullAircraftInformationDataToString());
+	}
+
 	/**
 	 *  !!! This method show all aircrafts to console 
 	 * @param airlineCompanyManager
@@ -100,9 +92,8 @@ public class RemoveAircraftAction {
 	 */
 	private static void showToUserConsoleAircraftsFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
 		List<Aircraft>  aircraftsList = airlineCompanyManager.getListOfAicrafts();
-		
+
 		System.out.println("Please enter aircraft id from a table below:");
 		System.out.println("Aircrafts at the airline company park:");
 
@@ -112,6 +103,4 @@ public class RemoveAircraftAction {
 					"Aircraft ID: " + aircraft.getIdAircraft() + " Aircraft Name: " + aircraft.getNameAircraft());
 		}
 	}
-	
-	
 }

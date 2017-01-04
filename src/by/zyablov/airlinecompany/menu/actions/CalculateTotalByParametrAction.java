@@ -1,13 +1,13 @@
 package by.zyablov.airlinecompany.menu.actions;
 
-import static by.zyablov.airlinecompany.enums.comandenums.MessagesForUserEnum.WARNING_MESSAGE_EMPTY_PARK;
-import static by.zyablov.airlinecompany.enums.comandenums.MessagesForUserEnum.WARNING_MESSAGE_NEED_AIRLINE_COMPANY;
-import static by.zyablov.airlinecompany.enums.comandenums.MessagesForUserEnum.WARNING_MESSAGE_TRY_AGAIN;
+import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.WARNING_MESSAGE_EMPTY_PARK;
+import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.WARNING_MESSAGE_NEED_AIRLINE_COMPANY;
+import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.WARNING_MESSAGE_TRY_AGAIN;
 
 import java.util.Scanner;
 
-import by.zyablov.airlinecompany.enums.comandenums.GetTotalParametrEnum;
-import by.zyablov.airlinecompany.enums.comandenums.MessagesForUserEnum;
+import by.zyablov.airlinecompany.enums.comandsenums.GetTotalParametrEnum;
+import by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum;
 import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
@@ -20,25 +20,29 @@ public class CalculateTotalByParametrAction {
 	 * 
 	 * @param consoleReader
 	 */
-	public static void run(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){
+	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){
 		
 		while (true) {
 			try {
+				
+				if(!airlineCompanyManager.haveAirlinerCompany()){
+					throw new NoAirlineCompanyException();
+				}
+				
+				if(airlineCompanyManager.getAircraftsTotalAmount() == 0){
+					throw new AircraftEmptyParkException();
+				}
 
-				System.out.println(MessagesForUserEnum.getMenuActionCalculateTotalByParametrMessageInString());
-
-				String comandAction = consoleReader.nextLine();
-				GetTotalParametrEnum getTotalParam = GetTotalParametrEnum.stringToEnum(comandAction);
+				GetTotalParametrEnum getTotalParam = getTotalParametrTypeToCalculate(consoleReader);
 
 				switch (getTotalParam) {
 				case TOTAL_PEOPLE_CAPACITY: {
-					System.out.println("A total people capacity of all aircrafts at the park is "
-							+ airlineCompanyManager.getTotalAircraftsPeopleCapacity());
+					showToUserConsoleTotalAircraftsPeopleCapacity(airlineCompanyManager);
 					return;
 				}
+				
 				case TOTAL_WEIGHT_CAPACITY: {
-					System.out.println("A total weight capacity of all aircrafts at the park is "
-							+ airlineCompanyManager.getTotalAircraftsWeigthCapacity());
+					showToUserConsoleTotalAicraftsWeightCapacity(airlineCompanyManager);
 					return;
 				}
 				}
@@ -55,6 +59,42 @@ public class CalculateTotalByParametrAction {
 			}
 		}
 		
+	}
+
+	/** !!! This method get a total paramtr type to calculate
+	 * @param consoleReader
+	 * @return
+	 */
+	private static GetTotalParametrEnum getTotalParametrTypeToCalculate(Scanner consoleReader) {
+		System.out.println(MessagesForUserEnum.getMenuActionCalculateTotalByParametrMessageInString());
+
+		String comandAction = consoleReader.nextLine();
+		GetTotalParametrEnum getTotalParam = GetTotalParametrEnum.stringToEnum(comandAction);
+		return getTotalParam;
+	}
+
+	/**
+	 *  !!! This method show to console a total value of aircrafts weight capacity
+	 * @param airlineCompanyManager
+	 * @throws AircraftEmptyParkException
+	 * @throws NoAirlineCompanyException
+	 */
+	private static void showToUserConsoleTotalAicraftsWeightCapacity(AirlineManageSystem airlineCompanyManager)
+			throws AircraftEmptyParkException, NoAirlineCompanyException {
+		System.out.println("A total weight capacity of all aircrafts at the park is "
+				+ airlineCompanyManager.getTotalAircraftsWeigthCapacity());
+	}
+
+	/**
+	 *  !!! This method show to console a total value of aircrafts people capacity
+	 * @param airlineCompanyManager
+	 * @throws AircraftEmptyParkException
+	 * @throws NoAirlineCompanyException
+	 */
+	private static void showToUserConsoleTotalAircraftsPeopleCapacity(AirlineManageSystem airlineCompanyManager)
+			throws AircraftEmptyParkException, NoAirlineCompanyException {
+		System.out.println("A total people capacity of all aircrafts at the park is "
+				+ airlineCompanyManager.getTotalAircraftsPeopleCapacity());
 	}
 
 }

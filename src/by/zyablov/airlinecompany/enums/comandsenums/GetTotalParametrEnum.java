@@ -1,4 +1,4 @@
-package by.zyablov.airlinecompany.enums.comandenums;
+package by.zyablov.airlinecompany.enums.comandsenums;
 
 public enum GetTotalParametrEnum {
 	

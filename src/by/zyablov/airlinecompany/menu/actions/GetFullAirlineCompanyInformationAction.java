@@ -3,7 +3,10 @@
  */
 package by.zyablov.airlinecompany.menu.actions;
 
+import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
+
+import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.WARNING_MESSAGE_NEED_AIRLINE_COMPANY;
 
 /**
  * @author Дмитрий
@@ -14,8 +17,17 @@ public class GetFullAirlineCompanyInformationAction {
 	/**
 	 * !!! This method show a full information about airline company
 	 */
-	public static void run(AirlineManageSystem airlineCompanyManager){
-		System.out.println(airlineCompanyManager.getFullAirlineCompanyInformation());			
+	public static void runAction(AirlineManageSystem airlineCompanyManager){
+		try {
+			
+			if(!(airlineCompanyManager.haveAirlinerCompany())){
+				throw new NoAirlineCompanyException();
+			}
+			
+			System.out.println(airlineCompanyManager.getFullAirlineCompanyInformation());
+		} catch (NoAirlineCompanyException e) {
+			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
+		}			
 	}
 
 }

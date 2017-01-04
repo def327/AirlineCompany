@@ -1,4 +1,4 @@
-package by.zyablov.airlinecompany.enums.comandenums;
+package by.zyablov.airlinecompany.enums.comandsenums;
 
 public enum GetByRangeParametrEnum {
 	RANGE_BY_MIDDLE_VELOCITY, RANGE_BY_FUEL_SPENDING;
@@ -16,5 +16,4 @@ public enum GetByRangeParametrEnum {
 		}
 		}
 	}
-
 }

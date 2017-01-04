@@ -242,7 +242,7 @@ public class AirlineCompany extends Company {
 			Aircraft aircraft = (Aircraft) iterAircraftSet.next();
 
 			KilometerPerHour aicraftMidVelocity = (KilometerPerHour) aircraft.getBasicTechAircraftData()
-					.getMidVelocity();
+					.getMiddleVelocity();
 			
 			if ((aicraftMidVelocity.compareTo(fromValueMidVelocity) >= 0)
 					&& (aicraftMidVelocity.compareTo(toValueMidVelocity) <= 0)) {

@@ -12,8 +12,8 @@ import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
-import by.zyablov.airlinecompany.beans.builders.BuilderAirliner;
-import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerTechData;
+import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerAircraft;
+import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerAircraftTechData;
 import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
@@ -62,7 +62,7 @@ public class FileAircraftTextReader {
 	private static Aircraft createAirlinerAicraft(String[] fieldsOfAircraft) {
 
 		// Create a new airliner aircraft object
-		BuilderAircraft buildAircraft = new BuilderAirliner();
+		BuilderAircraft buildAircraft = new BuilderAirlinerAircraft();
 		buildAircraft.setId(Integer.parseInt(fieldsOfAircraft[1]));
 		buildAircraft.setName(fieldsOfAircraft[2]);
 
@@ -70,13 +70,13 @@ public class FileAircraftTextReader {
 		BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
 		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
 		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
-		techDataBuild.setMidVelocity(Integer.parseInt(fieldsOfAircraft[5]));
+		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
 		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
 
-		buildAircraft.setTechSpecificationAircraft(techDataBuild.getResult());
+		buildAircraft.setBasicTechSpecificationAircraft(techDataBuild.getResult());
 
 		// --b)Create AirlinerTechData
-		BuilderAirlinerTechData buildAirlinerTechData = new BuilderAirlinerTechData();
+		BuilderAirlinerAircraftTechData buildAirlinerTechData = new BuilderAirlinerAircraftTechData();
 		buildAirlinerTechData.setAirlinerType(fieldsOfAircraft[7]);
 		buildAirlinerTechData.setHavBusinesClass(Boolean.parseBoolean(fieldsOfAircraft[8]));
 
@@ -104,10 +104,10 @@ public class FileAircraftTextReader {
 		
 		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
 		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
-		techDataBuild.setMidVelocity(Integer.parseInt(fieldsOfAircraft[5]));
+		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
 		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
 
-		buildAircraft.setTechSpecificationAircraft(techDataBuild.getResult());
+		buildAircraft.setBasicTechSpecificationAircraft(techDataBuild.getResult());
 		
 		 // Create CargoTechData
 		 BuilderCargoAircraftTechData buildCargoTechData = new BuilderCargoAircraftTechData();		 

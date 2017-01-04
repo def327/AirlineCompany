@@ -35,8 +35,8 @@ public class AirlineManageSystem {
 		this.airlineCompany = null;
 	}
 
-	/*
-	 * !!! Get the list of all aircrafts from airline company park
+	/**
+	 * !!! This method get the list of all aircrafts from airline company park
 	 */
 	public List<Aircraft> getListOfAicrafts() throws NoAirlineCompanyException, AircraftEmptyParkException {
 
@@ -51,8 +51,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfAircrafts());
 	}
 
-	/*
-	 * !!! Get the List of aircrafts from airline company park, which middle
+	/**
+	 * This method get the List of aircrafts from airline company park, which middle
 	 * velocity parameter are included in the range formed by values
 	 * fromValueMidVelocity and toValueMidVelocity
 	 * 
@@ -67,8 +67,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfFoundAicraftsByMidVelocityRange(fromValueMidVelocity, toValueMidVelocity));
 	}
 
-	/*
-	 * !!! Get the List of aircrafts from airline comapany park, which
+	/**
+	 * !!! This method get the List of aircrafts from airline comapany park, which
 	 * fuelspending parameter are included in the range formed by values
 	 * fromValueFuelSpending and toValueFuelSpending
 	 * 
@@ -84,8 +84,8 @@ public class AirlineManageSystem {
 				toValueFuelSpending));
 	}
 
-	/*
-	 * !!! Get the List of sort aircrafts by their middle velocity
+	/**
+	 * !!! This method Get the List of sort aircrafts by their middle velocity
 	 * 
 	 */
 	public List<Aircraft> getListOfSortAircraftsByMidVelocity()
@@ -98,8 +98,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfSortedAircraftsByMidVelocity());
 	}
 
-	/*
-	 * !!! Get the List of sort aircrafts by their maximum people capacity
+	/**
+	 * !!! This method get the List of sort aircrafts by their maximum people capacity
 	 * 
 	 */
 	public List<Aircraft> getListOfSortAircraftByPeopleCapacity()
@@ -112,8 +112,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfSortedAircraftByPeopleCapacity());
 	}
 
-	/*
-	 * !!! Get the List of sort aicrafts by their fuel spending ()
+	/**
+	 * !!! This method get the List of sort aicrafts by their fuel spending ()
 	 * 
 	 */
 	public List<Aircraft> getListOfSortAicraftByFuelSpending()
@@ -126,8 +126,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfSortedAircraftByFuelSpending());
 	}
 
-	/*
-	 * !!! Get the List of sort aicrafts by their maximum weight capacity
+	/**
+	 * !!! This method get the List of sort aicrafts by their maximum weight capacity
 	 */
 	public List<Aircraft> getListOfSortAicraftByMaxWeightCapacity()
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
@@ -139,8 +139,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getListOfSortedAircraftByMaxWeightCapacity());
 	}
 
-	/*
-	 * !!! Get aircraft from airline company park
+	/**
+	 * !!! This method get aircraft from airline company park
 	 */
 	public Aircraft getAircraftkById(int idAircraft) throws NoAirlineCompanyException, AircraftEmptyParkException {
 
@@ -155,8 +155,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.getAircraftFormAircraftParkById(idAircraft));
 	}
 
-	/*
-	 * !!! Add new aircraft to aircraft park of the airliner company
+	/**
+	 * !!! This method add new aircraft to airliner company park
 	 * 
 	 */
 	public boolean addAircraft(Aircraft newAircraft) throws NoAirlineCompanyException {
@@ -168,8 +168,8 @@ public class AirlineManageSystem {
 		return (this.airlineCompany.addAircraftToPark(newAircraft));
 	}
 
-	/*
-	 * !!! Remove existing aircraft from aircraft park of the airliner company
+	/**
+	 * !!! This method remove existing aircraft from airliner company park 
 	 * 
 	 */
 	public boolean removeAircraft(Aircraft removingAircraft) throws NoAirlineCompanyException {
@@ -182,7 +182,7 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! Calculate a total amount people capacity of all aircrafts at the
+	 * !!! This method calculate a total amount people capacity of all aircrafts at the
 	 * Aircraft park of airline company
 	 * 
 	 * @throws NoAirlineCompanyException
@@ -199,7 +199,7 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! Calculate a total amount weight capacity of all aircrafts at the
+	 * !!! This method calculate a total amount weight capacity of all aircrafts at the
 	 * Aircraft park of airline company
 	 * 
 	 * @throws NoAirlineCompanyException
@@ -233,8 +233,10 @@ public class AirlineManageSystem {
 	 * !!! This method return a full airliner company information to string
 	 * 
 	 * @return
+	 * @throws NoAirlineCompanyException 
 	 */
-	public String getFullAirlineCompanyInformation() {
+	public String getFullAirlineCompanyInformation(){
+		
 		String fullCompanyInformation = ("Airline company name: " + this.airlineCompany.getCompanyName() + "\n"
 				+ "Airline company email: " + this.airlineCompany.getCompanyEmail() + "\n"
 				+ "Airline company founding date: " + this.airlineCompany.getFoundDataParsedToString() + "\n"
@@ -298,17 +300,28 @@ public class AirlineManageSystem {
 			throw new EmptyAircraftsFileException();
 		}
 
-		int counterForUniqueId = 0;
+		addAircraftFromFileToAirlineCompanyPark(aircraftsList);
+
+	}
+
+	/**
+	 *  !!! This metod add aircraft form data file to airline company park with generated unique Id
+	 * @param aircraftsList
+	 */
+	private void addAircraftFromFileToAirlineCompanyPark(List<Aircraft> aircraftsList) {
 		for (Iterator<Aircraft> iterator = aircraftsList.iterator(); iterator.hasNext();) {
 			Aircraft newAircraft = (Aircraft) iterator.next();
 
 			// Generate a unique Id for an aircraft from file and add this
 			// aircraft to airliner company park
-			counterForUniqueId++;
-			newAircraft.setIdAircraft(counterForUniqueId);
-			this.airlineCompany.addAircraftToPark(newAircraft);
+			int uniqueId = IdAircraftMakeManager.getUniqueIdAircraft(newAircraft.getNameAircraft());
+			
+			newAircraft.setIdAircraft(uniqueId);
+			if(!(this.airlineCompany.addAircraftToPark(newAircraft))){
+				System.out.println("Problems to add new aircraft to airline company park!");
+				return;
+			};
 		}
-
 	}
 
 	/**

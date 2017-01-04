@@ -4,9 +4,9 @@ public enum AirlinerTypeEnum {
 
 	LOCAL("Local aircraft to transport passengers over distances up to 1000 km"),
 
-	REGIONAL("Regional aircraft to transport passengers over distances up to 3000 km "),
+	REGIONAL("Regional aircraft to transport passengers over distances up to 3000 km"),
 
-	HAUL("Long-haul aircraft to transport passengers over distances over 6000 km;");
+	HAUL("Long-haul aircraft to transport passengers over distances over 6000 km");
 
 	private String airlinerType;
 

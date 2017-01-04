@@ -33,8 +33,8 @@ public class BuilderBasicTechAiracft implements BuilderBehavior {
 		specification.setFuelSpending(new FuelSpendTonPerKm(fuelSpending));
 	}
 
-	public void setMidVelocity(int midVelocity){
-		specification.setMidVelocity(new KilometerPerHour(midVelocity));
+	public void setMiddleVelocity(int midVelocity){
+		specification.setMiddleVelocity(new KilometerPerHour(midVelocity));
 	}
 
 	public void setPeopleCapacity(int peopleCapacity){

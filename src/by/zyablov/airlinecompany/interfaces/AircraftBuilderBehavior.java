@@ -16,7 +16,7 @@ public interface AircraftBuilderBehavior extends BuilderBehavior {
 
 	void setName(final String name);
 	
-	void setTechSpecificationAircraft(final BasicTechAircraftData specification);
+	void setBasicTechSpecificationAircraft(final BasicTechAircraftData specification);
 	
     Aircraft getResult();
 	

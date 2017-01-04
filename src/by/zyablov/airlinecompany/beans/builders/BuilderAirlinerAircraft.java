@@ -11,9 +11,9 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
  * @author Дмитрий
  *
  */
-public class BuilderAirliner extends BuilderAircraft {
+public class BuilderAirlinerAircraft extends BuilderAircraft {
 
-	public BuilderAirliner() {
+	public BuilderAirlinerAircraft() {
 		this.aircraft = new AirlinerAircraft();
 	}
 	
