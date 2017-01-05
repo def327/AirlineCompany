@@ -100,7 +100,7 @@ public class AirlineCompany extends Company {
 	 * 
 	 * 
 	 */
-	public List<Aircraft> getListOfSortedAircraftsByMidVelocity() throws AircraftEmptyParkException {
+	public List<Aircraft> getListOfSortedAircraftsByMiddleVelocity() throws AircraftEmptyParkException {
 		
 		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
 			throw new AircraftEmptyParkException();

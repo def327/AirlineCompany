@@ -37,7 +37,7 @@ public enum MessagesForUserEnum {
 
 	MESSAGE_SAVE_AIRCRAFTS_TO_FILE("----Enter '8' to save aircrafts information to data file:"),
 
-	MESSAGE_READ_AICRAFTS_FROM_FILE("----Enter '9' to get aircrafts information from data file:"),
+	MESSAGE_READ_AICRAFTS_FROM_FILE("----Enter '9' to load aircrafts information from data file:"),
 
 	MESSAGE_GET_FULL_INFORMATION_ABOUT_COMPANY("----Enter '10' to get full data information about airline company:"),
 

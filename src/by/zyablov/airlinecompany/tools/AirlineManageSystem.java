@@ -88,14 +88,14 @@ public class AirlineManageSystem {
 	 * !!! This method Get the List of sort aircrafts by their middle velocity
 	 * 
 	 */
-	public List<Aircraft> getListOfSortAircraftsByMidVelocity()
+	public List<Aircraft> getListOfSortAircraftsByMiddleVelocity()
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
 
 		if (this.airlineCompany == null) {
 			throw new NoAirlineCompanyException();
 		}
 
-		return (this.airlineCompany.getListOfSortedAircraftsByMidVelocity());
+		return (this.airlineCompany.getListOfSortedAircraftsByMiddleVelocity());
 	}
 
 	/**

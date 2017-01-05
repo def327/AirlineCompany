@@ -27,6 +27,8 @@ public abstract class Measure implements Measureable, Comparable<Object>, Serial
 	protected Measure(int measureValue) {
 		this.measureValue = measureValue;
 	}
+	
+	
 
 	@Override
 	public int compareTo(Object o) {

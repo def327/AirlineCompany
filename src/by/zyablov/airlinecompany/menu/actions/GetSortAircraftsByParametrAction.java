@@ -129,7 +129,7 @@ public class GetSortAircraftsByParametrAction {
 	 */
 	private static void showSortedAircraftsByMiddleVelocity(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAircraftsByMidVelocity();
+		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAircraftsByMiddleVelocity();
 
 		for (Iterator<Aircraft> iterator = sortedAircraftsList.iterator(); iterator.hasNext();) {
 			Aircraft aircraft = (Aircraft) iterator.next();

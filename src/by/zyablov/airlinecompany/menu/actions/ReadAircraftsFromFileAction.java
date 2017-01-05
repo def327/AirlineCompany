@@ -13,6 +13,7 @@ import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 public class ReadAircraftsFromFileAction {
 	
+	public  static boolean loadAicraftsFromFile = false;
 	
 	/**
 	 * !!! method action read data information about aircrafts from file
@@ -20,8 +21,14 @@ public class ReadAircraftsFromFileAction {
 	public static void runAction(AirlineManageSystem airlineCompanyManager){
 		try {
 			
+			if(loadAicraftsFromFile){
+				System.out.println("You loaded all information about aircrafts from data file yet!");
+				return;
+			}
+			
 			airlineCompanyManager.readAircraftsFromFile();
 			System.out.println("Loaded information about aircrafts from data file");
+			loadAicraftsFromFile = true;
 			
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);

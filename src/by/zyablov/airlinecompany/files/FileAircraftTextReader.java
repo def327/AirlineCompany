@@ -39,7 +39,7 @@ public class FileAircraftTextReader {
 
 			while ((aircraftString = in.readLine()) != null) {
 				String[] fieldsOfAircraft = aircraftString.split("\\|");
-						
+
 				if (fieldsOfAircraft[0].equalsIgnoreCase("AirlinerAircraft")) {
 					listOfAircraft.add(FileAircraftTextReader.createAirlinerAicraft(fieldsOfAircraft));
 
@@ -66,19 +66,12 @@ public class FileAircraftTextReader {
 		buildAircraft.setId(Integer.parseInt(fieldsOfAircraft[1]));
 		buildAircraft.setName(fieldsOfAircraft[2]);
 
-		// Create basicTeachAircraftData for a new airliner aircraft object
-		BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
-		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
-		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
-		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
-		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
-
+		// Create BasicTeachAircraftData for a new airliner aircraft object
+		BuilderBasicTechAiracft techDataBuild = createBasicAircraftTechData(fieldsOfAircraft);
 		buildAircraft.setBasicTechSpecificationAircraft(techDataBuild.getResult());
 
-		// --b)Create AirlinerTechData
-		BuilderAirlinerAircraftTechData buildAirlinerTechData = new BuilderAirlinerAircraftTechData();
-		buildAirlinerTechData.setAirlinerType(fieldsOfAircraft[7]);
-		buildAirlinerTechData.setHavBusinesClass(Boolean.parseBoolean(fieldsOfAircraft[8]));
+		// Create AirlinerTechData for a new airliner aircraft object
+		BuilderAirlinerAircraftTechData buildAirlinerTechData = createAirlinerAircraftTechData(fieldsOfAircraft);
 
 		buildAircraft.setUniqueAircraftTechData(buildAirlinerTechData.getResult());
 
@@ -86,8 +79,40 @@ public class FileAircraftTextReader {
 	}
 
 	/**
-	 * !!! This method create cargo aircraft object with the fields, which
-	 * were parsed from text file
+	 * !!! This method create AirlinerTechData for a new airliner aircraft
+	 * object
+	 * 
+	 * @param fieldsOfAircraft
+	 * @return
+	 */
+	private static BuilderAirlinerAircraftTechData createAirlinerAircraftTechData(String[] fieldsOfAircraft) {
+		BuilderAirlinerAircraftTechData buildAirlinerTechData = new BuilderAirlinerAircraftTechData();
+		buildAirlinerTechData.setAirlinerType(fieldsOfAircraft[7]);
+		buildAirlinerTechData.setHavBusinesClass(Boolean.parseBoolean(fieldsOfAircraft[8]));
+		return buildAirlinerTechData;
+	}
+
+	/**
+	 * !!! This method create BasicTeachAircraftData for a new airliner aircraft
+	 * object
+	 * 
+	 * @param fieldsOfAircraft
+	 * @return
+	 * @throws NumberFormatException
+	 */
+	private static BuilderBasicTechAiracft createBasicAircraftTechData(String[] fieldsOfAircraft)
+			throws NumberFormatException {
+		BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
+		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
+		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
+		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
+		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
+		return techDataBuild;
+	}
+
+	/**
+	 * !!! This method create a cargo aircraft object with the fields, which were
+	 * parsed from text file
 	 * 
 	 * @param fieldsOfAircraft
 	 * @return CargorAircraft object
@@ -99,24 +124,29 @@ public class FileAircraftTextReader {
 		buildAircraft.setId(Integer.parseInt(fieldsOfAircraft[1]));
 		buildAircraft.setName(fieldsOfAircraft[2]);
 
-		// Create basicTeachAircraftData for a new cargo aircraft object
-		BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
-		
-		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
-		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
-		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
-		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
-
+		// Create BasicTeachAircraftData for a new cargo aircraft object
+		BuilderBasicTechAiracft techDataBuild = createBasicAircraftTechData(fieldsOfAircraft);
 		buildAircraft.setBasicTechSpecificationAircraft(techDataBuild.getResult());
-		
-		 // Create CargoTechData
-		 BuilderCargoAircraftTechData buildCargoTechData = new BuilderCargoAircraftTechData();		 
-		 buildCargoTechData.setCargoDepartmentSize(Integer.parseInt(fieldsOfAircraft[7]));
-		 buildCargoTechData.setCanTransprtDangerGoods(Boolean.parseBoolean(fieldsOfAircraft[7]));
-		
-		 buildAircraft.setUniqueAircraftTechData(buildCargoTechData.getResult());
-		
+
+		// Create CargoTechData for a new cargo aircraft
+		BuilderCargoAircraftTechData buildCargoTechData = createCargoAircraftTechData(fieldsOfAircraft);
+		buildAircraft.setUniqueAircraftTechData(buildCargoTechData.getResult());
+
 		return buildAircraft.getResult();
 	}
 
+	/**
+	 * !!! This method create CargoTechData for a new airliner aircraft
+	 * 
+	 * @param fieldsOfAircraft
+	 * @return
+	 * @throws NumberFormatException
+	 */
+	private static BuilderCargoAircraftTechData createCargoAircraftTechData(String[] fieldsOfAircraft)
+			throws NumberFormatException {
+		BuilderCargoAircraftTechData buildCargoTechData = new BuilderCargoAircraftTechData();
+		buildCargoTechData.setCargoDepartmentSize(Integer.parseInt(fieldsOfAircraft[7]));
+		buildCargoTechData.setCanTransprtDangerGoods(Boolean.parseBoolean(fieldsOfAircraft[7]));
+		return buildCargoTechData;
+	}
 }
