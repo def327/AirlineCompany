@@ -40,15 +40,16 @@ public class FileAircraftTextWriter {
 			Aircraft aircraft = (Aircraft) iterator.next();
 
 			if (aircraft instanceof AirlinerAircraft) {
+				
 				AirlinerAircraft airlinerAircraft = (AirlinerAircraft) aircraft;
-
 				// Write all data of airlinerAircraft to text file in string
-				out.println((String) FileAircraftTextWriter.ParseAirlinerAircraftFieldsToString(airlinerAircraft));
+				out.println((String) FileAircraftTextWriter.getParsedAirlinerAircraftFields(airlinerAircraft));
+				
 			} else if (aircraft instanceof CargoAircraft) {
+				
 				CargoAircraft cargoAircraft = (CargoAircraft) aircraft;
-
 				// Write all data of cargoAircraft to text file in string
-				out.println((String) FileAircraftTextWriter.ParseCargoAircraftFieldsToString(cargoAircraft));
+				out.println((String) FileAircraftTextWriter.getParsedCargoAircraftFields(cargoAircraft));
 			}
 		}
 		out.close();
@@ -61,7 +62,7 @@ public class FileAircraftTextWriter {
 	 * @param airlinerAircraft
 	 * @return parseAirlinerAircraftData
 	 */
-	private static String ParseAirlinerAircraftFieldsToString(AirlinerAircraft airlinerAircraft) {
+	private static String getParsedAirlinerAircraftFields(AirlinerAircraft airlinerAircraft) {
 
 		// Parse all fields from airlinerAircraft to string
 
@@ -81,11 +82,33 @@ public class FileAircraftTextWriter {
 
 		// Create a string type value, which consists of parsed to string
 		// airlinerAircraft fields
+		String parseAirlinerAircraftData = parseAirlinerAircraftTechDataToString(idAircraft, nameAircraft, maxWeigthCapacity,
+				fuelSpending, midVelocity, peopleCapacity, airlinerType, havBusinesClass);
+
+		return parseAirlinerAircraftData;
+	}
+
+	/**
+	 * This method method parse airliner tech data to string
+	 * 
+	 * @param idAircraft
+	 * @param nameAircraft
+	 * @param maxWeigthCapacity
+	 * @param fuelSpending
+	 * @param midVelocity
+	 * @param peopleCapacity
+	 * @param airlinerType
+	 * @param havBusinesClass
+	 * @return
+	 */
+	private static String parseAirlinerAircraftTechDataToString(int idAircraft, String nameAircraft, Tons maxWeigthCapacity,
+			FuelSpendTonPerKm fuelSpending, KilometerPerHour midVelocity, PeopleCapacity peopleCapacity,
+			String airlinerType, boolean havBusinesClass) {
+		
 		String parseAirlinerAircraftData = ("AirlinerAircraft" + "|" + idAircraft + "|" + nameAircraft + "|"
 				+ maxWeigthCapacity.getMeasureValueInInt() + "|" + fuelSpending.getMeasureValueInInt() + "|"
 				+ midVelocity.getMeasureValueInInt() + "|" + peopleCapacity.getMeasureValueInInt() + "|" + airlinerType
 				+ "|" + havBusinesClass);
-
 		return parseAirlinerAircraftData;
 	}
 
@@ -95,7 +118,7 @@ public class FileAircraftTextWriter {
 	 * @param cargoAircraft
 	 * @return parseCargoAircraftData
 	 */
-	private static String ParseCargoAircraftFieldsToString(CargoAircraft cargoAircraft) {
+	private static String getParsedCargoAircraftFields(CargoAircraft cargoAircraft) {
 
 		//// Parse all fields from cargoAircraft to string
 
@@ -114,11 +137,31 @@ public class FileAircraftTextWriter {
 
 		// Create a string type value, which consists of parsed to string
 		// cargoAircraft fields
+		String parseCargoAircraftData = parseCargoAircraftTechDataToString(idAircraft, nameAircraft, maxWeigthCapacity,
+				fuelSpending, midVelocity, peopleCapacity, cargoDepartmentSize, canTransprtDangerGoods);
+
+		return parseCargoAircraftData;
+	}
+
+	/**
+	 * !!! This method method parse cargo aircraft tech data to string
+	 * @param idAircraft
+	 * @param nameAircraft
+	 * @param maxWeigthCapacity
+	 * @param fuelSpending
+	 * @param midVelocity
+	 * @param peopleCapacity
+	 * @param cargoDepartmentSize
+	 * @param canTransprtDangerGoods
+	 * @return
+	 */
+	private static String parseCargoAircraftTechDataToString(int idAircraft, String nameAircraft,
+			Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending, KilometerPerHour midVelocity,
+			PeopleCapacity peopleCapacity, CubicMeter cargoDepartmentSize, boolean canTransprtDangerGoods) {
 		String parseCargoAircraftData = ("CargoAircraft" + "|" + idAircraft + "|" + nameAircraft + "|"
 				+ maxWeigthCapacity.getMeasureValueInInt() + "|" + fuelSpending.getMeasureValueInInt() + "|"
 				+ midVelocity.getMeasureValueInInt() + "|" + peopleCapacity.getMeasureValueInInt() + "|"
 				+ cargoDepartmentSize.getMeasureValueInInt() + "|" + canTransprtDangerGoods);
-
 		return parseCargoAircraftData;
 	}
 
