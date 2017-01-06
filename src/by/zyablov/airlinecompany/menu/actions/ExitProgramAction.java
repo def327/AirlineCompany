@@ -26,7 +26,7 @@ public class ExitProgramAction {
 				//Save aircrafts data inforamation to file
 				SaveAircraftsToFileAction.runAction(airlineCompanyManager);
 				}else{
-					System.out.println("You didn't create a airline company, exit program without saving to file!");
+					System.out.println("You didn't create an airline company, exit program without saving to file!");
 				}
 				closeResoursesAndExitProgram(consoleReader);
 				break;

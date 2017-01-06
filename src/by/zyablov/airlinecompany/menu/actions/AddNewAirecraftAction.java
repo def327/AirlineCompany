@@ -109,7 +109,8 @@ public class AddNewAirecraftAction {
 		aircraftBuilder.setName(newAicraftName);
 		aircraftBuilder.setId(getIdForNewAicraft(newAicraftName));
 		aircraftBuilder.setBasicTechSpecificationAircraft(getBasicTechAircraftDataForNewAicraft(consoleReader));
-		aircraftBuilder.setUniqueAircraftTechData(getUniqueAircraftTechDataBehavior(consoleReader, uniqueAircraftTechDataBehavior));
+		aircraftBuilder.setUniqueAircraftTechData(
+				getUniqueAircraftTechDataBehavior(consoleReader, uniqueAircraftTechDataBehavior));
 
 		return aircraftBuilder.getResult();
 	}
