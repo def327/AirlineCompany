@@ -3,11 +3,24 @@
  */
 package by.zyablov.airlinecompany.interfaces;
 
+import java.util.Scanner;
+
+import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
+import by.zyablov.airlinecompany.tools.AirlineManageSystem;
+
 /**
  * @author Дмитрий
  *
  */
 public interface NewAircraftConsoleCreatorBehavior {
 
-	void createNewAircraft();
+	/**
+	 * !!! This method create new aircraft and add it to airline company park
+	 * @param consoleReader
+	 * @param airlineCompanyManager
+	 * @param aircraftBuilder
+	 */
+	void addAndCreateNewAircraft(Scanner consoleReader, AirlineManageSystem airlineCompanyManager,BuilderAircraft aircraftBuilder);
 }
+
+
