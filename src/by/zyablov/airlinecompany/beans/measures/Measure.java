@@ -17,9 +17,8 @@ public abstract class Measure implements Measureable, Comparable<Object>, Serial
 	 * 
 	 */
 	private static final long serialVersionUID = 3159340879977905378L;
-	
-	
-	protected int measureValue;	
+
+	protected int measureValue;
 
 	/**
 	 * @param measureValue
@@ -27,13 +26,11 @@ public abstract class Measure implements Measureable, Comparable<Object>, Serial
 	protected Measure(int measureValue) {
 		this.measureValue = measureValue;
 	}
-	
-	
 
 	@Override
 	public int compareTo(Object o) {
-		Measure other = (Measure)o;		
+		Measure other = (Measure) o;
 		return (this.getMeasureValueInInt() - other.getMeasureValueInInt());
 	}
-	
+
 }

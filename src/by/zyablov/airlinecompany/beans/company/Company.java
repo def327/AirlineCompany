@@ -61,7 +61,6 @@ public abstract class Company {
 		}
 
 		Company other = (Company) obj;
-
 		return ((this.companyId == other.companyId) && (this.companyName.equals(other.companyName)) && (this.companyEmail.equals(companyEmail))
 				&& (this.companyFoundDate.equals(other.companyFoundDate)));
 	}

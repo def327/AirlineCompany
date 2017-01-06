@@ -3,7 +3,7 @@ package by.zyablov.airlinecompany.enums.comandsenums;
 public enum UserComandEnum {
 
 	CREATE_AIRLINE_COMPANY,
-	
+
 	GET_FULL_INFORMATION_ABOUT_COMPANY,
 
 	CALCULATE_TOTAL_BY_PARAMETR,
@@ -19,7 +19,7 @@ public enum UserComandEnum {
 	REMOVE_AIRCRAFT,
 
 	SAVE_AIRCRAFTS_TO_FILE,
-	
+
 	READ_AICRAFTS_FROM_FILE,
 
 	EXIT_APPLICATION;
@@ -50,10 +50,10 @@ public enum UserComandEnum {
 		case "8": {
 			return SAVE_AIRCRAFTS_TO_FILE;
 		}
-		case "9":{
+		case "9": {
 			return READ_AICRAFTS_FROM_FILE;
 		}
-		case "10":{
+		case "10": {
 			return GET_FULL_INFORMATION_ABOUT_COMPANY;
 		}
 		case "11": {
@@ -66,16 +66,3 @@ public enum UserComandEnum {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

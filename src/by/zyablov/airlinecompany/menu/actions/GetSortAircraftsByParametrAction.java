@@ -23,33 +23,33 @@ public class GetSortAircraftsByParametrAction {
 	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
 		while (true) {
 			try {
-				
-				if(!airlineCompanyManager.haveAirlinerCompany()){
+
+				if (!airlineCompanyManager.haveAirlinerCompany()) {
 					throw new NoAirlineCompanyException();
 				}
-				
-				if(airlineCompanyManager.getAircraftsTotalAmount() == 0){
+
+				if (airlineCompanyManager.getAircraftsTotalAmount() == 0) {
 					throw new AircraftEmptyParkException();
 				}
-				
+
 				GetSortTypesEnum getSortType = choseParametrTypeToSortAircrafts(consoleReader);
-				
+
 				switch (getSortType) {
 				case SORT_BY_FUEL_SPEND: {
 					showSortedAircraftsByFuelSpend(airlineCompanyManager);
 					return;
 				}
-				
+
 				case SORT_BY_MIDDLE_VELOCITY: {
 					showSortedAircraftsByMiddleVelocity(airlineCompanyManager);
 					return;
 				}
-				
+
 				case SORT_BY_PEOPLE_CAPACITY: {
 					showSortedAircraftsByPeopleCapacity(airlineCompanyManager);
 					return;
 				}
-				
+
 				case SORT_BY_WEIGHT_CAPACITY: {
 					showSortedAircraftsByWeightCapacity(airlineCompanyManager);
 					return;
@@ -70,7 +70,8 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method get a type of a sort parametr to show all aircrafts from airline company park
+	 * !!! This method get a type of a sort parametr to show all aircrafts from
+	 * airline company park
 	 * 
 	 * @param consoleReader
 	 * @return
@@ -84,18 +85,22 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show all aircrafts to user console sorted by weight capacity
-	 *  
+	 * !!! This method show all aircrafts to user console sorted by weight
+	 * capacity
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
 	private static void showSortedAircraftsByWeightCapacity(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
+
 		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAicraftByMaxWeightCapacity();
 
 		for (Iterator<Aircraft> iterator = sortedAircraftsList.iterator(); iterator.hasNext();) {
+
 			Aircraft aircraft = (Aircraft) iterator.next();
+
 			System.out.println("Aircrafts ID: " + aircraft.getIdAircraft() + " Aircraft Name: "
 					+ aircraft.getNameAircraft() + " maximum weight capacity: "
 					+ aircraft.getBasicTechAircraftData().getMaxWeigthCapacity().getMeasureValueInString());
@@ -103,18 +108,22 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show all aircrafts to user console sorted by people capacity
+	 * !!! This method show all aircrafts to user console sorted by people
+	 * capacity
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
 	private static void showSortedAircraftsByPeopleCapacity(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
+
 		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAircraftByPeopleCapacity();
 
 		for (Iterator<Aircraft> iterator = sortedAircraftsList.iterator(); iterator.hasNext();) {
+
 			Aircraft aircraft = (Aircraft) iterator.next();
+
 			System.out.println("Aircrafts ID: " + aircraft.getIdAircraft() + " Aircraft Name: "
 					+ aircraft.getNameAircraft() + " maximum people capacity: "
 					+ aircraft.getBasicTechAircraftData().getMaxPeopleCapacity().getMeasureValueInString());
@@ -122,7 +131,9 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show all aircrafts to user console sorted by middle velocity
+	 * !!! This method show all aircrafts to user console sorted by middle
+	 * velocity
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
@@ -132,7 +143,9 @@ public class GetSortAircraftsByParametrAction {
 		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAircraftsByMiddleVelocity();
 
 		for (Iterator<Aircraft> iterator = sortedAircraftsList.iterator(); iterator.hasNext();) {
+
 			Aircraft aircraft = (Aircraft) iterator.next();
+
 			System.out.println("Aircrafts ID: " + aircraft.getIdAircraft() + " Aircraft Name: "
 					+ aircraft.getNameAircraft() + " middle velocity: "
 					+ aircraft.getBasicTechAircraftData().getMiddleVelocity().getMeasureValueInString());
@@ -140,18 +153,21 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show all aircrafts to user console sorted by fuel spending
-	 *  
+	 * !!! This method show all aircrafts to user console sorted by fuel
+	 * spending
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
 	private static void showSortedAircraftsByFuelSpend(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
+
 		List<Aircraft> sortedAircraftsList = airlineCompanyManager.getListOfSortAicraftByFuelSpending();
 
 		for (Iterator<Aircraft> iterator = sortedAircraftsList.iterator(); iterator.hasNext();) {
 			Aircraft aircraft = (Aircraft) iterator.next();
+
 			System.out.println("Aircraft ID: " + aircraft.getIdAircraft() + " Aircraft Name: "
 					+ aircraft.getNameAircraft() + " fuel spending: "
 					+ aircraft.getBasicTechAircraftData().getFuelSpending().getMeasureValueInString());

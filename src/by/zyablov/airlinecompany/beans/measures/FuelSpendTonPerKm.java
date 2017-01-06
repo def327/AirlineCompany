@@ -9,32 +9,30 @@ package by.zyablov.airlinecompany.beans.measures;
  */
 public class FuelSpendTonPerKm extends Measure {
 
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6914592884036514919L;
-	
-	
-	
 
 	/**
 	 * @param measureValue
 	 */
 	public FuelSpendTonPerKm(int fuelSpendTonPerKm) {
-		super(fuelSpendTonPerKm);		
+		super(fuelSpendTonPerKm);
 	}
-	
-	public FuelSpendTonPerKm(){
+
+	public FuelSpendTonPerKm() {
 		super(0);
 	}
-	
+
 	@Override
-	public int getMeasureValueInInt() {		
+	public int getMeasureValueInInt() {
 		return measureValue;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see by.zyablov.airlinecompany.interfaces.Measureable#getMeasureValue()
 	 */
 	@Override
@@ -42,14 +40,17 @@ public class FuelSpendTonPerKm extends Measure {
 		return this.measureValue + " tons / 1000km";
 	}
 
-	/* (non-Javadoc)
-	 * @see by.zyablov.airlinecompany.interfaces.Measureable#setMeasureValue(int)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * by.zyablov.airlinecompany.interfaces.Measureable#setMeasureValue(int)
 	 */
 	@Override
 	public void setMeasureIntValue(int fuelSpendTonPerKm) {
 		super.measureValue = fuelSpendTonPerKm;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -67,12 +68,10 @@ public class FuelSpendTonPerKm extends Measure {
 		FuelSpendTonPerKm other = (FuelSpendTonPerKm) obj;
 		return (this.measureValue == other.measureValue);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "fuelSpendTonPerKm = " + measureValue + " tons / 1000km";
 	}
-	
-	
 
 }

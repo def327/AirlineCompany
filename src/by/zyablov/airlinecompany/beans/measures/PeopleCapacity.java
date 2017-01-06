@@ -13,8 +13,6 @@ public class PeopleCapacity extends Measure {
 	 * 
 	 */
 	private static final long serialVersionUID = 9174692227205197309L;
-	
-	
 
 	/**
 	 * @param measureValue
@@ -82,7 +80,6 @@ public class PeopleCapacity extends Measure {
 
 	@Override
 	public String toString() {
-
 		return "peopleCapacity = " + measureValue + " persons";
 	}
 

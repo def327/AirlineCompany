@@ -14,45 +14,44 @@ import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 public class GetFullAircraftDataInformationFromBaseAction {
-	
-	
+
 	/**
 	 * !!! This action show a full information about a certain aircraft from
 	 * airliner company park
 	 * 
 	 * @param consoleReader
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){
-		try {				
-			
+	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
+		try {
+
 			Aircraft foundAircraft = getAircraftByIdFromAicraftPark(airlineCompanyManager, consoleReader);
-		    showToUserConsoleFullAircraftInformationData(foundAircraft);
-			
+			showToUserConsoleFullAircraftInformationData(foundAircraft);
+
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
 			return;
 		} catch (AircraftEmptyParkException e) {
 			System.out.println(WARNING_MESSAGE_EMPTY_PARK);
 			return;
-		}		
+		}
 	}
 
-	/** 
-	 *  !!! This method return an aircraft by id from airline company park
-	 *  
+	/**
+	 * !!! This method return an aircraft by id from airline company park
+	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
-	 * @return 
+	 * @return
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
-	private static Aircraft getAircraftByIdFromAicraftPark(AirlineManageSystem airlineCompanyManager, Scanner consoleReader)
-			throws NoAirlineCompanyException, AircraftEmptyParkException {
+	private static Aircraft getAircraftByIdFromAicraftPark(AirlineManageSystem airlineCompanyManager,
+			Scanner consoleReader) throws NoAirlineCompanyException, AircraftEmptyParkException {
 		while (true) {
 			try {
-				
+
 				showToUserConsoleAircraftsFromAirlineCompanyPark(airlineCompanyManager);
-				
+
 				String idString = consoleReader.nextLine();
 				int idAircraft = Integer.parseInt(idString);
 
@@ -61,14 +60,14 @@ public class GetFullAircraftDataInformationFromBaseAction {
 				}
 
 				Aircraft foundAircraft = airlineCompanyManager.getAircraftkById(idAircraft);
-				
+
 				if (foundAircraft == null) {
 					System.out.println(WARNING_MESSAGE_TRY_AGAIN);
 					continue;
-				} else{
+				} else {
 					return foundAircraft;
 				}
-						
+
 			} catch (NumberFormatException e) {
 				System.out.println(WARNING_MESSAGE_TRY_AGAIN);
 				continue;
@@ -77,7 +76,8 @@ public class GetFullAircraftDataInformationFromBaseAction {
 	}
 
 	/**
-	 *  !!! This method show to console aircraft's full data information 
+	 * !!! This method show to console aircraft's full data information
+	 * 
 	 * @param foundAircraft
 	 */
 	private static void showToUserConsoleFullAircraftInformationData(Aircraft foundAircraft) {
@@ -85,14 +85,16 @@ public class GetFullAircraftDataInformationFromBaseAction {
 	}
 
 	/**
-	 *  !!! This method show all aircrafts to console 
+	 * !!! This method show all aircrafts to console
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
 	private static void showToUserConsoleAircraftsFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		List<Aircraft>  aircraftsList = airlineCompanyManager.getListOfAicrafts();
+
+		List<Aircraft> aircraftsList = airlineCompanyManager.getListOfAicrafts();
 
 		System.out.println("Please enter aircraft id from a table below:");
 		System.out.println("Aircrafts at the airline company park:");

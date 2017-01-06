@@ -4,7 +4,6 @@
 package by.zyablov.airlinecompany.files;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -12,17 +11,15 @@ import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
-
 /**
  * @author Дмитрий
  *
  */
-public class FileAicraftSerializeWriter{
+public class FileAicraftsSerializeWriter extends FileAircraftsWriter {
 
-	public static void writeAircraftListToFile(List<Aircraft> aircraftsList) throws FileNotFoundException, IOException  {
-		try (ObjectOutputStream out = new ObjectOutputStream(
-				new FileOutputStream(new File("src/datafiles/datalist.dat")))) {
-			
+	public void writeAircraftListToFile(List<Aircraft> aircraftsList) throws IOException {
+		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(new File(pathToFileInString)))) {
+
 			out.writeObject(aircraftsList);
 		}
 	}

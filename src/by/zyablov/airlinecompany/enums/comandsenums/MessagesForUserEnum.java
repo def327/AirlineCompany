@@ -76,24 +76,20 @@ public enum MessagesForUserEnum {
 
 	MESSAGE_CHOSE_NO_SAVE_TO_FILE_BEFORE_EXIT(
 			"---Enter '2' to exit program without saving aircrafts from airline company park to data file:"),
-	
+
 	// ---Special messages for action CREATE_AIRLINE_COMPANY
 	MESSAGE_CHOSE_BELAVIA("---Enter '1' to chose 'Belavia'"),
-	
+
 	MESSAGE_CHOSE_LUFTHANSA("---Enter '2' to chose 'Lufthansa'"),
-	
+
 	MESSAGE_CHOSE_EMIRATES_AIRLINES("---Enter '3' to chose 'Emirates Airlines'"),
-	
+
 	MESSAGE_CHOSE_AIR_FRANCE("---Enter '4' to chose 'Air France'"),
-	
+
 	// ---Special messages for action ADD_NEW_AIRCRAFT
 	MESSAGE_CHOSE_ADD_NEW_AIRLINER_AICRAFT("---Enter '1' to add a new airliner aircraft:"),
-	
+
 	MESSAGE_CHOSE_ADD_NEW_CARGO_AICRAFT("---Enter '2' to add a new cargo aircraft:");
-	
-	
-	
-	
 
 	// ---Methods to get menu navigation and menu actions in string
 	public static String getMainMenuActionsMessageInString() {
@@ -152,30 +148,25 @@ public enum MessagesForUserEnum {
 				+ "----------------------------------------------------------");
 		return message;
 	}
-	
-	public static String getMenuActionCreateAirlineCompanyInString(){
-		String message = new String ("----------------------------------------------------------" + "\n"
-				+ MESSAGE_CHOSE_BELAVIA + "\n" 
-				+ MESSAGE_CHOSE_LUFTHANSA + "\n" 
-				+ MESSAGE_CHOSE_EMIRATES_AIRLINES + "\n"
-				+ MESSAGE_CHOSE_AIR_FRANCE + "\n"
+
+	public static String getMenuActionCreateAirlineCompanyInString() {
+		String message = new String("----------------------------------------------------------" + "\n"
+				+ MESSAGE_CHOSE_BELAVIA + "\n" + MESSAGE_CHOSE_LUFTHANSA + "\n" + MESSAGE_CHOSE_EMIRATES_AIRLINES + "\n"
+				+ MESSAGE_CHOSE_AIR_FRANCE + "\n" + "----------------------------------------------------------");
+		return message;
+	}
+
+	public static String getMenuActionAddNewAirecraft() {
+		String message = new String("----------------------------------------------------------" + "\n"
+				+ MESSAGE_CHOSE_ADD_NEW_AIRLINER_AICRAFT + "\n" + MESSAGE_CHOSE_ADD_NEW_CARGO_AICRAFT + "\n"
 				+ "----------------------------------------------------------");
 		return message;
 	}
-	
-	public static String getMenuActionAddNewAirecraft(){
-		String message  = new String("----------------------------------------------------------" + "\n" 
-									+ MESSAGE_CHOSE_ADD_NEW_AIRLINER_AICRAFT + "\n" 
-									+ MESSAGE_CHOSE_ADD_NEW_CARGO_AICRAFT + "\n" 
-									+ "----------------------------------------------------------");
-		return message;
-	}
-	
-	
+
 	/**
-	 *  Class description:
+	 * Class description:
 	 */
-	
+
 	private String message;
 
 	/**
@@ -189,6 +180,5 @@ public enum MessagesForUserEnum {
 	public String toString() {
 		return (this.message);
 	}
-	
-	
+
 }

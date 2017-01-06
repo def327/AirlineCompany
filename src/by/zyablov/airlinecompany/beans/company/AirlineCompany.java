@@ -88,8 +88,7 @@ public class AirlineCompany extends Company {
 	 * !!! This method return a total amount of all aircrafts at the aircraft
 	 * park
 	 * 
-	 */
-	
+	 */	
 	public int getTotalAmountOfAircraft() {
 		return (this.aircraftPark.getTotalAircraftsAmount());
 	}
@@ -205,8 +204,7 @@ public class AirlineCompany extends Company {
 		
 		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
 			throw new AircraftEmptyParkException();
-		}
-		
+		}		
 
 		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
 		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();
@@ -266,7 +264,7 @@ public class AirlineCompany extends Company {
 
 		for (Iterator<Aircraft> iterAicraftList = listOfAircraft.iterator(); iterAicraftList.hasNext();) {
 			Aircraft aircraft = (Aircraft) iterAicraftList.next();
-
+			
 			if (aircraft.getIdAircraft() == idAircraft) {
 				return aircraft;
 			}

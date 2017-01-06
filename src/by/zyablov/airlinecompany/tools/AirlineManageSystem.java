@@ -17,8 +17,10 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
 import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.EmptyAircraftsFileException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
-import by.zyablov.airlinecompany.files.FileAicraftSerializeReader;
-import by.zyablov.airlinecompany.files.FileAicraftSerializeWriter;
+import by.zyablov.airlinecompany.files.FileAicraftsSerializeReader;
+import by.zyablov.airlinecompany.files.FileAicraftsSerializeWriter;
+import by.zyablov.airlinecompany.interfaces.FileAircraftsReaderable;
+import by.zyablov.airlinecompany.interfaces.FileAircraftsWriterable;
 
 /**
  * @author Дмитрий
@@ -43,8 +45,8 @@ public class AirlineManageSystem {
 		if (this.airlineCompany == null) {
 			throw new NoAirlineCompanyException();
 		}
-		
-		if(this.airlineCompany.getTotalAmountOfAircraft() == 0){
+
+		if (this.airlineCompany.getTotalAmountOfAircraft() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -52,8 +54,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * This method get the List of aircrafts from airline company park, which middle
-	 * velocity parameter are included in the range formed by values
+	 * This method get the List of aircrafts from airline company park, which
+	 * middle velocity parameter are included in the range formed by values
 	 * fromValueMidVelocity and toValueMidVelocity
 	 * 
 	 */
@@ -68,8 +70,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method get the List of aircrafts from airline comapany park, which
-	 * fuelspending parameter are included in the range formed by values
+	 * !!! This method get the List of aircrafts from airline comapany park,
+	 * which fuelspending parameter are included in the range formed by values
 	 * fromValueFuelSpending and toValueFuelSpending
 	 * 
 	 */
@@ -99,7 +101,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method get the List of sort aircrafts by their maximum people capacity
+	 * !!! This method get the List of sort aircrafts by their maximum people
+	 * capacity
 	 * 
 	 */
 	public List<Aircraft> getListOfSortAircraftByPeopleCapacity()
@@ -127,7 +130,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method get the List of sort aicrafts by their maximum weight capacity
+	 * !!! This method get the List of sort aicrafts by their maximum weight
+	 * capacity
 	 */
 	public List<Aircraft> getListOfSortAicraftByMaxWeightCapacity()
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
@@ -147,8 +151,8 @@ public class AirlineManageSystem {
 		if (this.airlineCompany == null) {
 			throw new NoAirlineCompanyException();
 		}
-		
-		if(this.getAircraftsTotalAmount() == 0){
+
+		if (this.getAircraftsTotalAmount() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -169,7 +173,7 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method remove existing aircraft from airliner company park 
+	 * !!! This method remove existing aircraft from airliner company park
 	 * 
 	 */
 	public boolean removeAircraft(Aircraft removingAircraft) throws NoAirlineCompanyException {
@@ -182,8 +186,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method calculate a total amount people capacity of all aircrafts at the
-	 * Aircraft park of airline company
+	 * !!! This method calculate a total amount people capacity of all aircrafts
+	 * at the Aircraft park of airline company
 	 * 
 	 * @throws NoAirlineCompanyException
 	 * 
@@ -199,8 +203,8 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method calculate a total amount weight capacity of all aircrafts at the
-	 * Aircraft park of airline company
+	 * !!! This method calculate a total amount weight capacity of all aircrafts
+	 * at the Aircraft park of airline company
 	 * 
 	 * @throws NoAirlineCompanyException
 	 * 
@@ -233,15 +237,16 @@ public class AirlineManageSystem {
 	 * !!! This method return a full airliner company information to string
 	 * 
 	 * @return
-	 * @throws NoAirlineCompanyException 
+	 * @throws NoAirlineCompanyException
 	 */
-	public String getFullAirlineCompanyInformation(){
-		
+	public String getFullAirlineCompanyInformation() {
+
 		String fullCompanyInformation = ("Airline company name: " + this.airlineCompany.getCompanyName() + "\n"
 				+ "Airline company email: " + this.airlineCompany.getCompanyEmail() + "\n"
 				+ "Airline company founding date: " + this.airlineCompany.getFoundDataParsedToString() + "\n"
 				+ "A total amount of aircrafts at the airliner company park: "
 				+ this.airlineCompany.getTotalAmountOfAircraft() + " aircrafts");
+
 		return fullCompanyInformation;
 	}
 
@@ -274,7 +279,9 @@ public class AirlineManageSystem {
 		}
 
 		List<Aircraft> aircraftsList = this.getListOfAicrafts();
-		FileAicraftSerializeWriter.writeAircraftListToFile(aircraftsList);
+
+		FileAircraftsWriterable fileWriter = new FileAicraftsSerializeWriter();
+		fileWriter.writeAircraftListToFile(aircraftsList);
 	}
 
 	/**
@@ -294,7 +301,8 @@ public class AirlineManageSystem {
 			throw new NoAirlineCompanyException();
 		}
 
-		List<Aircraft> aircraftsList = FileAicraftSerializeReader.readAircraftListFromFile();
+		FileAircraftsReaderable fileReader = new FileAicraftsSerializeReader();
+		List<Aircraft> aircraftsList = fileReader.readAircraftListFromFile();
 
 		if (aircraftsList.size() == 0) {
 			throw new EmptyAircraftsFileException();
@@ -305,7 +313,9 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 *  !!! This metod add aircraft form data file to airline company park with generated unique Id
+	 * !!! This metod add aircraft form data file to airline company park with
+	 * generated unique Id
+	 * 
 	 * @param aircraftsList
 	 */
 	private void addAircraftFromFileToAirlineCompanyPark(List<Aircraft> aircraftsList) {
@@ -315,20 +325,23 @@ public class AirlineManageSystem {
 			// Generate a unique Id for an aircraft from file and add this
 			// aircraft to airliner company park
 			int uniqueId = IdAircraftMakeManager.getUniqueIdAircraft(newAircraft.getNameAircraft());
-			
+
 			newAircraft.setIdAircraft(uniqueId);
-			if(!(this.airlineCompany.addAircraftToPark(newAircraft))){
+			if (!(this.airlineCompany.addAircraftToPark(newAircraft))) {
 				System.out.println("Problems to add new aircraft to airline company park!");
 				return;
-			};
+			}
+			;
 		}
 	}
 
 	/**
-	 *  !!! This method return true if airline company object was created else return false
+	 * !!! This method return true if airline company object was created else
+	 * return false
+	 * 
 	 * @return
 	 */
-	public boolean haveAirlinerCompany() {	
+	public boolean haveAirlinerCompany() {
 		return (this.airlineCompany != null);
 	}
 

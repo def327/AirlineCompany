@@ -68,7 +68,6 @@ public class CubicMeter extends Measure {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "cubicMetersValue = " + measureValue + " M^3";
 	}
 

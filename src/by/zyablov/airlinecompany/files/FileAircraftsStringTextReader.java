@@ -22,7 +22,7 @@ import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
  * @author Дмитрий
  *
  */
-public class FileAircraftTextReader {
+public class FileAircraftsStringTextReader extends FileAircraftsReader {
 
 	/**
 	 * !!! This method get the list of aircrafts, which was parsed from text
@@ -31,9 +31,9 @@ public class FileAircraftTextReader {
 	 * @return
 	 * @throws IOException
 	 */
-	public static List<Aircraft> readAircraftListFromFile() throws IOException {
+	public List<Aircraft> readAircraftListFromFile() throws IOException {
 
-		try (BufferedReader in = new BufferedReader(new FileReader(new File("datafiles/txtdatalist.txt")))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(new File(pathToFileInString)))) {
 			List<Aircraft> listOfAircraft = new LinkedList<>();
 			String aircraftString = null;
 
@@ -41,13 +41,12 @@ public class FileAircraftTextReader {
 				String[] fieldsOfAircraft = aircraftString.split("\\|");
 
 				if (fieldsOfAircraft[0].equalsIgnoreCase("AirlinerAircraft")) {
-					listOfAircraft.add(FileAircraftTextReader.createAirlinerAicraft(fieldsOfAircraft));
+					listOfAircraft.add(FileAircraftsStringTextReader.createAirlinerAicraft(fieldsOfAircraft));
 
 				} else if (fieldsOfAircraft[0].equalsIgnoreCase("CargoAircraft")) {
-					listOfAircraft.add(FileAircraftTextReader.createCargoAicraft(fieldsOfAircraft));
+					listOfAircraft.add(FileAircraftsStringTextReader.createCargoAicraft(fieldsOfAircraft));
 				}
 			}
-
 			return listOfAircraft;
 		}
 	}
@@ -72,7 +71,6 @@ public class FileAircraftTextReader {
 
 		// Create AirlinerTechData for a new airliner aircraft object
 		BuilderAirlinerAircraftTechData buildAirlinerTechData = createAirlinerAircraftTechData(fieldsOfAircraft);
-
 		buildAircraft.setUniqueAircraftTechData(buildAirlinerTechData.getResult());
 
 		return buildAircraft.getResult();
@@ -86,9 +84,11 @@ public class FileAircraftTextReader {
 	 * @return
 	 */
 	private static BuilderAirlinerAircraftTechData createAirlinerAircraftTechData(String[] fieldsOfAircraft) {
+
 		BuilderAirlinerAircraftTechData buildAirlinerTechData = new BuilderAirlinerAircraftTechData();
 		buildAirlinerTechData.setAirlinerType(fieldsOfAircraft[7]);
 		buildAirlinerTechData.setHavBusinesClass(Boolean.parseBoolean(fieldsOfAircraft[8]));
+
 		return buildAirlinerTechData;
 	}
 
@@ -102,17 +102,19 @@ public class FileAircraftTextReader {
 	 */
 	private static BuilderBasicTechAiracft createBasicAircraftTechData(String[] fieldsOfAircraft)
 			throws NumberFormatException {
+
 		BuilderBasicTechAiracft techDataBuild = new BuilderBasicTechAiracft();
 		techDataBuild.setMaxWeigthCapacity(Integer.parseInt(fieldsOfAircraft[3]));
 		techDataBuild.setFuelSpending(Integer.parseInt(fieldsOfAircraft[4]));
 		techDataBuild.setMiddleVelocity(Integer.parseInt(fieldsOfAircraft[5]));
 		techDataBuild.setPeopleCapacity(Integer.parseInt(fieldsOfAircraft[6]));
+
 		return techDataBuild;
 	}
 
 	/**
-	 * !!! This method create a cargo aircraft object with the fields, which were
-	 * parsed from text file
+	 * !!! This method create a cargo aircraft object with the fields, which
+	 * were parsed from text file
 	 * 
 	 * @param fieldsOfAircraft
 	 * @return CargorAircraft object
@@ -144,9 +146,11 @@ public class FileAircraftTextReader {
 	 */
 	private static BuilderCargoAircraftTechData createCargoAircraftTechData(String[] fieldsOfAircraft)
 			throws NumberFormatException {
+
 		BuilderCargoAircraftTechData buildCargoTechData = new BuilderCargoAircraftTechData();
 		buildCargoTechData.setCargoDepartmentSize(Integer.parseInt(fieldsOfAircraft[7]));
 		buildCargoTechData.setCanTransprtDangerGoods(Boolean.parseBoolean(fieldsOfAircraft[7]));
+
 		return buildCargoTechData;
 	}
 }

@@ -21,7 +21,6 @@ public abstract class BuilderAircraft implements AircraftBuilderBehavior {
 
 	public void setName(final String nameAircraft) {
 		this.aircraft.setNameAircraft(nameAircraft);
-
 	}
 
 	public void setBasicTechSpecificationAircraft(final BasicTechAircraftData basicTechAircraftData) {

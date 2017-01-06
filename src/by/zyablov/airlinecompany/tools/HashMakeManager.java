@@ -8,14 +8,13 @@ package by.zyablov.airlinecompany.tools;
  *
  */
 public class HashMakeManager {
-	
-	public static int createHashValue(String hashingString){
-		
-		char [] symbolsArray = hashingString.toCharArray();
+
+	public static int createHashValue(String hashingString) {
+
+		char[] symbolsArray = hashingString.toCharArray();
 		int hash = 0;
 
-		for (char iter : symbolsArray)
-		{
+		for (char iter : symbolsArray) {
 			hash += iter;
 			hash += (hash << 10);
 			hash ^= (hash >> 6);

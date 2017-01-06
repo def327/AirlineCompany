@@ -14,61 +14,66 @@ import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 public class RemoveAircraftAction {
-	
+
 	/**
-	 *  !!! This method remove aircraft from airline company park
+	 * !!! This method remove aircraft from airline company park
+	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){		
-		try {				
-			
-			Aircraft removedAircraft = getAircraftByIdFromAicraftPark(airlineCompanyManager, consoleReader);			
-			removeAircraftFromAirlineCompanyPark(airlineCompanyManager, removedAircraft);	
-			
+	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
+		try {
+
+			Aircraft removedAircraft = getAircraftByIdFromAicraftPark(airlineCompanyManager, consoleReader);
+			removeAircraftFromAirlineCompanyPark(airlineCompanyManager, removedAircraft);
+
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
 			return;
 		} catch (AircraftEmptyParkException e) {
 			System.out.println(WARNING_MESSAGE_EMPTY_PARK);
 			return;
-		}	
+		}
 	}
 
 	/**
-	 *  !!! This method  remove aircraft from airline company park
+	 * !!! This method remove aircraft from airline company park
+	 * 
 	 * @param airlineCompanyManager
 	 * @param removedAircraft
 	 * @throws NoAirlineCompanyException
 	 */
 	private static void removeAircraftFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager,
 			Aircraft removedAircraft) throws NoAirlineCompanyException {
-		if(airlineCompanyManager.removeAircraft(removedAircraft)){
-			System.out.println("AIRCRAFT ID: " + removedAircraft.getIdAircraft() + "\n"
-					+ "AIRCRAFT NAME: " + removedAircraft.getNameAircraft() + "\n" 
+
+		if (airlineCompanyManager.removeAircraft(removedAircraft)) {
+
+			System.out.println("AIRCRAFT ID: " + removedAircraft.getIdAircraft() + "\n" + "AIRCRAFT NAME: "
+					+ removedAircraft.getNameAircraft() + "\n"
 					+ "WAS REMOVED FROM AIRLINE COMPANY PARK !!! SUCCESSFULLY !!!");
-		}else{
+
+		} else {
 			System.out.println(" !!! FAIL TO REMOVE !!!");
 		}
 	}
-	
-	/** 
-	 *  !!! This method return an aircraft by id from airline company park
-	 *  
+
+	/**
+	 * !!! This method return an aircraft by id from airline company park
+	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
-	 * @return 
+	 * @return
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
-	private static Aircraft getAircraftByIdFromAicraftPark(AirlineManageSystem airlineCompanyManager, Scanner consoleReader)
-			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
+	private static Aircraft getAircraftByIdFromAicraftPark(AirlineManageSystem airlineCompanyManager,
+			Scanner consoleReader) throws NoAirlineCompanyException, AircraftEmptyParkException {
+
 		while (true) {
 			try {
-				
+
 				showToUserConsoleAircraftsFromAirlineCompanyPark(airlineCompanyManager);
-				
+
 				String idString = consoleReader.nextLine();
 				int idAircraft = Integer.parseInt(idString);
 
@@ -77,41 +82,43 @@ public class RemoveAircraftAction {
 				}
 
 				Aircraft foundAircraft = airlineCompanyManager.getAircraftkById(idAircraft);
-				
+
 				if (foundAircraft == null) {
 					System.out.println(WARNING_MESSAGE_TRY_AGAIN);
 					continue;
-				} else{
+				} else {
 					return foundAircraft;
 				}
-						
+
 			} catch (NumberFormatException e) {
 				System.out.println(WARNING_MESSAGE_TRY_AGAIN);
 				continue;
 			}
 		}
 	}
-	
+
 	/**
-	 *  !!! This method show all aircrafts to console 
+	 * !!! This method show all aircrafts to console
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
 	private static void showToUserConsoleAircraftsFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager)
 			throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
-		List<Aircraft>  aircraftsList = airlineCompanyManager.getListOfAicrafts();
-		
+
+		List<Aircraft> aircraftsList = airlineCompanyManager.getListOfAicrafts();
+
 		System.out.println("Please enter aircraft id from a table below:");
 		System.out.println("Aircrafts at the airline company park:");
 
 		for (Iterator<Aircraft> iterator = aircraftsList.iterator(); iterator.hasNext();) {
+
 			Aircraft aircraft = (Aircraft) iterator.next();
+
 			System.out.println(
 					"Aircraft ID: " + aircraft.getIdAircraft() + " Aircraft Name: " + aircraft.getNameAircraft());
 		}
 	}
-	
-	
+
 }

@@ -16,7 +16,6 @@ public class AircraftComparatorByPeopleCapacity implements Comparator<Object> {
 
 	@Override
 	public int compare(Object o1, Object o2) {
-
 		Aircraft oneObj = (Aircraft) o1;
 		Aircraft twoObj = (Aircraft) o2;
 

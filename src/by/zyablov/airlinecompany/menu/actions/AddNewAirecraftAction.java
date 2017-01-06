@@ -87,8 +87,8 @@ public class AddNewAirecraftAction {
 			if (!(airlineCompanyManager.addAircraft(newAircraft))) {
 				System.out.println("Problems to add new aircraft to airline company park!");
 				return;
-			}else{
-				System.out.println("You created an new aircraft with fields:" );
+			} else {
+				System.out.println("You created an new aircraft with fields:");
 				System.out.println(newAircraft.getFullAircraftInformationDataToString());
 			}
 		} catch (NoAirlineCompanyException e) {
@@ -109,8 +109,7 @@ public class AddNewAirecraftAction {
 		aircraftBuilder.setName(newAicraftName);
 		aircraftBuilder.setId(getIdForNewAicraft(newAicraftName));
 		aircraftBuilder.setBasicTechSpecificationAircraft(getBasicTechAircraftDataForNewAicraft(consoleReader));
-		aircraftBuilder.setUniqueAircraftTechData(
-				getUniqueAircraftTechDataBehavior(consoleReader, uniqueAircraftTechDataBehavior));
+		aircraftBuilder.setUniqueAircraftTechData(getUniqueAircraftTechDataBehavior(consoleReader, uniqueAircraftTechDataBehavior));
 
 		return aircraftBuilder.getResult();
 	}
@@ -239,8 +238,7 @@ public class AddNewAirecraftAction {
 			final int minimumFuelSpending = 2;
 			final int maximumFuelSpending = 30;
 
-			System.out
-					.println("Choose a fuel spending for a new aircraft (from 2 tons / 1000km to 30 tons / 1000km):");
+			System.out.println("Choose a fuel spending for a new aircraft (from 2 tons / 1000km to 30 tons / 1000km):");
 			String newAircraftFuelSpending = consoleReader.nextLine();
 
 			try {
@@ -408,7 +406,9 @@ public class AddNewAirecraftAction {
 	}
 
 	/**
-	 * !!! This method return a airline aicraft type for airline aircraft tech data object
+	 * !!! This method return a airline aicraft type for airline aircraft tech
+	 * data object
+	 * 
 	 * @param consoleReader
 	 * @return
 	 */

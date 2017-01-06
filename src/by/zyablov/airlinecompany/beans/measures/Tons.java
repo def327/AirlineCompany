@@ -3,7 +3,6 @@
  */
 package by.zyablov.airlinecompany.beans.measures;
 
-
 /**
  * @author Дмитрий
  *
@@ -14,19 +13,18 @@ public class Tons extends Measure {
 	 * 
 	 */
 	private static final long serialVersionUID = 8363057548547864061L;
-	
 
 	/**
 	 * @param measureValue
 	 */
 	public Tons(int tonsValue) {
-		super(tonsValue);		
+		super(tonsValue);
 	}
 
 	public Tons() {
 		super(0);
 	}
-	
+
 	@Override
 	public int getMeasureValueInInt() {
 		return measureValue;
@@ -45,7 +43,7 @@ public class Tons extends Measure {
 
 	@Override
 	public boolean equals(Object obj) {
-		
+
 		if (obj == this) {
 			return true;
 		}
