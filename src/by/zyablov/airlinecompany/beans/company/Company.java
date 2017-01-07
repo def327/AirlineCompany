@@ -3,7 +3,6 @@
  */
 package by.zyablov.airlinecompany.beans.company;
 
-
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -17,9 +16,22 @@ public abstract class Company {
 	private int companyId;
 	private String companyName;
 	private String companyEmail;
-	private GregorianCalendar companyFoundDate; 
+	private GregorianCalendar companyFoundDate;
 
 	/**
+	 * !!! This method return a company found date parsed to string
+	 * 
+	 * @return
+	 */
+	public String getFoundDataParsedToString() {
+		SimpleDateFormat simpleDataformat = new SimpleDateFormat("yyyy MMMM dd", new Locale("en", "EN"));
+		String stringFoundData = simpleDataformat.format(this.companyFoundDate.getTime());
+		return stringFoundData;
+	}
+
+	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param id
 	 * @param name
 	 * @param email
@@ -32,6 +44,9 @@ public abstract class Company {
 		this.companyFoundDate = foundDate;
 	}
 
+	/**
+	 * !!! This a constuctor without parameters
+	 */
 	public Company() {
 		this.companyId = 0;
 		this.companyName = null;
@@ -39,12 +54,50 @@ public abstract class Company {
 		this.companyFoundDate = null;
 	}
 
-	@Override
-	public String toString() {
-		return "id = " + this.companyId + "\n" + "name = " + this.companyName + "\n" + "email = " + this.companyEmail + "\n" + "foundDate = "
-				+ this.companyFoundDate;
+	public int getCompanyId() {
+		return companyId;
 	}
 
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getCompanyEmail() {
+		return companyEmail;
+	}
+
+	public void setCompanyEmail(String companyEmail) {
+		this.companyEmail = companyEmail;
+	}
+
+	public GregorianCalendar getCompanyFoundDate() {
+		return companyFoundDate;
+	}
+
+	public void setCompanyFoundDate(GregorianCalendar companyFoundDate) {
+		this.companyFoundDate = companyFoundDate;
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return "id = " + this.companyId + "\n" + "name = " + this.companyName + "\n" + "email = " + this.companyEmail
+				+ "\n" + "foundDate = " + this.companyFoundDate;
+	}
+
+	/**
+	 * !!! This method equals two companies
+	 */
 	@Override
 	public boolean equals(Object obj) {
 
@@ -61,76 +114,8 @@ public abstract class Company {
 		}
 
 		Company other = (Company) obj;
-		return ((this.companyId == other.companyId) && (this.companyName.equals(other.companyName)) && (this.companyEmail.equals(companyEmail))
-				&& (this.companyFoundDate.equals(other.companyFoundDate)));
+		return ((this.companyId == other.companyId) && (this.companyName.equals(other.companyName))
+				&& (this.companyEmail.equals(companyEmail)) && (this.companyFoundDate.equals(other.companyFoundDate)));
 	}
-
-	/**
-	 * @return the companyId
-	 */
-	public int getCompanyId() {
-		return companyId;
-	}
-
-	/**
-	 * @param companyId the companyId to set
-	 */
-	public void setCompanyId(int companyId) {
-		this.companyId = companyId;
-	}
-
-	/**
-	 * @return the companyName
-	 */
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	/**
-	 * @param companyName the companyName to set
-	 */
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-	/**
-	 * @return the companyEmail
-	 */
-	public String getCompanyEmail() {
-		return companyEmail;
-	}
-
-	/**
-	 * @param companyEmail the companyEmail to set
-	 */
-	public void setCompanyEmail(String companyEmail) {
-		this.companyEmail = companyEmail;
-	}
-
-	/**
-	 * @return the companyFoundDate
-	 */
-	public GregorianCalendar getCompanyFoundDate() {
-		return companyFoundDate;
-	}
-
-	/**
-	 * @param companyFoundDate the companyFoundDate to set
-	 */
-	public void setCompanyFoundDate(GregorianCalendar companyFoundDate) {
-		this.companyFoundDate = companyFoundDate;
-	}
-	
-	/**
-	 *  !!! This method return a company found date parsed to string
-	 * @return
-	 */
-	public String getFoundDataParsedToString(){
-		SimpleDateFormat simpleDataformat = new SimpleDateFormat("yyyy MMMM dd",new Locale("en","EN"));
-		String stringFoundData = simpleDataformat.format(this.companyFoundDate.getTime());
-		return stringFoundData;
-	}
-
-	
 
 }

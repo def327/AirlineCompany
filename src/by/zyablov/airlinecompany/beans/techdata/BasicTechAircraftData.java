@@ -17,9 +17,6 @@ import by.zyablov.airlinecompany.beans.measures.Tons;
 
 public class BasicTechAircraftData implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8074903153153914987L;
 
 	private Tons maxWeigthCapacity;
@@ -28,6 +25,8 @@ public class BasicTechAircraftData implements Serializable {
 	private PeopleCapacity maxPeopleCapacity;
 
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param maxWeigthCapacity
 	 * @param fuelSpending
 	 * @param midVelocity
@@ -42,6 +41,8 @@ public class BasicTechAircraftData implements Serializable {
 	}
 
 	/**
+	 * !!! This a constuctor without parameters
+	 * 
 	 * @param maxWeigthCapacity
 	 * @param fuelSpending
 	 * @param middleVelocity
@@ -53,66 +54,50 @@ public class BasicTechAircraftData implements Serializable {
 		this.maxPeopleCapacity = new PeopleCapacity();
 	}
 
-	/**
-	 * @return the maxWeigthCapacity
-	 */
 	public Tons getMaxWeigthCapacity() {
 		return maxWeigthCapacity;
 	}
 
-	/**
-	 * @param maxWeigthCapacity
-	 *            the maxWeigthCapacity to set
-	 */
 	public void setMaxWeigthCapacity(Tons maxWeigthCapacity) {
 		this.maxWeigthCapacity = maxWeigthCapacity;
 	}
 
-	/**
-	 * @return the fuelSpending
-	 */
 	public FuelSpendTonPerKm getFuelSpending() {
 		return fuelSpending;
 	}
 
-	/**
-	 * @param fuelSpending
-	 *            the fuelSpending to set
-	 */
 	public void setFuelSpending(FuelSpendTonPerKm fuelSpending) {
 		this.fuelSpending = fuelSpending;
 	}
 
-	/**
-	 * @return the middleVelocity
-	 */
 	public KilometerPerHour getMiddleVelocity() {
 		return middleVelocity;
 	}
 
-	/**
-	 * @param middleVelocity
-	 *            the middleVelocity to set
-	 */
 	public void setMiddleVelocity(KilometerPerHour middleVelocity) {
 		this.middleVelocity = middleVelocity;
 	}
 
-	/**
-	 * @return the maxPeopleCapacity
-	 */
 	public PeopleCapacity getMaxPeopleCapacity() {
 		return maxPeopleCapacity;
 	}
 
-	/**
-	 * @param maxPeopleCapacity
-	 *            the maxPeopleCapacity to set
-	 */
 	public void setMaxPeopleCapacity(PeopleCapacity maxPeopleCapacity) {
 		this.maxPeopleCapacity = maxPeopleCapacity;
 	}
 
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.middleVelocity + "\n"
+				+ this.maxPeopleCapacity);
+	}
+
+	/**
+	 * !!! This method equals two BasicTechAircraftData
+	 */
 	@Override
 	public boolean equals(Object obj) {
 
@@ -133,11 +118,5 @@ public class BasicTechAircraftData implements Serializable {
 				&& (this.maxWeigthCapacity.equals(other.maxWeigthCapacity))
 				&& (this.middleVelocity.equals(other.middleVelocity))
 				&& (this.maxPeopleCapacity.equals(other.maxPeopleCapacity)));
-	}
-
-	@Override
-	public String toString() {
-		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.middleVelocity + "\n"
-				+ this.maxPeopleCapacity);
 	}
 }

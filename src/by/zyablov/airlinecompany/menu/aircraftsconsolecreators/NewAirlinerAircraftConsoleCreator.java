@@ -10,18 +10,17 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
 public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator {
 
-
 	/**
 	 * !!! This method return an airliner tech data object for a new aircraft
 	 * 
 	 * @param uniqueAircraftTechDataBehavior
 	 * @return
 	 */
-	protected  UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader) {
-		
+	protected UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader) {
+
 		AirlinerTechData airlinerTechData = getAirlinerTechData(consoleReader);
 		return airlinerTechData;
-		
+
 	}
 
 	/**
@@ -31,7 +30,7 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	 * @param consoleReader
 	 * @return
 	 */
-	private  AirlinerTechData getAirlinerTechData(Scanner consoleReader) {
+	private AirlinerTechData getAirlinerTechData(Scanner consoleReader) {
 
 		BuilderAirlinerAircraftTechData newAirlinerAircraftTechDataBuilder = new BuilderAirlinerAircraftTechData();
 
@@ -48,7 +47,7 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	 * @param consoleReader
 	 * @return
 	 */
-	private  String getAirlinerAircraftType(Scanner consoleReader) {
+	private String getAirlinerAircraftType(Scanner consoleReader) {
 		while (true) {
 
 			try {
@@ -78,7 +77,7 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	 * @param consoleReader
 	 * @return
 	 */
-	private  boolean getHavBusinesClass(Scanner consoleReader) {
+	private boolean getHavBusinesClass(Scanner consoleReader) {
 		while (true) {
 
 			System.out.println("Has a new airline aircraft bussiness class:");

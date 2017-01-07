@@ -166,16 +166,20 @@ public enum MessagesForUserEnum {
 	/**
 	 * Class description:
 	 */
-
 	private String message;
 
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param message
 	 */
 	private MessagesForUserEnum(String message) {
 		this.message = message;
 	}
 
+	/**
+	 * !!! This method parse fields to string
+	 */
 	@Override
 	public String toString() {
 		return (this.message);

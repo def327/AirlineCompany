@@ -12,14 +12,14 @@ public class AirlineCompanyRunner {
 	/**
 	 * 
 	 * @param args
-	 * @throws NoAirlineCompanyException 
-	 * @throws AircraftEmptyParkException 
-	 *   
+	 * @throws NoAirlineCompanyException
+	 * @throws AircraftEmptyParkException
+	 * 
 	 */
 	public static void main(String[] args) throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
+
 		ApplicationMenu mn = new ApplicationMenu();
 		mn.mainMenuRun();
 	}
-		
+
 }

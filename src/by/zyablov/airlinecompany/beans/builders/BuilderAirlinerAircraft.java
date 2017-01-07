@@ -13,21 +13,19 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
  */
 public class BuilderAirlinerAircraft extends BuilderAircraft {
 
-	public BuilderAirlinerAircraft() {
-		this.aircraft = new AirlinerAircraft();
-	}
-	
-//  Roll back if have problem with cast during RUN-TIME	
-//	public void setAirlinerTechData(final AirlinerTechData airlinerTechData) {
-//		((Airliner)aircraft).setAirlinerTechData(airlinerTechData);
-//	}
-
 	public AirlinerAircraft getResult() {
-		return (AirlinerAircraft)aircraft;
+		return (AirlinerAircraft) aircraft;
 	}
 
 	@Override
 	public void setUniqueAircraftTechData(UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior) {
-		((AirlinerAircraft) aircraft).setAirlinerTechData((AirlinerTechData) uniqueAircraftTechDataBehavior);		
+		((AirlinerAircraft) aircraft).setAirlinerTechData((AirlinerTechData) uniqueAircraftTechDataBehavior);
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public BuilderAirlinerAircraft() {
+		this.aircraft = new AirlinerAircraft();
 	}
 }

@@ -12,13 +12,12 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  */
 public class CargoAircraft extends Aircraft {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7792314539883108495L;
-
 	private CargoAircraftTechData cargoAircraftTechData;
 
+	/**
+	 * !!!This method return a an aicraft full data to string
+	 */
 	@Override
 	public String getFullAircraftInformationDataToString() {
 
@@ -43,6 +42,8 @@ public class CargoAircraft extends Aircraft {
 	}
 
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param idAircraft
 	 * @param nameAircraft
 	 * @param basicTechAircraftData
@@ -55,6 +56,7 @@ public class CargoAircraft extends Aircraft {
 	}
 
 	/**
+	 * !!! This a constuctor without parameters
 	 * 
 	 * @param cargoAircraftTechData
 	 * 
@@ -64,6 +66,25 @@ public class CargoAircraft extends Aircraft {
 		this.cargoAircraftTechData = new CargoAircraftTechData();
 	}
 
+	public CargoAircraftTechData getCargoAircraftTechdata() {
+		return cargoAircraftTechData;
+	}
+
+	public void setCargoAircraftTechdata(CargoAircraftTechData cargoAircraftTechData) {
+		this.cargoAircraftTechData = cargoAircraftTechData;
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return (super.toString() + "\n" + this.cargoAircraftTechData.toString());
+	}
+
+	/**
+	 * !!! This method equals two aicrafts
+	 */
 	@Override
 	public boolean equals(Object obj) {
 
@@ -85,26 +106,6 @@ public class CargoAircraft extends Aircraft {
 
 		CargoAircraft other = (CargoAircraft) obj;
 		return (this.cargoAircraftTechData.equals(other.cargoAircraftTechData));
-	}
-
-	@Override
-	public String toString() {
-		return (super.toString() + "\n" + this.cargoAircraftTechData.toString());
-	}
-
-	/**
-	 * @return the cargoAircraftTechdata
-	 */
-	public CargoAircraftTechData getCargoAircraftTechdata() {
-		return cargoAircraftTechData;
-	}
-
-	/**
-	 * @param cargoAircraftTechData
-	 *            the cargoAircraftTechdata to set
-	 */
-	public void setCargoAircraftTechdata(CargoAircraftTechData cargoAircraftTechData) {
-		this.cargoAircraftTechData = cargoAircraftTechData;
 	}
 
 }

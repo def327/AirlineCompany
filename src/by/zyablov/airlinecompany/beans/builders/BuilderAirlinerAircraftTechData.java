@@ -11,22 +11,25 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  *
  */
 public class BuilderAirlinerAircraftTechData implements BuilderBehavior {
-	
+
 	private AirlinerTechData airlinerTechData;
-	
-	public BuilderAirlinerAircraftTechData(){
-		airlinerTechData = new AirlinerTechData();
-	}
-	
-	public void setAirlinerType(String airlinerType){
+
+	public void setAirlinerType(String airlinerType) {
 		airlinerTechData.setAirlinerType(airlinerType);
 	}
-	
-	public void setHavBusinesClass(boolean havBusinesClass ){
+
+	public void setHavBusinesClass(boolean havBusinesClass) {
 		airlinerTechData.setHavBusinesClass(havBusinesClass);
 	}
-	
-	public AirlinerTechData getResult(){
+
+	public AirlinerTechData getResult() {
 		return airlinerTechData;
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public BuilderAirlinerAircraftTechData() {
+		airlinerTechData = new AirlinerTechData();
 	}
 }

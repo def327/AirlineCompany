@@ -12,31 +12,26 @@ import by.zyablov.airlinecompany.interfaces.BuilderBehavior;
  *
  */
 public class BuilderCargoAircraftTechData implements BuilderBehavior {
-	
+
 	private CargoAircraftTechData cargoAircraftTechData;
-	
-	public BuilderCargoAircraftTechData(){
-		cargoAircraftTechData = new CargoAircraftTechData();
+
+	public void setCargoDepartmentSize(int cargoDepartmentSize) {
+		cargoAircraftTechData.setCargoDepartmentSize(new CubicMeter(cargoDepartmentSize));
 	}
-	
-	public void setCargoDepartmentSize(int cargoDepartmentSize){
-		cargoAircraftTechData.setCargoDepartmentSize( new CubicMeter(cargoDepartmentSize));
-	}
-	
-	public void setCanTransprtDangerGoods(boolean canTransprtDangerGoods){
+
+	public void setCanTransprtDangerGoods(boolean canTransprtDangerGoods) {
 		cargoAircraftTechData.setCanTransprtDangerGoods(canTransprtDangerGoods);
 	}
-	
-	public CargoAircraftTechData getResult(){
+
+	public CargoAircraftTechData getResult() {
 		return cargoAircraftTechData;
 	}
-	
-	
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public BuilderCargoAircraftTechData() {
+		cargoAircraftTechData = new CargoAircraftTechData();
+	}
 
 }
-
-
-
-
-
-

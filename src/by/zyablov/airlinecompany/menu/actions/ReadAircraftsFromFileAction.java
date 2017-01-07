@@ -12,24 +12,24 @@ import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 public class ReadAircraftsFromFileAction {
-	
-	public  static boolean loadAicraftsFromFile = false;
-	
+
+	public static boolean loadAicraftsFromFile = false;
+
 	/**
 	 * !!! method action read data information about aircrafts from file
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager){
+	public static void runAction(AirlineManageSystem airlineCompanyManager) {
 		try {
-			
-			if(loadAicraftsFromFile){
+
+			if (loadAicraftsFromFile) {
 				System.out.println("You loaded all information about aircrafts from data file yet!");
 				return;
 			}
-			
+
 			airlineCompanyManager.readAircraftsFromFile();
 			System.out.println("Loaded information about aircrafts from data file");
 			loadAicraftsFromFile = true;
-			
+
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
 		} catch (EmptyAircraftsFileException e) {

@@ -11,25 +11,11 @@ public enum AirlinerTypeEnum {
 	private String airlinerType;
 
 	/**
+	 * !!! this method return type of aircraft by string
 	 * 
-	 * @param airlinerType
+	 * @param comandString
+	 * @return
 	 */
-	private AirlinerTypeEnum(String airlinerType) {
-		this.airlinerType = airlinerType;
-	}
-
-	/**
-	 * @return the airlinerType
-	 */
-	public String getAirlinerType() {
-		return airlinerType;
-	}
-
-	@Override
-	public String toString() {
-		return (this.airlinerType);
-	}
-
 	public static AirlinerTypeEnum stringToEnum(String comandString) {
 		switch (comandString) {
 		case "1": {
@@ -46,4 +32,26 @@ public enum AirlinerTypeEnum {
 		}
 		}
 	}
+
+	/**
+	 * !!! This a constuctor with parameters
+	 * 
+	 * @param airlinerType
+	 */
+	private AirlinerTypeEnum(String airlinerType) {
+		this.airlinerType = airlinerType;
+	}
+
+	public String getAirlinerType() {
+		return airlinerType;
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return (this.airlinerType);
+	}
+
 }

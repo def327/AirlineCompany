@@ -9,45 +9,50 @@ package by.zyablov.airlinecompany.beans.measures;
  */
 public class KilometerPerHour extends Measure {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7246317486198153340L;
-	
-	
 
-	/**
-	 * @param measureValue
-	 */
-	public KilometerPerHour(int kilometrsPerHourValue) {
-		super(kilometrsPerHourValue);		
-	}
-	
-	public KilometerPerHour(){
-		super(0);
-	}
-	
 	@Override
-	public int getMeasureValueInInt() {		
+	public int getMeasureValueInInt() {
 		return measureValue;
 	}
 
-	/* (non-Javadoc)
-	 * @see by.zyablov.airlinecompany.measures.Measure#getMeasureValue()
-	 */
 	@Override
-	public String getMeasureValueInString() {		
+	public String getMeasureValueInString() {
 		return this.measureValue + " km/h";
 	}
 
-	/* (non-Javadoc)
-	 * @see by.zyablov.airlinecompany.measures.Measure#setMeasureValue(int)
-	 */
 	@Override
-	public void setMeasureIntValue(int kilometrsPerHourValue) {		
+	public void setMeasureIntValue(int kilometrsPerHourValue) {
 		this.measureValue = kilometrsPerHourValue;
 	}
-	
+
+	/**
+	 * !!! This a constuctor with parameters
+	 * 
+	 * @param measureValue
+	 */
+	public KilometerPerHour(int kilometrsPerHourValue) {
+		super(kilometrsPerHourValue);
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public KilometerPerHour() {
+		super(0);
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return "kilometrsPerHourValue = " + measureValue + " km/h";
+	}
+
+	/**
+	 * !!! This method equals two KilometerPerHour
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -65,11 +70,4 @@ public class KilometerPerHour extends Measure {
 		KilometerPerHour other = (KilometerPerHour) obj;
 		return (this.measureValue == other.measureValue);
 	}
-	
-	@Override
-	public String toString() {		
-		return "kilometrsPerHourValue = " + measureValue + " km/h";
-	}
-	
-
 }

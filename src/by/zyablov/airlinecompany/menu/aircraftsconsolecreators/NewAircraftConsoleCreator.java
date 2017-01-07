@@ -43,6 +43,14 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
+	 * !!! This method an unique tech data object for a new aircraft
+	 * 
+	 * @param consoleReader
+	 * @return
+	 */
+	protected abstract UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader);
+
+	/**
 	 * !!! This method create a new aircraft for airline company park
 	 * 
 	 * @param airlineCompanyManager
@@ -235,13 +243,5 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 			}
 		}
 	}
-
-	/**
-	 * !!! This method an unique tech data object for a new aircraft
-	 * 
-	 * @param consoleReader
-	 * @return
-	 */
-	protected abstract UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader);
 
 }

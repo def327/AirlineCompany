@@ -21,15 +21,6 @@ public class AircraftPark {
 	private int aircraftsAmount;
 
 	/**
-	 * @param aircraftSet
-	 * @param aircraftsAmount
-	 */
-	public AircraftPark() {
-		this.aircraftSet = new HashSet<>();
-		this.aircraftsAmount = 0;
-	}
-
-	/**
 	 * !!! This method add new aircraft to aircraftPark
 	 * 
 	 */
@@ -62,11 +53,11 @@ public class AircraftPark {
 	 * 
 	 */
 	public PeopleCapacity getTotalAmountPeopleCapacity() throws AircraftEmptyParkException {
-		
-		if(this.aircraftsAmount == 0){
+
+		if (this.aircraftsAmount == 0) {
 			throw new AircraftEmptyParkException();
 		}
-		
+
 		int totalAmountPeopleCapacityInt = 0;
 
 		for (Aircraft aircraft : aircraftSet) {
@@ -84,11 +75,11 @@ public class AircraftPark {
 	 * 
 	 */
 	public Tons getTotalAmountWeigthCapacity() throws AircraftEmptyParkException {
-		
-		if(this.aircraftsAmount == 0){
+
+		if (this.aircraftsAmount == 0) {
 			throw new AircraftEmptyParkException();
 		}
-		
+
 		int totalAmountWieghtCapacityInt = 0;
 
 		for (Aircraft aircraft : aircraftSet) {
@@ -99,7 +90,7 @@ public class AircraftPark {
 		Tons totalAmountMaxWeigthCapacity = new Tons(totalAmountWieghtCapacityInt);
 		return totalAmountMaxWeigthCapacity;
 	}
-	
+
 	/**
 	 * !!! This method return a total amount of aircrafts at the aircraft park
 	 * 
@@ -109,39 +100,38 @@ public class AircraftPark {
 	}
 
 	/**
-	 * @return the aircraftListSet
+	 * !!! This a constuctor without parameters
+	 * 
+	 * @param aircraftSet
+	 * @param aircraftsAmount
 	 */
+	public AircraftPark() {
+		this.aircraftSet = new HashSet<>();
+		this.aircraftsAmount = 0;
+	}
+
 	public Set<Aircraft> getAircraftSet() {
 		return aircraftSet;
 	}
 
-	/**
-	 * @param aircraftListSet
-	 *            the aircraftListSet to set
-	 */
 	public void setAircraftSet(Set<Aircraft> aircraftSet) {
 		this.aircraftSet = aircraftSet;
 	}
 
-	/**
-	 * @return the amountOfAircraft
-	 */
 	public int getAicraftsAmount() {
 		return this.aircraftsAmount;
 	}
 
-	/**
-	 * @param amountOfAircraft
-	 *            the amountOfAircraft to set
-	 */
 	public void setAicraftsAmount(int amountOfAircraft) {
 		this.aircraftsAmount = amountOfAircraft;
 	}
 
+	/**
+	 * !!! This method return to String
+	 */
 	@Override
 	public String toString() {
 		return "amountOfAircraft" + (this.aircraftsAmount);
 	}
-
 
 }

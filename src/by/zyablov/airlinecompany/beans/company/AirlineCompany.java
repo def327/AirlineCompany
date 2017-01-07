@@ -31,26 +31,6 @@ public class AirlineCompany extends Company {
 	private AircraftPark aircraftPark;
 
 	/**
-	 * @param id
-	 * @param name
-	 * @param email
-	 * @param today
-	 * @param aircraftPark
-	 */
-	public AirlineCompany(int id, String name, String email, GregorianCalendar today, AircraftPark aircraftPark) {
-		super(id, name, email, today);
-		this.aircraftPark = aircraftPark;
-	}
-
-	/**
-	 * 
-	 */
-	public AirlineCompany() {
-		super();
-		this.aircraftPark = new AircraftPark();
-	}
-
-	/**
 	 * !!! This method @return true if new aircraft will be added to park
 	 * successfully else @return false
 	 */
@@ -68,7 +48,8 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method calculate amount of all aircraft's people capacity
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 */
 	public PeopleCapacity getTotalAircraftsPeopleCapacity() throws AircraftEmptyParkException {
@@ -77,7 +58,8 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method calculate amount of all aircraft's maxWeightCapacity
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 */
 	public Tons getTotalAircraftsWeightCapacity() throws AircraftEmptyParkException {
@@ -88,20 +70,21 @@ public class AirlineCompany extends Company {
 	 * !!! This method return a total amount of all aircrafts at the aircraft
 	 * park
 	 * 
-	 */	
+	 */
 	public int getTotalAmountOfAircraft() {
 		return (this.aircraftPark.getTotalAircraftsAmount());
 	}
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their middle velocity
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 * 
 	 */
 	public List<Aircraft> getListOfSortedAircraftsByMiddleVelocity() throws AircraftEmptyParkException {
-		
-		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+
+		if (this.aircraftPark.getTotalAircraftsAmount() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -112,12 +95,13 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their people capacity
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 */
 	public List<Aircraft> getListOfSortedAircraftByPeopleCapacity() throws AircraftEmptyParkException {
-		
-		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+
+		if (this.aircraftPark.getTotalAircraftsAmount() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -128,12 +112,13 @@ public class AirlineCompany extends Company {
 
 	/**
 	 * !!! This method return a sort list of aicrafts by their fuel spending
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 */
 	public List<Aircraft> getListOfSortedAircraftByFuelSpending() throws AircraftEmptyParkException {
-		
-		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+
+		if (this.aircraftPark.getTotalAircraftsAmount() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -145,12 +130,13 @@ public class AirlineCompany extends Company {
 	/**
 	 * !!! This method return a sort list of aircrafts by their maximum fuel
 	 * spending
-	 * @throws AircraftEmptyParkException 
+	 * 
+	 * @throws AircraftEmptyParkException
 	 * 
 	 */
 	public List<Aircraft> getListOfSortedAircraftByMaxWeightCapacity() throws AircraftEmptyParkException {
-		
-		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+
+		if (this.aircraftPark.getTotalAircraftsAmount() == 0) {
 			throw new AircraftEmptyParkException();
 		}
 
@@ -160,35 +146,15 @@ public class AirlineCompany extends Company {
 	}
 
 	/**
-	 * @return the aircraftPark
-	 */
-	public AircraftPark getAircraftPark() {
-		return this.aircraftPark;
-	}
-
-	/**
-	 * @param aircraftPark
-	 *            the aircraftPark to set
-	 */
-	public void setAircraftPark(AircraftPark aircraftPark) {
-		this.aircraftPark = aircraftPark;
-	}
-
-	@Override
-	public String toString() {
-		return (super.toString() + "\n" + aircraftPark.toString());
-	}
-	
-	/**
 	 * !!! This method return a list of all aicrafts from airliner company park
+	 * 
 	 * @return listOfAircraft
 	 */
-	public List<Aircraft> getListOfAircrafts(){
-		
+	public List<Aircraft> getListOfAircrafts() {
+
 		List<Aircraft> listOfAircraft = new ArrayList<>(this.aircraftPark.getAircraftSet());
 		return listOfAircraft;
 	}
-	
 
 	/**
 	 * !!! This method return a list of found aircrafts, which fuel spending per
@@ -197,14 +163,14 @@ public class AirlineCompany extends Company {
 	 * @param fromValueFuelSpending
 	 * @param toValueFuelSpending
 	 * @return listOfFoundAicrafts
-	 * @throws AircraftEmptyParkException 
+	 * @throws AircraftEmptyParkException
 	 */
 	public List<Aircraft> getListOfFoundAicraftsByFuelSpendingRange(FuelSpendTonPerKm fromValueFuelSpending,
 			FuelSpendTonPerKm toValueFuelSpending) throws AircraftEmptyParkException {
-		
-		if(this.aircraftPark.getTotalAircraftsAmount() == 0){
+
+		if (this.aircraftPark.getTotalAircraftsAmount() == 0) {
 			throw new AircraftEmptyParkException();
-		}		
+		}
 
 		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
 		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();
@@ -221,10 +187,11 @@ public class AirlineCompany extends Company {
 		}
 		return listOfFoundAicrafts;
 	}
-	
+
 	/**
-	 * !!! This method return a list of found aircrafts, which middle velocity 
-	 *  enter the range, formed by parameters fromValueMidVelocity to toValueMidVelocity
+	 * !!! This method return a list of found aircrafts, which middle velocity
+	 * enter the range, formed by parameters fromValueMidVelocity to
+	 * toValueMidVelocity
 	 * 
 	 * @param fromValueMidVelocity
 	 * @param toValueMidVelocity
@@ -232,7 +199,7 @@ public class AirlineCompany extends Company {
 	 */
 	public List<Aircraft> getListOfFoundAicraftsByMidVelocityRange(KilometerPerHour fromValueMidVelocity,
 			KilometerPerHour toValueMidVelocity) {
-		
+
 		List<Aircraft> listOfFoundAicrafts = new LinkedList<>();
 		Set<Aircraft> aircraftSet = this.aircraftPark.getAircraftSet();
 
@@ -241,14 +208,13 @@ public class AirlineCompany extends Company {
 
 			KilometerPerHour aicraftMidVelocity = (KilometerPerHour) aircraft.getBasicTechAircraftData()
 					.getMiddleVelocity();
-			
+
 			if ((aicraftMidVelocity.compareTo(fromValueMidVelocity) >= 0)
 					&& (aicraftMidVelocity.compareTo(toValueMidVelocity) <= 0)) {
 				listOfFoundAicrafts.add(aircraft);
 			}
 		}
 		return listOfFoundAicrafts;
-		
 	}
 
 	/**
@@ -264,7 +230,7 @@ public class AirlineCompany extends Company {
 
 		for (Iterator<Aircraft> iterAicraftList = listOfAircraft.iterator(); iterAicraftList.hasNext();) {
 			Aircraft aircraft = (Aircraft) iterAicraftList.next();
-			
+
 			if (aircraft.getIdAircraft() == idAircraft) {
 				return aircraft;
 			}
@@ -272,5 +238,42 @@ public class AirlineCompany extends Company {
 		return null;
 	}
 
+	/**
+	 * !!! This a constuctor with parameters
+	 * 
+	 * @param id
+	 * @param name
+	 * @param email
+	 * @param today
+	 * @param aircraftPark
+	 */
+	public AirlineCompany(int id, String name, String email, GregorianCalendar today, AircraftPark aircraftPark) {
+		super(id, name, email, today);
+		this.aircraftPark = aircraftPark;
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public AirlineCompany() {
+		super();
+		this.aircraftPark = new AircraftPark();
+	}
+
+	public void setAircraftPark(AircraftPark aircraftPark) {
+		this.aircraftPark = aircraftPark;
+	}
+
+	public AircraftPark getAircraftPark() {
+		return this.aircraftPark;
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return (super.toString() + "\n" + aircraftPark.toString());
+	}
 
 }

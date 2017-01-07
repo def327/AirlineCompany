@@ -24,6 +24,11 @@ public enum UserComandEnum {
 
 	EXIT_APPLICATION;
 
+	/**
+	 * !!! this method return type of comand by string
+	 * @param comandString
+	 * @return
+	 */
 	public static UserComandEnum stringToEnum(String comandString) {
 		switch (comandString) {
 		case "1": {

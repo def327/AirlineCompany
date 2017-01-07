@@ -29,7 +29,7 @@ public class GetAircraftsByParametrRangeAction {
 		while (true) {
 			try {
 				GetByRangeParametrEnum getSortType = choseRangedParametr(airlineCompanyManager, consoleReader);
-				
+
 				switch (getSortType) {
 
 				case RANGE_BY_FUEL_SPENDING: {
@@ -60,11 +60,10 @@ public class GetAircraftsByParametrRangeAction {
 
 	}
 
-	
-	
 	/**
-	 *  !!! This method get a type of a ranged parametr to show all aircrafts from airline company park
-	 *  
+	 * !!! This method get a type of a ranged parametr to show all aircrafts
+	 * from airline company park
+	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
 	 * @return
@@ -73,7 +72,7 @@ public class GetAircraftsByParametrRangeAction {
 	 */
 	private static GetByRangeParametrEnum choseRangedParametr(AirlineManageSystem airlineCompanyManager,
 			Scanner consoleReader) throws NoAirlineCompanyException, AircraftEmptyParkException {
-		
+
 		// To check: did you create an airline company
 		if (!airlineCompanyManager.haveAirlinerCompany()) {
 			throw new NoAirlineCompanyException();
@@ -173,7 +172,8 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method show aircrafts to user console ranged by minimum and maximum aircraft's fuel spending
+	 * !!! This method show aircrafts to user console ranged by minimum and
+	 * maximum aircraft's fuel spending
 	 * 
 	 * @param airlineCompanyManager
 	 * @param valueFromFuelSpendingInt
@@ -185,7 +185,7 @@ public class GetAircraftsByParametrRangeAction {
 	private static void showToUserConsoleAircraftsRangedByFuelSpending(AirlineManageSystem airlineCompanyManager,
 			int valueFromFuelSpendingInt, int valueToFuelSpendingInt)
 			throws NoAirlineCompanyException, AircraftEmptyParkException, NoSuitableAircraftsException {
-		
+
 		FuelSpendTonPerKm fromValueFuelSpending = new FuelSpendTonPerKm(valueFromFuelSpendingInt);
 		FuelSpendTonPerKm toValueFuelSpending = new FuelSpendTonPerKm(valueToFuelSpendingInt);
 
@@ -203,9 +203,9 @@ public class GetAircraftsByParametrRangeAction {
 					+ aircraft.getBasicTechAircraftData().getFuelSpending().getMeasureValueInString());
 		}
 	}
-	
+
 	/**
-	 *  !!! This method show all aircrafts from airline company park ranged by
+	 * !!! This method show all aircrafts from airline company park ranged by
 	 * minimum and maximum aircraft's middle velocity
 	 * 
 	 * @param airlineCompanyManager
@@ -216,15 +216,16 @@ public class GetAircraftsByParametrRangeAction {
 	private static void showAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
 			Scanner consoleReader) throws NoAirlineCompanyException, NoSuitableAircraftsException {
 		int valueFromMidVelocityInt = getMinimumAircraftMiddleVelocityInInt(consoleReader);
-		int valueToMidVelocityInt = getMaximumAircraftMiddleVelocityInInt(consoleReader,valueFromMidVelocityInt);
+		int valueToMidVelocityInt = getMaximumAircraftMiddleVelocityInInt(consoleReader, valueFromMidVelocityInt);
 
 		showToUserConsoleAircraftsRangedByMiddleVelocity(airlineCompanyManager, valueFromMidVelocityInt,
 				valueToMidVelocityInt);
 	}
 
 	/**
-	 *  !!! This method show aircrafts to user console ranged by minimum and maximum aircraft's middle velocity
-	 *  
+	 * !!! This method show aircrafts to user console ranged by minimum and
+	 * maximum aircraft's middle velocity
+	 * 
 	 * @param airlineCompanyManager
 	 * @param valueFromMidVelocityInt
 	 * @param valueToMidVelocityInt
@@ -234,7 +235,7 @@ public class GetAircraftsByParametrRangeAction {
 	private static void showToUserConsoleAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
 			int valueFromMidVelocityInt, int valueToMidVelocityInt)
 			throws NoAirlineCompanyException, NoSuitableAircraftsException {
-		
+
 		KilometerPerHour fromValueMidVelocity = new KilometerPerHour(valueFromMidVelocityInt);
 		KilometerPerHour toValueMidVelocity = new KilometerPerHour(valueToMidVelocityInt);
 		List<Aircraft> aircraftsList = airlineCompanyManager
@@ -253,8 +254,9 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method return a minimum value of aircraft's middle velocity, which
-	 * is entered from console by user
+	 * !!! This method return a minimum value of aircraft's middle velocity,
+	 * which is entered from console by user
+	 * 
 	 * @param consoleReader
 	 * @param valueFromMidVelocityInt
 	 * @return
@@ -279,10 +281,11 @@ public class GetAircraftsByParametrRangeAction {
 			}
 		}
 	}
-	
+
 	/**
-	 * !!! This method return a maximum value of aircraft's middle velocity, which
-	 * is entered from console by user	 * 
+	 * !!! This method return a maximum value of aircraft's middle velocity,
+	 * which is entered from console by user *
+	 * 
 	 * @param consoleReader
 	 * @param valueFromMidVelocityInt
 	 * @param valueToMidVelocityInt
@@ -308,6 +311,5 @@ public class GetAircraftsByParametrRangeAction {
 			}
 		}
 	}
-
 
 }

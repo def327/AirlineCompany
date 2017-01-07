@@ -4,6 +4,11 @@ public enum GetTotalParametrEnum {
 	
 	TOTAL_PEOPLE_CAPACITY,TOTAL_WEIGHT_CAPACITY;
 	
+	/**
+	 * !!! this method return total aircraft parametr  by string
+	 * @param comandString
+	 * @return
+	 */
 	public static GetTotalParametrEnum stringToEnum(String comandString) {
 		switch (comandString) {
 		case "1": {

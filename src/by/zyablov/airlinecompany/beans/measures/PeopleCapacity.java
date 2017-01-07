@@ -9,57 +9,50 @@ package by.zyablov.airlinecompany.beans.measures;
  */
 public class PeopleCapacity extends Measure {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 9174692227205197309L;
 
+	@Override
+	public String getMeasureValueInString() {
+		return measureValue + " persons";
+	}
+
+	@Override
+	public void setMeasureIntValue(int peopleCapacityValue) {
+		this.measureValue = peopleCapacityValue;
+	}
+
+	@Override
+	public int getMeasureValueInInt() {
+		return measureValue;
+	}
+
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param measureValue
 	 */
 	public PeopleCapacity(int peopleCapacityValue) {
 		super(peopleCapacityValue);
 	}
 
+	/**
+	 * !!! This a constuctor without parameters
+	 */
 	public PeopleCapacity() {
 		super(0);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * by.zyablov.airlinecompany.interfaces.Measureable#getMeasureValueInString(
-	 * )
+	/**
+	 * !!! This method parse fields to string
 	 */
 	@Override
-	public String getMeasureValueInString() {
-		return measureValue + " persons";
+	public String toString() {
+		return "peopleCapacity = " + measureValue + " persons";
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * by.zyablov.airlinecompany.interfaces.Measureable#setMeasureIntValue(int)
+	/**
+	 * !!! This method equals two PeopleCapacity
 	 */
-	@Override
-	public void setMeasureIntValue(int peopleCapacityValue) {
-		this.measureValue = peopleCapacityValue;
-
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * by.zyablov.airlinecompany.interfaces.Measureable#getMeasureValueInInt()
-	 */
-	@Override
-	public int getMeasureValueInInt() {
-		return measureValue;
-	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -77,10 +70,4 @@ public class PeopleCapacity extends Measure {
 		PeopleCapacity other = (PeopleCapacity) obj;
 		return (this.measureValue == other.measureValue);
 	}
-
-	@Override
-	public String toString() {
-		return "peopleCapacity = " + measureValue + " persons";
-	}
-
 }

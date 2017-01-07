@@ -16,6 +16,11 @@ import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 public class AddNewAirecraftAction {
 
+	/**
+	 * !!! This action create and add new aicraft
+	 * @param airlineCompanyManager
+	 * @param consoleReader
+	 */
 	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
 		while (true) {
 			try {

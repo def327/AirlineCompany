@@ -12,13 +12,12 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  */
 public class AirlinerAircraft extends Aircraft {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6664670089448551525L;
-
 	private AirlinerTechData airlinerTechData;
 
+	/**
+	 * !!!This method return a an aicraft full data to string
+	 */
 	@Override
 	public String getFullAircraftInformationDataToString() {
 
@@ -33,16 +32,18 @@ public class AirlinerAircraft extends Aircraft {
 		String airlinerType = this.getAirlinerTechData().getAirlinerType();
 		String havBusinesClass = (this.getAirlinerTechData().isHavBusinesClass()) ? "YES" : "NO";
 
-		String airlinerAircraftDataString = ("AIRCRAFT TYPE: " + aircraftTYpe + "\n" + "ID Aircraft: " + idAircraft + "\n"
-				+ "NAME: " + nameAircraft + "\n" + "MAXIMUM FUEL SPENDING: " + fuelSpending + "\n" + "MIDDLE VELOCITY: "
-				+ middleVelocity + "\n" + "MAX PEOPLE CAPACITY: " + maxPeopleCapacity + "\n" + "MAX WEIGHT CAPACITY: "
-				+ maxWeightCapacity + "\n" + "AIRLINER TYPE: " + airlinerType + "\n" + "HAVE BUSSINESS CLASS: "
-				+ havBusinesClass);
+		String airlinerAircraftDataString = ("AIRCRAFT TYPE: " + aircraftTYpe + "\n" + "ID Aircraft: " + idAircraft
+				+ "\n" + "NAME: " + nameAircraft + "\n" + "MAXIMUM FUEL SPENDING: " + fuelSpending + "\n"
+				+ "MIDDLE VELOCITY: " + middleVelocity + "\n" + "MAX PEOPLE CAPACITY: " + maxPeopleCapacity + "\n"
+				+ "MAX WEIGHT CAPACITY: " + maxWeightCapacity + "\n" + "AIRLINER TYPE: " + airlinerType + "\n"
+				+ "HAVE BUSSINESS CLASS: " + havBusinesClass);
 
 		return airlinerAircraftDataString;
 	}
 
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param idAircraft
 	 * @param nameAircraft
 	 * @param basicTechAircraftData
@@ -55,6 +56,8 @@ public class AirlinerAircraft extends Aircraft {
 	}
 
 	/**
+	 * !!! This a constuctor without parameters
+	 * 
 	 * @param airlinerType
 	 * @param havBusinesClass
 	 * 
@@ -64,21 +67,25 @@ public class AirlinerAircraft extends Aircraft {
 		this.airlinerTechData = new AirlinerTechData();
 	}
 
-	/**
-	 * @return the airlinerTechData
-	 */
 	public AirlinerTechData getAirlinerTechData() {
 		return airlinerTechData;
 	}
 
-	/**
-	 * @param airlinerTechData
-	 *            the airlinerTechData to set
-	 */
 	public void setAirlinerTechData(AirlinerTechData airlinerTechData) {
 		this.airlinerTechData = airlinerTechData;
 	}
 
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return (super.toString() + "\n" + this.airlinerTechData.toString());
+	}
+
+	/**
+	 * !!! This method equals two aicrafts
+	 */
 	@Override
 	public boolean equals(Object obj) {
 
@@ -100,11 +107,6 @@ public class AirlinerAircraft extends Aircraft {
 
 		AirlinerAircraft other = (AirlinerAircraft) obj;
 		return (this.airlinerTechData.equals(other.airlinerTechData));
-	}
-
-	@Override
-	public String toString() {
-		return (super.toString() + "\n" + this.airlinerTechData.toString());
 	}
 
 }

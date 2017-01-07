@@ -13,17 +13,6 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
  */
 public class BuilderCargoAircraft extends BuilderAircraft {
 
-	/**
-	 * 
-	 */
-	public BuilderCargoAircraft() {
-		aircraft = new CargoAircraft();
-	}
-
-//  Roll back if have problem with cast during RUN-TIME
-//	public void setCargoAircraftTechdata(final CargoAircraftTechdata cargoAircraftTechdata) {
-//		((CargoAircraft) aircraft).setCargoAircraftTechdata(cargoAircraftTechdata);
-//	}
 
 	@Override
 	public CargoAircraft getResult() {
@@ -33,6 +22,13 @@ public class BuilderCargoAircraft extends BuilderAircraft {
 	@Override
 	public void setUniqueAircraftTechData(UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior) {
 		((CargoAircraft)aircraft).setCargoAircraftTechdata((CargoAircraftTechData)uniqueAircraftTechDataBehavior);		
+	}
+	
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public BuilderCargoAircraft() {
+		aircraft = new CargoAircraft();
 	}
 
 }

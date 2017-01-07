@@ -8,6 +8,6 @@ package by.zyablov.airlinecompany.interfaces;
  *
  */
 public interface BuilderBehavior {
-	
+
 	Object getResult();
 }

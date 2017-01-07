@@ -13,15 +13,14 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
  */
 public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -375709814509627970L;
 
 	private String airlinerType;
 	private boolean haveBusinesClass;
 
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param airlinerType
 	 * @param havBusinesClass
 	 */
@@ -30,11 +29,41 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 		this.haveBusinesClass = havBusinesClass;
 	}
 
+	/**
+	 * !!! This a constuctor without parameters
+	 */
 	public AirlinerTechData() {
 		this.airlinerType = null;
 		this.haveBusinesClass = false;
 	}
 
+	public String getAirlinerType() {
+		return airlinerType;
+	}
+
+	public void setAirlinerType(String airlinerType) {
+		this.airlinerType = airlinerType;
+	}
+
+	public boolean isHavBusinesClass() {
+		return haveBusinesClass;
+	}
+
+	public void setHavBusinesClass(boolean havBusinesClass) {
+		this.haveBusinesClass = havBusinesClass;
+	}
+
+	/**
+	 * !!! This method parse fields to string
+	 */
+	@Override
+	public String toString() {
+		return "airlinerType = " + this.airlinerType + "\n" + "havBusinesClass = " + this.haveBusinesClass;
+	}
+
+	/**
+	 * !!! This method equals two AirlinerTechData
+	 */
 	@Override
 	public boolean equals(Object obj) {
 
@@ -53,40 +82,4 @@ public class AirlinerTechData implements UniqueAircraftTechDataBehavior, Seriali
 		AirlinerTechData other = (AirlinerTechData) obj;
 		return ((this.haveBusinesClass == other.haveBusinesClass) && (this.airlinerType.equals(other.airlinerType)));
 	}
-
-	@Override
-	public String toString() {
-		return "airlinerType = " + this.airlinerType + "\n" + "havBusinesClass = " + this.haveBusinesClass;
-	}
-
-	/**
-	 * @return the airlinerType
-	 */
-	public String getAirlinerType() {
-		return airlinerType;
-	}
-
-	/**
-	 * @param airlinerType
-	 *            the airlinerType to set
-	 */
-	public void setAirlinerType(String airlinerType) {
-		this.airlinerType = airlinerType;
-	}
-
-	/**
-	 * @return the havBusinesClass
-	 */
-	public boolean isHavBusinesClass() {
-		return haveBusinesClass;
-	}
-
-	/**
-	 * @param havBusinesClass
-	 *            the havBusinesClass to set
-	 */
-	public void setHavBusinesClass(boolean havBusinesClass) {
-		this.haveBusinesClass = havBusinesClass;
-	}
-
 }

@@ -5,7 +5,7 @@ public interface Measureable {
 	String getMeasureValueInString();
 
 	void setMeasureIntValue(int measureValue);
-	
+
 	int getMeasureValueInInt();
 
 }

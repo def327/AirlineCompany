@@ -15,40 +15,23 @@ import by.zyablov.airlinecompany.tools.HashMakeManager;
  */
 public abstract class Aircraft implements Comparable<Object>, Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 723753384223393921L;
+	private static int aircraftsCounter = 0;
 
-
-	protected transient int idAircraft;  
+	protected transient int idAircraft;
 	protected String nameAircraft;
 	protected BasicTechAircraftData basicTechAircraftData;
-	
-	private static int aircraftsCounter;	
-	
-	static{
-		aircraftsCounter = 0;
-	}
-	
-	/**
-	 * @return the aircraftsCounter
-	 */
-	public static int getAircraftsCounter() {
-		return Aircraft.aircraftsCounter;
-	}
-	/**
-	 * @param aircraftsCounter the aircraftsCounter to set
-	 */
-	public static void setAircraftsCounter(int aircraftsCounter) {
-		Aircraft.aircraftsCounter = aircraftsCounter;
-	}	
-	
 
+	/**
+	 * !!! This method return a an aicraft full data to string
+	 * 
+	 * @return
+	 */
 	public abstract String getFullAircraftInformationDataToString();
 
-	
 	/**
+	 * !!! This a constuctor with parameters
+	 * 
 	 * @param idAircraft
 	 * @param nameAircraft
 	 * @param basicTechAircraftData
@@ -56,81 +39,85 @@ public abstract class Aircraft implements Comparable<Object>, Serializable {
 	public Aircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData) {
 		this.idAircraft = idAircraft;
 		this.nameAircraft = nameAircraft;
-		this.basicTechAircraftData = basicTechAircraftData;	
-		
-		Aircraft.aircraftsCounter++;		//for static field
+		this.basicTechAircraftData = basicTechAircraftData;
+
+		Aircraft.aircraftsCounter++;
 	}
 
-
-
 	/**
+	 * !!! This a constuctor without parameters
 	 * 
 	 */
 	public Aircraft() {
 		idAircraft = 0;
 		nameAircraft = null;
 		basicTechAircraftData = new BasicTechAircraftData();
-		
-		Aircraft.aircraftsCounter++;		//for static field
+
+		Aircraft.aircraftsCounter++; // for static field
 	}
 
 	/**
-	 * @return the idAircraft
+	 * !!! This a method get a static field
+	 * 
+	 * @return the aircraftsCounter
 	 */
+	public static int getAircraftsCounter() {
+		return Aircraft.aircraftsCounter;
+	}
+
+	/**
+	 * !!! This method set a staitc field
+	 * 
+	 * @param aircraftsCounter
+	 *            the aircraftsCounter to set
+	 */
+	public static void setAircraftsCounter(int aircraftsCounter) {
+		Aircraft.aircraftsCounter = aircraftsCounter;
+	}
+
 	public int getIdAircraft() {
 		return idAircraft;
 	}
 
-
-
-	/**
-	 * @param idAircraft the idAircraft to set
-	 */
 	public void setIdAircraft(int idAircraft) {
 		this.idAircraft = idAircraft;
 	}
 
-
-
-	/**
-	 * @return the nameAircraft
-	 */
 	public String getNameAircraft() {
 		return nameAircraft;
 	}
 
-
-
-	/**
-	 * @param nameAircraft the nameAircraft to set
-	 */
 	public void setNameAircraft(String nameAircraft) {
 		this.nameAircraft = nameAircraft;
 	}
 
-
-
-	/**
-	 * @return the basicTechAircraftData
-	 */
 	public BasicTechAircraftData getBasicTechAircraftData() {
 		return basicTechAircraftData;
 	}
 
-
-
-	/**
-	 * @param basicTechAircraftData the basicTechAircraftData to set
-	 */
 	public void setBasicTechAircraftData(BasicTechAircraftData basicTechAircraftData) {
 		this.basicTechAircraftData = basicTechAircraftData;
 	}
 
+	/**
+	 * !!! This method parse fields to string
+	 */
 	@Override
-	public int hashCode() {		
+	public String toString() {
+		return "id = " + idAircraft + "\n" + "name = " + nameAircraft + "\n" + basicTechAircraftData.toString();
+	}
+
+	/**
+	 * !!! This method return a hash code
+	 */
+	@Override
+	public int hashCode() {
 		return (HashMakeManager.createHashValue(this.nameAircraft + this.idAircraft));
 	}
 
+	/**
+	 * !!! This method equals two aicrafts 
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -149,21 +136,15 @@ public abstract class Aircraft implements Comparable<Object>, Serializable {
 		return ((this.idAircraft == other.idAircraft) && (this.nameAircraft.equals(other.nameAircraft))
 				&& (this.basicTechAircraftData.equals(other.basicTechAircraftData)));
 	}
-	
-	@Override
-	public String toString() {		
-		return "id = " + idAircraft + "\n" + "name = " + nameAircraft + "\n" + basicTechAircraftData.toString();
-	}
-	
-	
+
 	/**
 	 * !!! This method originaly compare aricrafts by their middle velocity
 	 */
 	@Override
-	public int compareTo(Object o) {	
-		Aircraft other = (Aircraft)o;
-		KilometerPerHour otherMidVelocity =  other.getBasicTechAircraftData().getMiddleVelocity();
-		
+	public int compareTo(Object o) {
+		Aircraft other = (Aircraft) o;
+		KilometerPerHour otherMidVelocity = other.getBasicTechAircraftData().getMiddleVelocity();
+
 		return ((KilometerPerHour) this.basicTechAircraftData.getMiddleVelocity()).compareTo(otherMidVelocity);
 	}
 }

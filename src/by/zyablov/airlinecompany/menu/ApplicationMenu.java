@@ -30,10 +30,9 @@ public class ApplicationMenu {
 
 	private AirlineManageSystem airlineCompanyManager;
 
-	public ApplicationMenu() {
-		airlineCompanyManager = new AirlineManageSystem();
-	}
-
+	/**
+	 * !!! This method run aplications menu
+	 */
 	public void mainMenuRun() {
 
 		// Create only one Scanner object for a whole menu
@@ -101,6 +100,13 @@ public class ApplicationMenu {
 				continue;
 			}
 		}
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public ApplicationMenu() {
+		airlineCompanyManager = new AirlineManageSystem();
 	}
 
 }

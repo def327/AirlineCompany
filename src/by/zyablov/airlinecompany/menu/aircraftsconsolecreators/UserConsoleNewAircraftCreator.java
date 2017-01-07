@@ -17,7 +17,8 @@ public class UserConsoleNewAircraftCreator {
 	private NewAircraftConsoleCreatorBehavior newAircraftconsoleCreator;
 
 	/**
-	 * !!! This method create via user console new aircraft and add it to airline company park
+	 * !!! This method create via user console new aircraft and add it to
+	 * airline company park
 	 * 
 	 * @param consoleReader
 	 * @param airlineCompanyManager

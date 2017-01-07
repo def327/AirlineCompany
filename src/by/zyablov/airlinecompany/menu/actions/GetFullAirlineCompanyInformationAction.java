@@ -13,21 +13,21 @@ import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.W
  *
  */
 public class GetFullAirlineCompanyInformationAction {
-		
+
 	/**
 	 * !!! This method show a full information about airline company
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager){
+	public static void runAction(AirlineManageSystem airlineCompanyManager) {
 		try {
-			
-			if(!(airlineCompanyManager.haveAirlinerCompany())){
+
+			if (!(airlineCompanyManager.haveAirlinerCompany())) {
 				throw new NoAirlineCompanyException();
 			}
-			
+
 			System.out.println(airlineCompanyManager.getFullAirlineCompanyInformation());
 		} catch (NoAirlineCompanyException e) {
 			System.out.println(WARNING_MESSAGE_NEED_AIRLINE_COMPANY);
-		}			
+		}
 	}
 
 }

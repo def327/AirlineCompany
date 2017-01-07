@@ -18,10 +18,27 @@ public class BuilderAirlineCompany implements CompanyBuilderBehavior {
 	private AirlineCompany airlineCompany;
 
 	/**
-	 * @param airlineCompany
+	 * !!! This method fill all fields of a new airline company, just need only
+	 * a name of a new company
+	 * 
+	 * @param companyName
 	 */
-	public BuilderAirlineCompany() {
-		airlineCompany = new AirlineCompany();
+	public void buildAirlineCompanyUsingOnlyAirlineCompanyName(String companyName) {
+		airlineCompany.setCompanyName(companyName);
+
+		// Make all symbols at the compnay name to lower case and delete spaces
+		// beetwen words
+		airlineCompany.setCompanyEmail(companyName.toLowerCase().replace(" ", "") + "@workmail.com");
+
+		/*
+		 * Create a сompany founding date, get a date from operating system just
+		 * at at the time of creation new GregorianCalendar object
+		 */
+		GregorianCalendar companyFoundDate = new GregorianCalendar();
+		airlineCompany.setCompanyFoundDate(companyFoundDate);
+
+		// Generate a unic company id for a new airline company
+		airlineCompany.setCompanyId((int) (Math.random() * 300));
 	}
 
 	@Override
@@ -48,31 +65,17 @@ public class BuilderAirlineCompany implements CompanyBuilderBehavior {
 		airlineCompany.setAircraftPark(aircraftPark);
 	}
 
-	/**
-	 * !!! This method fill all fields of a new airline company, just need only
-	 * a name of a new company
-	 * 
-	 * @param companyName
-	 */
-	public void buildAirlineCompanyUsingOnlyAirlineCompanyName(String companyName) {
-		airlineCompany.setCompanyName(companyName);
-		
-		//Make all symbols at the compnay name to lower case and delete spaces beetwen words
-		airlineCompany.setCompanyEmail(companyName.toLowerCase().replace(" ", "") + "@workmail.com");
-		
-		/*
-		 * Create a сompany founding date, get a date from operating system just
-		 * at at the time of creation new GregorianCalendar object
-		 */
-		GregorianCalendar companyFoundDate = new GregorianCalendar();
-		airlineCompany.setCompanyFoundDate(companyFoundDate);
-
-		// Generate a unic company id for a new airline company
-		airlineCompany.setCompanyId((int) (Math.random() * 300));
-	}
-
 	public AirlineCompany getResult() {
 		return airlineCompany;
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 * 
+	 * @param airlineCompany
+	 */
+	public BuilderAirlineCompany() {
+		airlineCompany = new AirlineCompany();
 	}
 
 }

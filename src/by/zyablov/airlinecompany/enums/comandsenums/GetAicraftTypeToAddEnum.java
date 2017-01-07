@@ -4,6 +4,11 @@ public enum GetAicraftTypeToAddEnum {
 	
 	ADD_NEW_AIRLINE_AIRCRAFT, ADD_NEW_CARGO_AIRCRAFT;
 
+	/**
+	 * !!! this method return type of aircraft by string
+	 * @param comandString
+	 * @return
+	 */
 	public static GetAicraftTypeToAddEnum stringToEnum(String comandString) {
 		switch (comandString) {
 		case "1": {

@@ -7,7 +7,7 @@ import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 import by.zyablov.airlinecompany.interfaces.FileAircraftsWriterable;
 
 public abstract class FileAircraftsWriter implements FileAircraftsWriterable {
-	
+
 	protected final String pathToFileInString = "src/datafiles/datalist.dat";
 
 	/**

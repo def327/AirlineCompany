@@ -31,10 +31,39 @@ public class AirlineManageSystem {
 	private AirlineCompany airlineCompany;
 
 	/**
-	 * @param airlineCompany
+	 * !!! This method return true if airline company object was created else
+	 * return false
+	 * 
+	 * @return
 	 */
-	public AirlineManageSystem() {
-		this.airlineCompany = null;
+	public boolean haveAirlinerCompany() {
+		return (this.airlineCompany != null);
+	}
+
+	/**
+	 * !!! This method add new aircraft to airliner company park
+	 * 
+	 */
+	public boolean addAircraft(Aircraft newAircraft) throws NoAirlineCompanyException {
+
+		if (this.airlineCompany == null) {
+			throw new NoAirlineCompanyException();
+		}
+
+		return (this.airlineCompany.addAircraftToPark(newAircraft));
+	}
+
+	/**
+	 * !!! This method remove existing aircraft from airliner company park
+	 * 
+	 */
+	public boolean removeAircraft(Aircraft removingAircraft) throws NoAirlineCompanyException {
+
+		if (this.airlineCompany == null) {
+			throw new NoAirlineCompanyException();
+		}
+
+		return (this.airlineCompany.removeAircraftFromPark(removingAircraft));
 	}
 
 	/**
@@ -160,32 +189,6 @@ public class AirlineManageSystem {
 	}
 
 	/**
-	 * !!! This method add new aircraft to airliner company park
-	 * 
-	 */
-	public boolean addAircraft(Aircraft newAircraft) throws NoAirlineCompanyException {
-
-		if (this.airlineCompany == null) {
-			throw new NoAirlineCompanyException();
-		}
-
-		return (this.airlineCompany.addAircraftToPark(newAircraft));
-	}
-
-	/**
-	 * !!! This method remove existing aircraft from airliner company park
-	 * 
-	 */
-	public boolean removeAircraft(Aircraft removingAircraft) throws NoAirlineCompanyException {
-
-		if (this.airlineCompany == null) {
-			throw new NoAirlineCompanyException();
-		}
-
-		return (this.airlineCompany.removeAircraftFromPark(removingAircraft));
-	}
-
-	/**
 	 * !!! This method calculate a total amount people capacity of all aircrafts
 	 * at the Aircraft park of airline company
 	 * 
@@ -216,21 +219,6 @@ public class AirlineManageSystem {
 		}
 
 		return (this.airlineCompany.getTotalAircraftsWeightCapacity());
-	}
-
-	/**
-	 * @return the airlineCompany
-	 */
-	public AirlineCompany getAirlineCompany() {
-		return airlineCompany;
-	}
-
-	/**
-	 * @param airlineCompany
-	 *            the airlineCompany to set
-	 */
-	public void setAirlineCompany(AirlineCompany airlineCompany) {
-		this.airlineCompany = airlineCompany;
 	}
 
 	/**
@@ -331,18 +319,25 @@ public class AirlineManageSystem {
 				System.out.println("Problems to add new aircraft to airline company park!");
 				return;
 			}
-			;
+
 		}
 	}
 
 	/**
-	 * !!! This method return true if airline company object was created else
-	 * return false
+	 * !!! This is a constructor without parameters
 	 * 
-	 * @return
+	 * @param airlineCompany
 	 */
-	public boolean haveAirlinerCompany() {
-		return (this.airlineCompany != null);
+	public AirlineManageSystem() {
+		this.airlineCompany = null;
+	}
+
+	public AirlineCompany getAirlineCompany() {
+		return airlineCompany;
+	}
+
+	public void setAirlineCompany(AirlineCompany airlineCompany) {
+		this.airlineCompany = airlineCompany;
 	}
 
 }

@@ -18,13 +18,6 @@ public class BuilderBasicTechAiracft implements BuilderBehavior {
 
 	private BasicTechAircraftData specification;
 
-	/**
-	 * 
-	 */
-	public BuilderBasicTechAiracft() {
-		specification = new BasicTechAircraftData();
-	}
-
 	public void setMaxWeigthCapacity(int maxWeigthCapacity) {
 		specification.setMaxWeigthCapacity(new Tons(maxWeigthCapacity));
 	}
@@ -33,16 +26,23 @@ public class BuilderBasicTechAiracft implements BuilderBehavior {
 		specification.setFuelSpending(new FuelSpendTonPerKm(fuelSpending));
 	}
 
-	public void setMiddleVelocity(int midVelocity){
+	public void setMiddleVelocity(int midVelocity) {
 		specification.setMiddleVelocity(new KilometerPerHour(midVelocity));
 	}
 
-	public void setPeopleCapacity(int peopleCapacity){
+	public void setPeopleCapacity(int peopleCapacity) {
 		specification.setMaxPeopleCapacity(new PeopleCapacity(peopleCapacity));
 	}
-	
-	public BasicTechAircraftData getResult(){
+
+	public BasicTechAircraftData getResult() {
 		return specification;
+	}
+
+	/**
+	 * !!! This a constuctor without parameters
+	 */
+	public BuilderBasicTechAiracft() {
+		specification = new BasicTechAircraftData();
 	}
 
 }

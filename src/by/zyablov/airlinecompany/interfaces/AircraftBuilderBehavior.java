@@ -11,15 +11,15 @@ import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
  *
  */
 public interface AircraftBuilderBehavior extends BuilderBehavior {
-	
+
 	void setId(final int id);
 
 	void setName(final String name);
-	
+
 	void setBasicTechSpecificationAircraft(final BasicTechAircraftData specification);
-	
+
 	void setUniqueAircraftTechData(final UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior);
-	
-    Aircraft getResult();
-	
+
+	Aircraft getResult();
+
 }
