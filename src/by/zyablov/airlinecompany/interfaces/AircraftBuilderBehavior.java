@@ -18,6 +18,8 @@ public interface AircraftBuilderBehavior extends BuilderBehavior {
 	
 	void setBasicTechSpecificationAircraft(final BasicTechAircraftData specification);
 	
+	void setUniqueAircraftTechData(final UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior);
+	
     Aircraft getResult();
 	
 }
