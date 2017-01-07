@@ -7,10 +7,10 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
-import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
+import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
 import by.zyablov.airlinecompany.interfaces.NewAircraftConsoleCreatorBehavior;
 import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
@@ -25,7 +25,7 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	 * @param aircraftBuilder
 	 */
 	public void addAndCreateNewAircraft(Scanner consoleReader, AirlineManageSystem airlineCompanyManager,
-			BuilderAircraft aircraftBuilder) {
+			AircraftBuilderBehavior aircraftBuilder) {
 
 		Aircraft newAircraft = createNewAircraft(consoleReader, aircraftBuilder);
 
@@ -48,7 +48,7 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	 * @param airlineCompanyManager
 	 * @param aircraft
 	 */
-	private Aircraft createNewAircraft(Scanner consoleReader, BuilderAircraft aircraftBuilder) {
+	private Aircraft createNewAircraft(Scanner consoleReader, AircraftBuilderBehavior aircraftBuilder) {
 
 		String newAicraftName = getNameForNewAicraft(consoleReader);
 		aircraftBuilder.setName(newAicraftName);

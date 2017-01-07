@@ -27,6 +27,12 @@ public abstract class Measure implements Measureable, Comparable<Object>, Serial
 		this.measureValue = measureValue;
 	}
 
+	public abstract String getMeasureValueInString();
+
+	public abstract void setMeasureIntValue(int measureValue);
+
+	public abstract int getMeasureValueInInt();
+
 	@Override
 	public int compareTo(Object o) {
 		Measure other = (Measure) o;

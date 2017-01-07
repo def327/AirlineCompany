@@ -5,7 +5,7 @@ package by.zyablov.airlinecompany.menu.aircraftsconsolecreators;
 
 import java.util.Scanner;
 
-import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
+import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
 import by.zyablov.airlinecompany.interfaces.NewAircraftConsoleCreatorBehavior;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
@@ -23,7 +23,7 @@ public class UserConsoleNewAircraftCreator {
 	 * @param airlineCompanyManager
 	 */
 	public void addNewAircraftByUserConsole(Scanner consoleReader, AirlineManageSystem airlineCompanyManager,
-			BuilderAircraft aircraftBuilder) {
+			AircraftBuilderBehavior aircraftBuilder) {
 
 		this.newAircraftconsoleCreator.addAndCreateNewAircraft(consoleReader, airlineCompanyManager, aircraftBuilder);
 	}

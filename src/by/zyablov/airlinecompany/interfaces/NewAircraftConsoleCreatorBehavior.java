@@ -5,7 +5,6 @@ package by.zyablov.airlinecompany.interfaces;
 
 import java.util.Scanner;
 
-import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 /**
@@ -20,7 +19,7 @@ public interface NewAircraftConsoleCreatorBehavior {
 	 * @param airlineCompanyManager
 	 * @param aircraftBuilder
 	 */
-	void addAndCreateNewAircraft(Scanner consoleReader, AirlineManageSystem airlineCompanyManager,BuilderAircraft aircraftBuilder);
+	void addAndCreateNewAircraft(Scanner consoleReader, AirlineManageSystem airlineCompanyManager,AircraftBuilderBehavior aircraftBuilder);
 }
 
 

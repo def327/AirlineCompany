@@ -11,12 +11,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
-import by.zyablov.airlinecompany.beans.builders.BuilderAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerAircraftTechData;
 import by.zyablov.airlinecompany.beans.builders.BuilderBasicTechAiracft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
+import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
 
 /**
  * @author Дмитрий
@@ -143,7 +143,7 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	private static Aircraft createAirlinerAicraft(String[] fieldsOfAircraft) {
 
 		// Create a new airliner aircraft object
-		BuilderAircraft buildAircraft = new BuilderAirlinerAircraft();
+		AircraftBuilderBehavior buildAircraft = new BuilderAirlinerAircraft();
 		buildAircraft.setId(Integer.parseInt(fieldsOfAircraft[AIRCRAFT_ID_ARRAY_INDEX]));
 		buildAircraft.setName(fieldsOfAircraft[AIRCRAFT_NAME_ARRAY_INDEX]);
 
@@ -206,7 +206,7 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	private static Aircraft createCargoAicraft(String[] fieldsOfAircraft) {
 
 		// Create a new cargo aircraft object
-		BuilderAircraft buildAircraft = new BuilderCargoAircraft();
+		AircraftBuilderBehavior buildAircraft = new BuilderCargoAircraft();
 		buildAircraft.setId(Integer.parseInt(fieldsOfAircraft[AIRCRAFT_ID_ARRAY_INDEX]));
 		buildAircraft.setName(fieldsOfAircraft[AIRCRAFT_NAME_ARRAY_INDEX]);
 

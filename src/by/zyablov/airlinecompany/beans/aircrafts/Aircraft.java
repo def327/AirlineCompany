@@ -166,5 +166,4 @@ public abstract class Aircraft implements Comparable<Object>, Serializable {
 		
 		return ((KilometerPerHour) this.basicTechAircraftData.getMiddleVelocity()).compareTo(otherMidVelocity);
 	}
-
 }

@@ -48,7 +48,6 @@ public class Kilometer extends Measure {
 	@Override
 	public void setMeasureIntValue(int kilometrsValue) {
 		this.measureValue = kilometrsValue;
-
 	}
 
 	@Override

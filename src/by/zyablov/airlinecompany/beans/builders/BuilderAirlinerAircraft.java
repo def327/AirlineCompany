@@ -28,7 +28,6 @@ public class BuilderAirlinerAircraft extends BuilderAircraft {
 
 	@Override
 	public void setUniqueAircraftTechData(UniqueAircraftTechDataBehavior uniqueAircraftTechDataBehavior) {
-		((AirlinerAircraft)aircraft).setAirlinerTechData((AirlinerTechData)uniqueAircraftTechDataBehavior);		
+		((AirlinerAircraft) aircraft).setAirlinerTechData((AirlinerTechData) uniqueAircraftTechDataBehavior);		
 	}
-
 }
