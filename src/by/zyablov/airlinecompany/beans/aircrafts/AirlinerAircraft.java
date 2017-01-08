@@ -1,22 +1,45 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.beans.aircrafts;
 
 import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
 import by.zyablov.airlinecompany.beans.techdata.BasicTechAircraftData;
 
 /**
- * @author Дмитрий
  *
+ * Class {@code AirlinerAircraft} represents an airliner aircraft,
+ * {@code AirlinerAircraft} is a child of {@code Aircraft}, add a new field
+ * airlinerTechData, which represents an unique technical characteristic of
+ * every {@code CargoAircraft} object.
+ * 
+ * 
+ * @author Дмитрий
+ * @version 1.0
+ * @since 2016
+ * 
+ * @see by.zyablov.airlinecompany.beans.techdata.AirlinerTechData
+ * 
  */
 public class AirlinerAircraft extends Aircraft {
 
+	/**
+	 * This value is genereted by JVM to serialize {@code AirlinerAircraft}
+	 * class
+	 */
 	private static final long serialVersionUID = 6664670089448551525L;
+
+	/**
+	 * This value represents an unique technical characteristic of every
+	 * {@code AirlinerAircraft} object.
+	 * 
+	 * @see by.zyablov.airlinecompany.beans.techdata.AirlinerTechData
+	 */
 	private AirlinerTechData airlinerTechData;
 
 	/**
-	 * !!!This method return a an aicraft full data to string
+	 * Returns an {@code AirlinerAircraft} object's full information, which is
+	 * parsed to string
+	 * 
+	 * @return a full techinical information, parsed to String
 	 */
 	@Override
 	public String getFullAircraftInformationDataToString() {
@@ -42,12 +65,19 @@ public class AirlinerAircraft extends Aircraft {
 	}
 
 	/**
-	 * !!! This a constuctor with parameters
+	 * Constructor.
 	 * 
 	 * @param idAircraft
+	 *            - a unique ID of {@code Aircraft} object
 	 * @param nameAircraft
+	 *            - a name for {@code Aircraft} object
 	 * @param basicTechAircraftData
+	 *            - a {@code BasicTechAircraftData}, which represent's basic
+	 *            technical characteristic of {@code Aircraft} object
 	 * @param airlinerTechData
+	 *            - a {@code AirlinerTechData}, which represent's an airliner
+	 *            unique technical characteristic.
+	 * 
 	 */
 	public AirlinerAircraft(int idAircraft, String nameAircraft, BasicTechAircraftData basicTechAircraftData,
 			AirlinerTechData airlinerTechData) {
@@ -56,10 +86,18 @@ public class AirlinerAircraft extends Aircraft {
 	}
 
 	/**
-	 * !!! This a constuctor without parameters
+	 * Constructor.
 	 * 
-	 * @param airlinerType
-	 * @param havBusinesClass
+	 * @param idAircraft
+	 *            - a unique ID of {@code Aircraft} object
+	 * @param nameAircraft
+	 *            - a name for {@code Aircraft} object
+	 * @param basicTechAircraftData
+	 *            - a {@code BasicTechAircraftData}, which represent's basic
+	 *            technical characteristic of {@code Aircraft} object
+	 * @param airlinerTechData
+	 *            - a {@code AirlinerTechData}, which represent's an airliner
+	 *            unique technical characteristic.
 	 * 
 	 */
 	public AirlinerAircraft() {
@@ -76,7 +114,12 @@ public class AirlinerAircraft extends Aircraft {
 	}
 
 	/**
-	 * !!! This method parse fields to string
+	 * Returns a string representation of {@code AirlinerAircraft} object.
+	 * 
+	 * @return a string, which is consisted of
+	 *         <i>idAircraft</i>,<i>nameAircraft</i>,
+	 *         <i>basicTechAircraftData</i> and <i>airlinerTechData</i> fields
+	 *         of {@code AirlinerAircraft}.
 	 */
 	@Override
 	public String toString() {
@@ -84,7 +127,14 @@ public class AirlinerAircraft extends Aircraft {
 	}
 
 	/**
-	 * !!! This method equals two aicrafts
+	 * Indicates whether some other {@code AirlinerAircraft} object is "equal to
+	 * " this one
+	 * 
+	 * @param obj
+	 *            the reference object with which to compare
+	 * @return <b>{@code true}</b> if this {@code AirlinerAircraft} object is
+	 *         the same as obj argument; <b>{@code false}</b> otherwise.
+	 * 
 	 */
 	@Override
 	public boolean equals(Object obj) {

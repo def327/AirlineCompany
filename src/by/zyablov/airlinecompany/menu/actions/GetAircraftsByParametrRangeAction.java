@@ -212,9 +212,11 @@ public class GetAircraftsByParametrRangeAction {
 	 * @param consoleReader
 	 * @throws NoAirlineCompanyException
 	 * @throws NoSuitableAircraftsException
+	 * @throws AircraftEmptyParkException 
 	 */
 	private static void showAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
-			Scanner consoleReader) throws NoAirlineCompanyException, NoSuitableAircraftsException {
+			Scanner consoleReader) throws NoAirlineCompanyException, NoSuitableAircraftsException, AircraftEmptyParkException {
+		
 		int valueFromMidVelocityInt = getMinimumAircraftMiddleVelocityInInt(consoleReader);
 		int valueToMidVelocityInt = getMaximumAircraftMiddleVelocityInInt(consoleReader, valueFromMidVelocityInt);
 
@@ -231,10 +233,11 @@ public class GetAircraftsByParametrRangeAction {
 	 * @param valueToMidVelocityInt
 	 * @throws NoAirlineCompanyException
 	 * @throws NoSuitableAircraftsException
+	 * @throws AircraftEmptyParkException 
 	 */
 	private static void showToUserConsoleAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
 			int valueFromMidVelocityInt, int valueToMidVelocityInt)
-			throws NoAirlineCompanyException, NoSuitableAircraftsException {
+			throws NoAirlineCompanyException, NoSuitableAircraftsException, AircraftEmptyParkException {
 
 		KilometerPerHour fromValueMidVelocity = new KilometerPerHour(valueFromMidVelocityInt);
 		KilometerPerHour toValueMidVelocity = new KilometerPerHour(valueToMidVelocityInt);

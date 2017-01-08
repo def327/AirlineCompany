@@ -86,10 +86,11 @@ public class AirlineManageSystem {
 	 * This method get the List of aircrafts from airline company park, which
 	 * middle velocity parameter are included in the range formed by values
 	 * fromValueMidVelocity and toValueMidVelocity
+	 * @throws AircraftEmptyParkException 
 	 * 
 	 */
 	public List<Aircraft> getListOfFoundAircraftsByMidVelocityRange(KilometerPerHour fromValueMidVelocity,
-			KilometerPerHour toValueMidVelocity) throws NoAirlineCompanyException {
+			KilometerPerHour toValueMidVelocity) throws NoAirlineCompanyException, AircraftEmptyParkException {
 
 		if (this.airlineCompany == null) {
 			throw new NoAirlineCompanyException();

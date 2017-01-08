@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.beans.company;
 
 import java.text.SimpleDateFormat;
@@ -8,20 +6,46 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
+ * Class {@code Company} represents a company, which includes id, companie's
+ * name, companie's email and companie's date of found. Also
+ * {@code AirlineCompany} class inherits {@code Company} and give's more
+ * opportunitie's to manage airline company.
+ * 
  * @author Дмитрий
- *
+ * @version 1.0
+ * @since 2016
+ * 
+ * @see by.zyablov.airlinecompany.beans.company.AirlineCompany
+ * 
  */
 public abstract class Company {
 
+	/**
+	 * This value is a unique ID for {@code Company} object.
+	 */
 	private int companyId;
+
+	/**
+	 * This value is a name of {@code Company} object.
+	 */
 	private String companyName;
+
+	/**
+	 * This value is a email of {@code Company} object.
+	 */
 	private String companyEmail;
+
+	/**
+	 * This value is a date of found of {@code Company} object.
+	 */
 	private GregorianCalendar companyFoundDate;
 
 	/**
-	 * !!! This method return a company found date parsed to string
+	 * Returns an {@code Company} object's found date, which is parsed to
+	 * string. Notice, that {@code SimpleDateFormat} object uses <i>"EN"</i>
+	 * locale and <i>"yyyy MMMM dd"</i> date format.
 	 * 
-	 * @return
+	 * @return a found date of company in String
 	 */
 	public String getFoundDataParsedToString() {
 		SimpleDateFormat simpleDataformat = new SimpleDateFormat("yyyy MMMM dd", new Locale("en", "EN"));
@@ -30,12 +54,16 @@ public abstract class Company {
 	}
 
 	/**
-	 * !!! This a constuctor with parameters
+	 * Constructor.
 	 * 
 	 * @param id
+	 *            - a unique ID for {@code Company} object.
 	 * @param name
+	 *            - a name of {@code Company} object.
 	 * @param email
+	 *            - a email of {@code Company} object.
 	 * @param foundDate
+	 *            - a email of {@code Company} object.
 	 */
 	public Company(int id, String name, String email, GregorianCalendar foundDate) {
 		this.companyId = id;
@@ -45,7 +73,16 @@ public abstract class Company {
 	}
 
 	/**
-	 * !!! This a constuctor without parameters
+	 * Constructor.
+	 * 
+	 * @param id
+	 *            - a unique ID for {@code Company} object.
+	 * @param name
+	 *            - a name of {@code Company} object.
+	 * @param email
+	 *            - a email of {@code Company} object.
+	 * @param foundDate
+	 *            - a email of {@code Company} object.
 	 */
 	public Company() {
 		this.companyId = 0;
@@ -87,16 +124,27 @@ public abstract class Company {
 	}
 
 	/**
-	 * !!! This method parse fields to string
+	 * Returns a string representation of {@code Company} object.
+	 * 
+	 * @return a string, which is consisted of
+	 *         <i>companyId</i>,<i>companyName</i>,<i>companyEmail</i> and
+	 *         <i>companyFoundDate</i> fields of {@code Company}.
 	 */
 	@Override
 	public String toString() {
-		return "id = " + this.companyId + "\n" + "name = " + this.companyName + "\n" + "email = " + this.companyEmail
-				+ "\n" + "foundDate = " + this.companyFoundDate;
+		return "id = " + (this.companyId) + "\n" + "name = " + (this.companyName) + "\n" + "email = "
+				+ (this.companyEmail) + "\n" + "foundDate = " + (this.companyFoundDate);
 	}
 
 	/**
-	 * !!! This method equals two companies
+	 * Indicates whether some other {@code Company} object is "equal to " this
+	 * one
+	 * 
+	 * @param obj
+	 *            - the reference object with which to compare
+	 * @return <b>{@code true}</b> if this {@code Aircraft} object is the same
+	 *         as obj argument; <b>{@code false}</b> otherwise.
+	 * 
 	 */
 	@Override
 	public boolean equals(Object obj) {

@@ -1,35 +1,71 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.beans.techdata;
 
 import java.io.Serializable;
-
 import by.zyablov.airlinecompany.beans.measures.FuelSpendTonPerKm;
 import by.zyablov.airlinecompany.beans.measures.KilometerPerHour;
 import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 
 /**
+ * Class {@code BasicTechAircraftData} represents a basic technical information
+ * for {@code Aircraft} class such as maximum weight capacity, fuel spending in
+ * tons per kilometer, middle velocity in kilometers per hour and maximum people
+ * capacity of aircraft to transport.
+ * 
  * @author Дмитрий
- *
+ * @version 1.0
+ * @since 2016
+ * 
+ * @see Tons
+ * @see FuelSpendTonPerKm
+ * @see KilometerPerHour
+ * @see PeopleCapacity
+ * 
  */
-
 public class BasicTechAircraftData implements Serializable {
 
+	/**
+	 * This value is genereted by JVM to serialize {@code BasicTechAircraftData}
+	 * class
+	 */
 	private static final long serialVersionUID = 8074903153153914987L;
 
+	/**
+	 * This field is a value of maximum weight capacity for {@code Aircraft}
+	 * object.
+	 */
 	private Tons maxWeigthCapacity;
+
+	/**
+	 * This field is a value of an average fuel spending in tons per kilometer
+	 * for {@code Aircraft} object.
+	 */
 	private FuelSpendTonPerKm fuelSpending;
+
+	/**
+	 * This field is a value of middle velocity in kilometers per hour for
+	 * {@code Aircraft} object.
+	 */
 	private KilometerPerHour middleVelocity;
+
+	/**
+	 * This field is a value of maximum people capacity for {@code Aircraft}
+	 * object.
+	 */
 	private PeopleCapacity maxPeopleCapacity;
 
 	/**
-	 * !!! This a constuctor with parameters
+	 * Constructor.
 	 * 
 	 * @param maxWeigthCapacity
+	 *            - a value of maximum weight capacity
 	 * @param fuelSpending
+	 *            - a value of an average fuel spending in tons per kilometer
 	 * @param midVelocity
+	 *            - a value of middle velocity in kilometers per hour
+	 * @param peopleCapacity
+	 *            - a value of maximum people capacity
 	 */
 	public BasicTechAircraftData(Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending, KilometerPerHour midVelocity,
 			PeopleCapacity peopleCapacity) {
@@ -41,11 +77,16 @@ public class BasicTechAircraftData implements Serializable {
 	}
 
 	/**
-	 * !!! This a constuctor without parameters
+	 * Constructor.
 	 * 
 	 * @param maxWeigthCapacity
+	 *            - a value of maximum weight capacity
 	 * @param fuelSpending
-	 * @param middleVelocity
+	 *            - a value of an average fuel spending in tons per kilometer
+	 * @param midVelocity
+	 *            - a value of middle velocity in kilometers per hour
+	 * @param peopleCapacity
+	 *            - a value of maximum people capacity
 	 */
 	public BasicTechAircraftData() {
 		this.maxWeigthCapacity = new Tons();
@@ -87,16 +128,28 @@ public class BasicTechAircraftData implements Serializable {
 	}
 
 	/**
-	 * !!! This method parse fields to string
+	 * Returns a string representation of {@code BasicTechAircraftData} object.
+	 * 
+	 * @return a string, which is consisted of
+	 *         <i>fuelSpending</i>,<i>maxWeigthCapacity</i>,
+	 *         <i>middleVelocity</i> and <i>maxPeopleCapacity</i> fields of
+	 *         {@code BasicTechAircraftData}.
 	 */
 	@Override
 	public String toString() {
-		return (this.fuelSpending + "\n" + this.maxWeigthCapacity + "\n" + this.middleVelocity + "\n"
-				+ this.maxPeopleCapacity);
+		return ((this.fuelSpending) + "\n" + (this.maxWeigthCapacity) + "\n" + (this.middleVelocity) + "\n"
+				+ (this.maxPeopleCapacity));
 	}
 
 	/**
-	 * !!! This method equals two BasicTechAircraftData
+	 * Indicates whether some other {@code BasicTechAircraftData} object is
+	 * "equal to " this one.
+	 * 
+	 * @param obj
+	 *            the reference object with which to compare
+	 * @return <b>{@code true}</b> if this {@code BasicTechAircraftData} object
+	 *         is the same as obj argument; <b>{@code false}</b> otherwise.
+	 * 
 	 */
 	@Override
 	public boolean equals(Object obj) {

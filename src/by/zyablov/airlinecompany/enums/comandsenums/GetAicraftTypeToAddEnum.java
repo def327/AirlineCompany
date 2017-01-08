@@ -1,13 +1,33 @@
 package by.zyablov.airlinecompany.enums.comandsenums;
 
+/**
+ * Enum {@code GetAicraftTypeToAddEnum} represents a comand for
+ * {@code AddNewAirecraftAction} class to choose what type of {@code Aircraft}
+ * to create.
+ * 
+ * @author Дмитрий
+ * @version 1.0
+ * @since 2016
+ * 
+ * @see by.zyablov.airlinecompany.menu.actions.AddNewAirecraftAction
+ * @see by.zyablov.airlinecompany.beans.aircrafts.Aircraft
+ * @see by.zyablov.airlinecompany.beans.aircrafts.AirlinerAircraft
+ * @see by.zyablov.airlinecompany.beans.aircrafts.CargoAircraft
+ * 
+ */
 public enum GetAicraftTypeToAddEnum {
-	
+
 	ADD_NEW_AIRLINE_AIRCRAFT, ADD_NEW_CARGO_AIRCRAFT;
 
 	/**
-	 * !!! this method return type of aircraft by string
+	 * Returns a type of enum to a new W{@code Aircraft} object according to
+	 * string argument.
+	 * 
 	 * @param comandString
-	 * @return
+	 *            - a comand in String type to choose a type of {@code Aircraft}
+	 *            object to create.
+	 * @return {@code GetAicraftTypeToAddEnum} type for {@code Aircraft} object
+	 *         to create.
 	 */
 	public static GetAicraftTypeToAddEnum stringToEnum(String comandString) {
 		switch (comandString) {
