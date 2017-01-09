@@ -1,9 +1,6 @@
 # AirlineCompany
 AirlineCompany - а console application on Java SE
 
-
-
-/*
  *
  *   by.zyablov.airlinecompany.AirlineCompanyApplicationRunner is an entrance point of the program
  *	
@@ -21,4 +18,4 @@ AirlineCompany - а console application on Java SE
  *	         Use this plugin to open file UMLDiagramForAirlineCompanyApplication.ucls in Eclipse to edit or as a viewer.
  *
  *
- */
+
