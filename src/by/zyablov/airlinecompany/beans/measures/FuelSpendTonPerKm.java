@@ -32,8 +32,8 @@ public class FuelSpendTonPerKm extends Measure {
 
 	/**
 	 * Return's a string value of {@code FuelSpendTonPerKm} object.Also, this
-	 * method generates a string, which consist's of
-	 * {@link Measure#measureValue measureValue} and "tons / 1000km".
+	 * method generates a string, which consist's of {@link Measure#measureValue
+	 * measureValue} and "tons / 1000km".
 	 */
 	@Override
 	public String getMeasureValueInString() {

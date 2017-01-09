@@ -18,8 +18,8 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
  * @version 1.0
  * @since 2016
  * 
- * @see  Aircraft
- * @see  by.zyablov.airlinecompany.beans.company.AirlineCompany
+ * @see Aircraft
+ * @see by.zyablov.airlinecompany.beans.company.AirlineCompany
  *
  */
 public class AircraftPark {
@@ -99,7 +99,7 @@ public class AircraftPark {
 	 * @throws AircraftEmptyParkException
 	 *             indicates that {@code AircraftPark} object doesn't have
 	 *             {@code Aircraft} objects.
-	 *             
+	 * 
 	 * @see PeopleCapacity
 	 * 
 	 */
@@ -121,9 +121,8 @@ public class AircraftPark {
 	}
 
 	/**
-	 * Returns a {@code Tons} object, which includes a total amount of
-	 * weight capacity of all {@code Aircraft} objects in current
-	 * {@code AircraftPark}.
+	 * Returns a {@code Tons} object, which includes a total amount of weight
+	 * capacity of all {@code Aircraft} objects in current {@code AircraftPark}.
 	 * 
 	 * 
 	 * @return {@code Tons} a total amount of weight capacity in {@code Tons}

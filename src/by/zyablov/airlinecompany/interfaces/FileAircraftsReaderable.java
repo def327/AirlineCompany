@@ -6,7 +6,8 @@ import java.util.List;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
 /**
- * Interface {@code FileAircraftsReaderable} is used to read {@code Aircraft} objects from file.
+ * Interface {@code FileAircraftsReaderable} is used to read {@code Aircraft}
+ * objects from file.
  * 
  * @author Дмитрий
  */

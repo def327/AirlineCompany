@@ -11,8 +11,8 @@ import java.util.List;
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
 /**
- * Class {@code FileAicraftsSerializeReader} has method to read {@code Aircraft} object's from 
- * data file using serialization.
+ * Class {@code FileAicraftsSerializeReader} has method to read {@code Aircraft}
+ * object's from data file using serialization.
  * 
  * @author Дмитрий
  *

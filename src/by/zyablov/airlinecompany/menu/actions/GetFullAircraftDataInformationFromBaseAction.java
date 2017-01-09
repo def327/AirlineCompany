@@ -14,8 +14,9 @@ import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 /**
- * Class {@code GetFullAircraftDataInformationFromBaseAction} represents an action to get a full
- *  information about aircraft from the airline company park.
+ * Class {@code GetFullAircraftDataInformationFromBaseAction} represents an
+ * action to get a full information about aircraft from the airline company
+ * park.
  * 
  * @author Дмитрий
  *

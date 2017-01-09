@@ -73,8 +73,8 @@ public enum AirlinerTypeEnum {
 	/**
 	 * Returns a string representation of {@code AirlinerTypeEnum}.
 	 * 
-	 * @return a string, which is consisted of
-	 *         <i>airlinerType</i> field of {@code AirlinerTypeEnum}.
+	 * @return a string, which is consisted of <i>airlinerType</i> field of
+	 *         {@code AirlinerTypeEnum}.
 	 */
 	@Override
 	public String toString() {

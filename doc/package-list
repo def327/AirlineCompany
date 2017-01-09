@@ -1,0 +1,17 @@
+by.zyablov.airlinecompany
+by.zyablov.airlinecompany.beans.aircraftpark
+by.zyablov.airlinecompany.beans.aircrafts
+by.zyablov.airlinecompany.beans.aircrafts.aircraftcomparators
+by.zyablov.airlinecompany.beans.builders
+by.zyablov.airlinecompany.beans.company
+by.zyablov.airlinecompany.beans.measures
+by.zyablov.airlinecompany.beans.techdata
+by.zyablov.airlinecompany.enums.aircraftenums
+by.zyablov.airlinecompany.enums.comandsenums
+by.zyablov.airlinecompany.exeptions
+by.zyablov.airlinecompany.files
+by.zyablov.airlinecompany.interfaces
+by.zyablov.airlinecompany.menu
+by.zyablov.airlinecompany.menu.actions
+by.zyablov.airlinecompany.menu.aircraftsconsolecreators
+by.zyablov.airlinecompany.tools

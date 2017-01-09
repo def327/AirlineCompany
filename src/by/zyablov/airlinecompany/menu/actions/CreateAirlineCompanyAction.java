@@ -78,8 +78,8 @@ public class CreateAirlineCompanyAction {
 	}
 
 	/**
-	 * This method create airline company using only selected airline
-	 * company name
+	 * This method create airline company using only selected airline company
+	 * name
 	 * 
 	 * @param airlineCompanyManager
 	 * @param airlineCompanyBuilder
@@ -92,8 +92,8 @@ public class CreateAirlineCompanyAction {
 	}
 
 	/**
-	 * This method show full to console information about new created
-	 * airline company
+	 * This method show full to console information about new created airline
+	 * company
 	 * 
 	 * @param airlineCompanyManager
 	 */

@@ -111,7 +111,8 @@ public class ApplicationMenu {
 	/**
 	 * Constructor.
 	 * 
-	 * @param airlineCompanyManager - allows to manage {@code AirlineCompany} object.
+	 * @param airlineCompanyManager
+	 *            - allows to manage {@code AirlineCompany} object.
 	 */
 	public ApplicationMenu() {
 		airlineCompanyManager = new AirlineManageSystem();
