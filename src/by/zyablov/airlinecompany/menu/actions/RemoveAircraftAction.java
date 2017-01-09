@@ -13,10 +13,17 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code RemoveAircraftAction} represents an action to remove an aircraft
+ * from airlines company park.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class RemoveAircraftAction {
 
 	/**
-	 * !!! This method remove aircraft from airline company park
+	 * This method remove aircraft from airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
@@ -37,10 +44,11 @@ public class RemoveAircraftAction {
 	}
 
 	/**
-	 * !!! This method remove aircraft from airline company park
+	 * This method remove aircraft from airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param removedAircraft
+	 * 
 	 * @throws NoAirlineCompanyException
 	 */
 	private static void removeAircraftFromAirlineCompanyPark(AirlineManageSystem airlineCompanyManager,
@@ -58,11 +66,14 @@ public class RemoveAircraftAction {
 	}
 
 	/**
-	 * !!! This method return an aircraft by id from airline company park
+	 * This method return an aircraft by id from airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return an aircraft with a suiatable ID
+	 * 
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
@@ -98,9 +109,11 @@ public class RemoveAircraftAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts to console
+	 * This method show all aircrafts to console
 	 * 
 	 * @param airlineCompanyManager
+	 * 
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */

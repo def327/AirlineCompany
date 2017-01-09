@@ -5,12 +5,18 @@ import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
+/**
+ * Interface {@code FileAircraftsWriterable} is used to write {@code Aircraft}
+ * objects to file.
+ * 
+ * @author Дмитрий
+ */
 public interface FileAircraftsWriterable {
-	
+
 	/**
-	 * This method write a collection of aircrafts to data file
-	 * @param aircraftsList
+	 * Writes a collection of {@code Aircraft} objects to data file.
+	 * 
 	 * @throws IOException
 	 */
-	public void writeAircraftListToFile(List<Aircraft> aircraftsList)throws IOException ;
+	public void writeAircraftListToFile(List<Aircraft> aircraftsList) throws IOException;
 }

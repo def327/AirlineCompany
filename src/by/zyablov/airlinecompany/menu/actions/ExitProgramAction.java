@@ -7,10 +7,16 @@ import java.util.Scanner;
 import by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code ExitProgramAction} represents an action to exit an application.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class ExitProgramAction {
 
 	/**
-	 * !!! This action save save all aircrafts information to file and exit the
+	 * This action save save all aircrafts information to file and exit the
 	 * program
 	 */
 	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
@@ -21,11 +27,11 @@ public class ExitProgramAction {
 
 			switch (answer) {
 			case "1": {
-				
-				if(airlineCompanyManager.haveAirlinerCompany()){				
-				//Save aircrafts data inforamation to file
-				SaveAircraftsToFileAction.runAction(airlineCompanyManager);
-				}else{
+
+				if (airlineCompanyManager.haveAirlinerCompany()) {
+					// Save aircrafts data inforamation to file
+					SaveAircraftsToFileAction.runAction(airlineCompanyManager);
+				} else {
 					System.out.println("You didn't create an airline company, exit program without saving to file!");
 				}
 				closeResoursesAndExitProgram(consoleReader);
@@ -35,7 +41,7 @@ public class ExitProgramAction {
 				closeResoursesAndExitProgram(consoleReader);
 				break;
 			}
-			default:{
+			default: {
 				System.out.println(WARNING_MESSAGE_TRY_AGAIN);
 				continue;
 			}
@@ -44,7 +50,7 @@ public class ExitProgramAction {
 	}
 
 	/**
-	 * !!! This method close necessary reosurses and exit program
+	 * This method close necessary reosurses and exit program
 	 * 
 	 * @param consoleReader
 	 */

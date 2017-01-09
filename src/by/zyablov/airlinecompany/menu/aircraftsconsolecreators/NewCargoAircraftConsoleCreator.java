@@ -5,14 +5,21 @@ import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.W
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
 import by.zyablov.airlinecompany.beans.techdata.CargoAircraftTechData;
 
+/**
+ * Class {@code NewCargoAircraftConsoleCreator} is used to create a new cargo
+ * aircraft via user console menu.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class NewCargoAircraftConsoleCreator extends NewAircraftConsoleCreator {
 
 	/**
-	 * !!! This method return a cargo aicraft tech data object for a new
-	 * aircraft
+	 * This method return a cargo aicraft tech data object for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return cargo technical data information for a new cargo aircraft
 	 */
 	protected CargoAircraftTechData getUniqueAircraftTechDataBehavior(Scanner consoleReader) {
 
@@ -23,11 +30,12 @@ public class NewCargoAircraftConsoleCreator extends NewAircraftConsoleCreator {
 	}
 
 	/**
-	 * !!! This method return an int value of department size for cargo aircraft
+	 * This method return an int value of department size for cargo aircraft
 	 * tech data object
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a size of department for a new cargo aircraft
 	 */
 	private static int getCargoDepartmentSize(Scanner consoleReader) {
 		while (true) {
@@ -60,7 +68,8 @@ public class NewCargoAircraftConsoleCreator extends NewAircraftConsoleCreator {
 	 * transport danger goods for cargo aircraft tech data object
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return opportunity to transport danger goods for a new cargo aircraft
 	 */
 	private static boolean getCanTransportDangerGoods(Scanner consoleReader) {
 		while (true) {

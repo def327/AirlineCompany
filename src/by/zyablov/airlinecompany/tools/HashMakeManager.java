@@ -1,14 +1,21 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.tools;
 
 /**
- * @author Дмитрий
+ * Class {@code HashMakeManager} is used to generate an int hash value using a
+ * String argument.
  *
  */
 public class HashMakeManager {
 
+	/**
+	 * Returns a hash value of String type argument.
+	 * 
+	 * @param hashingString
+	 *            - a String type argument for to get hash
+	 * 
+	 * @return an int type hash value
+	 */
 	public static int createHashValue(String hashingString) {
 
 		char[] symbolsArray = hashingString.toCharArray();

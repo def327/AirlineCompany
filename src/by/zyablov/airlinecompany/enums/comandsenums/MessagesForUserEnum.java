@@ -1,5 +1,15 @@
 package by.zyablov.airlinecompany.enums.comandsenums;
 
+/**
+ * Enum {@code MessagesForUserEnum} represents a String type messages for user
+ * console menu and menu actions.
+ * 
+ * @author Дмитрий
+ * @version 1.0
+ * @since 2016
+ * 
+ * 
+ */
 public enum MessagesForUserEnum {
 
 	// ----Warnings messages
@@ -91,7 +101,13 @@ public enum MessagesForUserEnum {
 
 	MESSAGE_CHOSE_ADD_NEW_CARGO_AICRAFT("---Enter '2' to add a new cargo aircraft:");
 
-	// ---Methods to get menu navigation and menu actions in string
+	/**
+	 * Returns menu navigation and menu actions in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.ApplicationMenu#mainMenuRun()
+	 *         mainMenuRun()} of {@code ApplicationMenu} class.
+	 */
 	public static String getMainMenuActionsMessageInString() {
 
 		String message = new String("----------------------------------------------------------" + "\n"
@@ -117,6 +133,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.GetSortAircraftsByParametrAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code GetSortAircraftsByParametrAction} class.
+	 */
 	public static String getMenuActionGetSortAircraftsByParametrMessageInString() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_GET_AIRCRAFTS_SORT_BY_MIDDLE_VELOCITY + "\n"
@@ -127,6 +150,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.CalculateTotalByParametrAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code CalculateTotalByParametrAction} class.
+	 */
 	public static String getMenuActionCalculateTotalByParametrMessageInString() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_TOTAL_PEOPLE_CAPACITY + "\n" + MESSAGE_CHOSE_TOTAL_WEIGHT_CAPACITY + "\n"
@@ -134,6 +164,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.GetAircraftsByParametrRangeAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code GetAircraftsByParametrRangeAction} class.
+	 */
 	public static String getMenuActionGetAircraftsByParametrRangeMessageInString() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_GET_AIRCRATFS_RANGE_BY_MIDDLE_VELOCITY + "\n"
@@ -142,6 +179,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.ExitProgramAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code ExitProgramAction} class.
+	 */
 	public static String getMenuActionExitProgramInString() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_SAVE_TO_FILE_BEFORE_EXIT + "\n" + MESSAGE_CHOSE_NO_SAVE_TO_FILE_BEFORE_EXIT + "\n"
@@ -149,6 +193,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.CreateAirlineCompanyAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code CreateAirlineCompanyAction} class.
+	 */
 	public static String getMenuActionCreateAirlineCompanyInString() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_BELAVIA + "\n" + MESSAGE_CHOSE_LUFTHANSA + "\n" + MESSAGE_CHOSE_EMIRATES_AIRLINES + "\n"
@@ -156,6 +207,13 @@ public enum MessagesForUserEnum {
 		return message;
 	}
 
+	/**
+	 * Returns menu navigation for user in string
+	 * 
+	 * @return string message for
+	 *         {@link by.zyablov.airlinecompany.menu.actions.AddNewAirecraftAction#runAction(by.zyablov.airlinecompany.tools.AirlineManageSystem, java.util.Scanner)
+	 *         runAction() } of {@code AddNewAirecraftAction} class.
+	 */
 	public static String getMenuActionAddNewAirecraft() {
 		String message = new String("----------------------------------------------------------" + "\n"
 				+ MESSAGE_CHOSE_ADD_NEW_AIRLINER_AICRAFT + "\n" + MESSAGE_CHOSE_ADD_NEW_CARGO_AICRAFT + "\n"
@@ -164,21 +222,26 @@ public enum MessagesForUserEnum {
 	}
 
 	/**
-	 * Class description:
+	 * This field is a String value of message for user console to navigate
+	 * menu.
 	 */
 	private String message;
 
 	/**
-	 * !!! This a constuctor with parameters
+	 * Constructor.
 	 * 
 	 * @param message
+	 *            - a String value of message for user console to navigate menu.
 	 */
 	private MessagesForUserEnum(String message) {
 		this.message = message;
 	}
 
 	/**
-	 * !!! This method parse fields to string
+	 * Returns a string representation of {@code MessagesForUserEnum}.
+	 * 
+	 * @return a string, which is consisted of <i>message</i> field of
+	 *         {@code MessagesForUserEnum}.
 	 */
 	@Override
 	public String toString() {

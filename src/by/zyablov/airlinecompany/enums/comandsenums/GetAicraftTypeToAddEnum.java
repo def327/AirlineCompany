@@ -20,8 +20,8 @@ public enum GetAicraftTypeToAddEnum {
 	ADD_NEW_AIRLINE_AIRCRAFT, ADD_NEW_CARGO_AIRCRAFT;
 
 	/**
-	 * Returns a type of enum to a new W{@code Aircraft} object according to
-	 * string argument.
+	 * Returns a type of enum to create a new {@code Aircraft} object according
+	 * to string argument.
 	 * 
 	 * @param comandString
 	 *            - a comand in String type to choose a type of {@code Aircraft}

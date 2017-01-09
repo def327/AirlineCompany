@@ -26,7 +26,7 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
  * {@code AircraftPark} fields to storage {@code Aircraft} objects.
  * <p>
  * {@code AirlineCompany} class inherits {@code Company}, this class allow to
- * use {@code AircraftPark} object and interacts with it.
+ * use {@code AircraftPark} object and works with it.
  * 
  * @author Дмитрий
  * @version 1.0
@@ -298,7 +298,7 @@ public class AirlineCompany extends Company {
 	 * 
 	 * 
 	 * @param fromValueFuelSpending
-	 *            - a mimum {@code FuelSpendTonPerKm} value of the range
+	 *            - a minimum {@code FuelSpendTonPerKm} value of the range
 	 * 
 	 * @param toValueFuelSpendinga
 	 *            - maximum {@code FuelSpendTonPerKm} value of the range
@@ -350,7 +350,7 @@ public class AirlineCompany extends Company {
 	 * 
 	 * 
 	 * @param fromValueFuelSpending
-	 *            - a mimum {@code KilometerPerHour} value of the range
+	 *            - a minimum {@code KilometerPerHour} value of the range
 	 * 
 	 * @param toValueFuelSpendinga
 	 *            - maximum {@code KilometerPerHour} value of the range

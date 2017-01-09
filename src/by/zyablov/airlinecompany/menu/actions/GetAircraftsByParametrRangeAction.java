@@ -19,10 +19,17 @@ import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.exeptions.NoSuitableAircraftsException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code GetAircraftsByParametrRangeAction} represents an action to show
+ * all aircraft which parametrs are suitable for search range.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class GetAircraftsByParametrRangeAction {
 
 	/**
-	 * !!! This action show all aircrafts, which are suitable for paramert range
+	 * This action show all aircrafts, which are suitable for paramert range
 	 */
 	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
 
@@ -61,12 +68,14 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method get a type of a ranged parametr to show all aircrafts
-	 * from airline company park
+	 * This method get a type of a ranged parametr to show all aircrafts from
+	 * airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a type of parametr for a searching range
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
@@ -92,7 +101,7 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts from airline company park ranged by
+	 * This method show all aircrafts from airline company park ranged by
 	 * minimum and maximum aircraft's fuel spending
 	 * 
 	 * @param airlineCompanyManager
@@ -112,12 +121,14 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method return a minimum value of aircraft's fuel spending, which
-	 * is entered from console by user
+	 * This method return a minimum value of aircraft's fuel spending, which is
+	 * entered from console by user
 	 * 
 	 * @param consoleReader
 	 * @param valueFromFuelSpendingInt
-	 * @return
+	 * 
+	 * @return minimum {@code FuelSpendTonPerKm} object, which is parsed to int
+	 *         type
 	 */
 	private static int getMinimumAircraftFuelSpendingInInt(Scanner consoleReader) {
 		while (true) {
@@ -142,13 +153,15 @@ public class GetAircraftsByParametrRangeAction {
 
 	/**
 	 * 
-	 * !!! This method return a maximum value of aircraft's fuel spending, which
-	 * is entered from console by user
+	 * This method return a maximum value of aircraft's fuel spending, which is
+	 * entered from console by user
 	 * 
 	 * @param consoleReader
 	 * @param valueFromFuelSpendingInt
 	 * @param valueToFuelSpendingInt
-	 * @return
+	 * 
+	 * @return maximum {@code FuelSpendTonPerKm} object, which is parsed to int
+	 *         type
 	 */
 	private static int getMaximumAircraftFuelSpendingInInt(Scanner consoleReader, int valueFromFuelSpendingInt) {
 		while (true) {
@@ -172,12 +185,14 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method show aircrafts to user console ranged by minimum and
-	 * maximum aircraft's fuel spending
+	 * This method show aircrafts to user console ranged by minimum and maximum
+	 * aircraft's fuel spending
 	 * 
 	 * @param airlineCompanyManager
 	 * @param valueFromFuelSpendingInt
 	 * @param valueToFuelSpendingInt
+	 * 
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 * @throws NoSuitableAircraftsException
@@ -205,18 +220,21 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts from airline company park ranged by
+	 * This method show all aircrafts from airline company park ranged by
 	 * minimum and maximum aircraft's middle velocity
 	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
+	 * 
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws NoSuitableAircraftsException
-	 * @throws AircraftEmptyParkException 
+	 * @throws AircraftEmptyParkException
 	 */
 	private static void showAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
-			Scanner consoleReader) throws NoAirlineCompanyException, NoSuitableAircraftsException, AircraftEmptyParkException {
-		
+			Scanner consoleReader)
+			throws NoAirlineCompanyException, NoSuitableAircraftsException, AircraftEmptyParkException {
+
 		int valueFromMidVelocityInt = getMinimumAircraftMiddleVelocityInInt(consoleReader);
 		int valueToMidVelocityInt = getMaximumAircraftMiddleVelocityInInt(consoleReader, valueFromMidVelocityInt);
 
@@ -225,15 +243,17 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method show aircrafts to user console ranged by minimum and
-	 * maximum aircraft's middle velocity
+	 * This method show aircrafts to user console ranged by minimum and maximum
+	 * aircraft's middle velocity
 	 * 
 	 * @param airlineCompanyManager
 	 * @param valueFromMidVelocityInt
 	 * @param valueToMidVelocityInt
+	 * 
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws NoSuitableAircraftsException
-	 * @throws AircraftEmptyParkException 
+	 * @throws AircraftEmptyParkException
 	 */
 	private static void showToUserConsoleAircraftsRangedByMiddleVelocity(AirlineManageSystem airlineCompanyManager,
 			int valueFromMidVelocityInt, int valueToMidVelocityInt)
@@ -257,12 +277,13 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method return a minimum value of aircraft's middle velocity,
-	 * which is entered from console by user
+	 * This method return a minimum value of aircraft's middle velocity, which
+	 * is entered from console by user
 	 * 
 	 * @param consoleReader
 	 * @param valueFromMidVelocityInt
-	 * @return
+	 * @return minimum {@code KilometerPerHour} object, which is parsed to int
+	 *         type
 	 */
 	private static int getMinimumAircraftMiddleVelocityInInt(Scanner consoleReader) {
 		while (true) {
@@ -286,13 +307,15 @@ public class GetAircraftsByParametrRangeAction {
 	}
 
 	/**
-	 * !!! This method return a maximum value of aircraft's middle velocity,
-	 * which is entered from console by user *
+	 * This method return a maximum value of aircraft's middle velocity, which
+	 * is entered from console by user *
 	 * 
 	 * @param consoleReader
 	 * @param valueFromMidVelocityInt
 	 * @param valueToMidVelocityInt
-	 * @return
+	 * 
+	 * @return maximum {@code KilometerPerHour} object, which is parsed to int
+	 *         type
 	 */
 	private static int getMaximumAircraftMiddleVelocityInInt(Scanner consoleReader, int valueFromMidVelocityInt) {
 		while (true) {

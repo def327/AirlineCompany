@@ -11,12 +11,23 @@ import by.zyablov.airlinecompany.exeptions.EmptyAircraftsFileException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code ReadAircraftsFromFileAction} represents an action to load
+ * aircrafts from data file in OS.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class ReadAircraftsFromFileAction {
 
+	/**
+	 * This filed is used for user console menu to warning user, that he has
+	 * loaded information from file yet.
+	 */
 	public static boolean loadAicraftsFromFile = false;
 
 	/**
-	 * !!! method action read data information about aircrafts from file
+	 * This method reads data information about aircrafts from file
 	 */
 	public static void runAction(AirlineManageSystem airlineCompanyManager) {
 		try {

@@ -4,6 +4,7 @@ import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.W
 import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.WARNING_MESSAGE_TRY_AGAIN;
 
 import java.util.Scanner;
+
 import by.zyablov.airlinecompany.beans.builders.BuilderAirlinerAircraft;
 import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraft;
 import by.zyablov.airlinecompany.enums.comandsenums.GetAicraftTypeToAddEnum;
@@ -14,10 +15,18 @@ import by.zyablov.airlinecompany.menu.aircraftsconsolecreators.NewAirlinerAircra
 import by.zyablov.airlinecompany.menu.aircraftsconsolecreators.NewCargoAircraftConsoleCreator;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code AddNewAirecraftAction} represents an action to create a new
+ * aircraft for airlines company park.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class AddNewAirecraftAction {
 
 	/**
-	 * !!! This action create and add new aicraft
+	 * This action create and add new aicraft
+	 * 
 	 * @param airlineCompanyManager
 	 * @param consoleReader
 	 */
@@ -34,12 +43,14 @@ public class AddNewAirecraftAction {
 				switch (getAicraftTypeToCreate) {
 				case ADD_NEW_AIRLINE_AIRCRAFT: {
 					NewAircraftConsoleCreatorBehavior newAircraftConsoleCreator = new NewAirlinerAircraftConsoleCreator();
-					newAircraftConsoleCreator.addAndCreateNewAircraft(consoleReader, airlineCompanyManager, new BuilderAirlinerAircraft());
+					newAircraftConsoleCreator.addAndCreateNewAircraft(consoleReader, airlineCompanyManager,
+							new BuilderAirlinerAircraft());
 					return;
 				}
 				case ADD_NEW_CARGO_AIRCRAFT: {
 					NewAircraftConsoleCreatorBehavior newAircraftConsoleCreator = new NewCargoAircraftConsoleCreator();
-					newAircraftConsoleCreator.addAndCreateNewAircraft(consoleReader, airlineCompanyManager, new BuilderCargoAircraft());
+					newAircraftConsoleCreator.addAndCreateNewAircraft(consoleReader, airlineCompanyManager,
+							new BuilderCargoAircraft());
 					return;
 				}
 				}
@@ -55,10 +66,10 @@ public class AddNewAirecraftAction {
 	}
 
 	/**
-	 * !!! This method get a type of aircraft to create
+	 * This method get a type of aircraft to create.
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * @return what kind of a new Aircraft to create
 	 */
 	private static GetAicraftTypeToAddEnum choseAircraftTypeToAdd(Scanner consoleReader) {
 		System.out.println(MessagesForUserEnum.getMenuActionAddNewAirecraft());
@@ -67,7 +78,5 @@ public class AddNewAirecraftAction {
 		GetAicraftTypeToAddEnum getAicraftTypeToCreate = GetAicraftTypeToAddEnum.stringToEnum(comandAction);
 		return getAicraftTypeToCreate;
 	}
-
-
 
 }

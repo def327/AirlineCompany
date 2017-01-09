@@ -1,5 +1,16 @@
 package by.zyablov.airlinecompany.enums.comandsenums;
 
+/**
+ * Enum {@code UserComandEnum} represents a comands for user console menu to
+ * manage {@code ApplicationMenu} object.
+ * 
+ * @author Дмитрий
+ * @version 1.0
+ * @since 2016
+ * 
+ * @see by.zyablov.airlinecompany.menu.ApplicationMenu
+ * 
+ */
 public enum UserComandEnum {
 
 	CREATE_AIRLINE_COMPANY,
@@ -25,9 +36,13 @@ public enum UserComandEnum {
 	EXIT_APPLICATION;
 
 	/**
-	 * !!! this method return type of comand by string
+	 * Returns a type of comand for console menu according to string argument.
+	 * 
 	 * @param comandString
-	 * @return
+	 *            - a comand in String type to choose menu action
+	 * 
+	 * @return {@code UserComandEnum} type to manage {@code ApplicationMenu}
+	 *         object.
 	 */
 	public static UserComandEnum stringToEnum(String comandString) {
 		switch (comandString) {

@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.files;
 
 import java.io.BufferedWriter;
@@ -21,13 +19,16 @@ import by.zyablov.airlinecompany.beans.measures.PeopleCapacity;
 import by.zyablov.airlinecompany.beans.measures.Tons;
 
 /**
+ * Class {@code FileAircraftsStringTextReader} has method to write
+ * {@code Aircraft} object's to data text file using parsing string.
+ * 
  * @author Дмитрий
  *
  */
 public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 
 	/**
-	 * !!! This method write the list of aircrafts to text file
+	 * This method write the list of aircrafts to text file
 	 * 
 	 * @param aircraftsList
 	 * @throws IOException
@@ -56,7 +57,7 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	}
 
 	/**
-	 * !!! This method parse fields of airliner aircraft to string with symbol -
+	 * This method parse fields of airliner aircraft to string with symbol -
 	 * spliter "|"
 	 * 
 	 * @param airlinerAircraft
@@ -100,7 +101,7 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	 * @param peopleCapacity
 	 * @param airlinerType
 	 * @param havBusinesClass
-	 * @return
+	 * @return a string parsing {@code AirlinerAircraft} object
 	 */
 	private static String parseAirlinerAircraftTechDataToString(int idAircraft, String nameAircraft,
 			Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending, KilometerPerHour midVelocity,
@@ -115,7 +116,7 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	}
 
 	/**
-	 * !!! This method parse fields of cargo aircraft to string with spliter"|"
+	 * This method parse fields of cargo aircraft to string with spliter"|"
 	 * 
 	 * @param cargoAircraft
 	 * @return parseCargoAircraftData
@@ -147,7 +148,7 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	}
 
 	/**
-	 * !!! This method method parse cargo aircraft tech data to string
+	 * This method method parse cargo aircraft tech data to string
 	 * 
 	 * @param idAircraft
 	 * @param nameAircraft
@@ -157,7 +158,7 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	 * @param peopleCapacity
 	 * @param cargoDepartmentSize
 	 * @param canTransprtDangerGoods
-	 * @return
+	 * @return a string parsing {@code CargoAircraft} object
 	 */
 	private static String parseCargoAircraftTechDataToString(int idAircraft, String nameAircraft,
 			Tons maxWeigthCapacity, FuelSpendTonPerKm fuelSpending, KilometerPerHour midVelocity,

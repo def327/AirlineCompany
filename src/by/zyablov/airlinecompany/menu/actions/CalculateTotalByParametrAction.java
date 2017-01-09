@@ -12,24 +12,31 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code CalculateTotalByParametrAction} represents an action to
+ * calculate a summary of any parametr of each aircraft in airliner company
+ * park.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class CalculateTotalByParametrAction {
-	
-	
+
 	/**
-	 * !!! This action calculate a total amount of airacrafts parametr
+	 * This action calculates a total amount of airacrafts parametr
 	 * 
 	 * @param consoleReader
 	 */
-	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader){
-		
+	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
+
 		while (true) {
 			try {
-				
-				if(!airlineCompanyManager.haveAirlinerCompany()){
+
+				if (!airlineCompanyManager.haveAirlinerCompany()) {
 					throw new NoAirlineCompanyException();
 				}
-				
-				if(airlineCompanyManager.getAircraftsTotalAmount() == 0){
+
+				if (airlineCompanyManager.getAircraftsTotalAmount() == 0) {
 					throw new AircraftEmptyParkException();
 				}
 
@@ -40,7 +47,7 @@ public class CalculateTotalByParametrAction {
 					showToUserConsoleTotalAircraftsPeopleCapacity(airlineCompanyManager);
 					return;
 				}
-				
+
 				case TOTAL_WEIGHT_CAPACITY: {
 					showToUserConsoleTotalAicraftsWeightCapacity(airlineCompanyManager);
 					return;
@@ -58,12 +65,14 @@ public class CalculateTotalByParametrAction {
 				continue;
 			}
 		}
-		
+
 	}
 
-	/** !!! This method get a total paramtr type to calculate
+	/**
+	 * This method ges a total paramtr type to calculate
+	 * 
 	 * @param consoleReader
-	 * @return
+	 * @return a type of parametr to calculate
 	 */
 	private static GetTotalParametrEnum getTotalParametrTypeToCalculate(Scanner consoleReader) {
 		System.out.println(MessagesForUserEnum.getMenuActionCalculateTotalByParametrMessageInString());
@@ -74,7 +83,8 @@ public class CalculateTotalByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show to console a total value of aircrafts weight capacity
+	 * This method show to console a total value of aircrafts weight capacity
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws AircraftEmptyParkException
 	 * @throws NoAirlineCompanyException
@@ -86,7 +96,8 @@ public class CalculateTotalByParametrAction {
 	}
 
 	/**
-	 *  !!! This method show to console a total value of aircrafts people capacity
+	 * This method show to console a total value of aircrafts people capacity
+	 * 
 	 * @param airlineCompanyManager
 	 * @throws AircraftEmptyParkException
 	 * @throws NoAirlineCompanyException

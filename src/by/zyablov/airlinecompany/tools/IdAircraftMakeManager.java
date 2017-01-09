@@ -1,9 +1,10 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.tools;
 
 /**
+ * Class {@code IdAircraftMakeManager} generates a unique int value for
+ * {@code Aircraft} object's id field.
+ * 
  * @author Дмитрий
  *
  */
@@ -13,10 +14,10 @@ public class IdAircraftMakeManager {
 	static final int VALUE_RANGE_LIMIT = 1234578;
 
 	/**
-	 * !!! This method generate unique Id for aircraft using hash and static
-	 * field randomCounter
+	 * This method generate unique Id for aircraft using hash and static field
+	 * randomCounter
 	 * 
-	 * @return
+	 * @return a unique int value
 	 */
 	public static int getUniqueIdAircraft(String aircraftName) {
 

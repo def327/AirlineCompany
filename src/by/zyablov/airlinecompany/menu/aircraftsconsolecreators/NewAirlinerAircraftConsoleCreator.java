@@ -8,13 +8,21 @@ import by.zyablov.airlinecompany.beans.techdata.AirlinerTechData;
 import by.zyablov.airlinecompany.enums.aircraftenums.AirlinerTypeEnum;
 import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 
+/**
+ * Class {@code NewAirlinerAircraftConsoleCreator} is used to create a new
+ * airliner aircraft via user console menu.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator {
 
 	/**
-	 * !!! This method return an airliner tech data object for a new aircraft
+	 * This method returns an airliner tech data object for a new aircraft
 	 * 
 	 * @param uniqueAircraftTechDataBehavior
-	 * @return
+	 * 
+	 * @return a unique technical information for a new airliner aircraft
 	 */
 	protected UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader) {
 
@@ -24,11 +32,12 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	}
 
 	/**
-	 * !!! This method return a airliner aicraft tech data object for a new
-	 * aircraft
+	 * This method returns a airliner aicraft tech data object for a new
+	 * airliner aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return airliner technical data information for a new airliner aircraft
 	 */
 	private AirlinerTechData getAirlinerTechData(Scanner consoleReader) {
 
@@ -41,11 +50,12 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	}
 
 	/**
-	 * !!! This method return a airline aicraft type for airline aircraft tech
-	 * data object
+	 * This method returns a airline aicraft type for airline aircraft tech data
+	 * object
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a type of a new airliner aircraft
 	 */
 	private String getAirlinerAircraftType(Scanner consoleReader) {
 		while (true) {
@@ -71,11 +81,12 @@ public class NewAirlinerAircraftConsoleCreator extends NewAircraftConsoleCreator
 	}
 
 	/**
-	 * !!! This method return a boolean value of airline aircraft opportunity to
+	 * This method returns a boolean value of airline aircraft opportunity to
 	 * have bussiness class for airline aircraft tech data object
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return opportunity to have bussiness class for a new airline aircraft
 	 */
 	private boolean getHavBusinesClass(Scanner consoleReader) {
 		while (true) {

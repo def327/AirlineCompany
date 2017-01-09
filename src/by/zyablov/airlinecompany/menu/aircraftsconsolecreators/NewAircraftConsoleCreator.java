@@ -16,10 +16,17 @@ import by.zyablov.airlinecompany.interfaces.UniqueAircraftTechDataBehavior;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 import by.zyablov.airlinecompany.tools.IdAircraftMakeManager;
 
+/**
+ * Class {@code NewAircraftConsoleCreator} is used to create a new aircraft via
+ * user console menu.
+ * 
+ * @author Дмитрий
+ *
+ */
 public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCreatorBehavior {
 
 	/**
-	 * !!! This method add new aircraft for airline company park
+	 * This method add new aircraft for airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param aircraftBuilder
@@ -43,15 +50,16 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method an unique tech data object for a new aircraft
+	 * Returns an unique tech data object for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a unique technical information for a new aircraft
 	 */
 	protected abstract UniqueAircraftTechDataBehavior getUniqueAircraftTechDataBehavior(Scanner consoleReader);
 
 	/**
-	 * !!! This method create a new aircraft for airline company park
+	 * This method creates a new aircraft for airline company park
 	 * 
 	 * @param airlineCompanyManager
 	 * @param aircraft
@@ -69,10 +77,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return a name for a new aircraft
+	 * This method returns a name for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a name for a new aircraft
 	 */
 	private String getNameForNewAicraft(Scanner consoleReader) {
 		while (true) {
@@ -89,9 +98,9 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return an int unique id for a new aircraft
+	 * This method returns an int unique id for a new aircraft
 	 * 
-	 * @return
+	 * @return a unique ID for a new aircraft
 	 */
 	private int getIdForNewAicraft(String aircraftName) {
 		int uniqueAicraftId = IdAircraftMakeManager.getUniqueIdAircraft(aircraftName);
@@ -99,10 +108,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return a basic tech data object for a new aircraft
+	 * This method returns a basic tech data object for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a basic technical information for a new aircraft
 	 */
 	private BasicTechAircraftData getBasicTechAircraftDataForNewAicraft(Scanner consoleReader) {
 
@@ -117,10 +127,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return an int value of people capacity for a new aircraft
+	 * This method returns an int value of people capacity for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a value of people capacity for a new aircraft
 	 */
 	private int getPeopleCapacity(Scanner consoleReader) {
 		while (true) {
@@ -149,10 +160,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return an int value of middle velocity for a new aircraft
+	 * This method returns an int value of middle velocity for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a value of middle velocity for a new aircraft
 	 */
 	private int getMiddleVelocity(Scanner consoleReader) {
 		while (true) {
@@ -181,10 +193,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return an int value of fuel spending for a new aircraft
+	 * This method returns an int value of fuel spending for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a value of fuel spending for a new aircraft
 	 */
 	private int getFuelSpending(Scanner consoleReader) {
 		while (true) {
@@ -213,10 +226,11 @@ public abstract class NewAircraftConsoleCreator implements NewAircraftConsoleCre
 	}
 
 	/**
-	 * !!! This method return an int value of weight capacity for a new aircraft
+	 * This method returns an int value of weight capacity for a new aircraft
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a value of weight capacity for a new aircraft
 	 */
 	private int getMaxWeightCapacity(Scanner consoleReader) {
 		while (true) {

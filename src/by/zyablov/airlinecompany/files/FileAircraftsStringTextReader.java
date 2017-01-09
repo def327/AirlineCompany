@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.files;
 
 import java.io.BufferedReader;
@@ -19,6 +17,9 @@ import by.zyablov.airlinecompany.beans.builders.BuilderCargoAircraftTechData;
 import by.zyablov.airlinecompany.interfaces.AircraftBuilderBehavior;
 
 /**
+ * Class {@code FileAircraftsStringTextReader} has method to read
+ * {@code Aircraft} object's from data text file using parsing string.
+ * 
  * @author Дмитрий
  *
  */
@@ -107,10 +108,9 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	private final static int AIRCRAFT_CAN_TRANSPORT_DANGER_GOODS_ARRAY_INDEX = 8;
 
 	/**
-	 * !!! This method get the list of aircrafts, which was parsed from text
-	 * file
+	 * This method get the list of aircrafts, which was parsed from text file
 	 * 
-	 * @return
+	 * @return List<Aircraft>
 	 * @throws IOException
 	 */
 	public List<Aircraft> readAircraftListFromFile() throws IOException {
@@ -134,8 +134,8 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	}
 
 	/**
-	 * !!! This method create airliner aircraft object with the fields, which
-	 * were parsed from text file
+	 * This method create airliner aircraft object with the fields, which were
+	 * parsed from text file
 	 * 
 	 * @param fieldsOfAircraft
 	 * @return AirlinerAircraft object
@@ -159,11 +159,11 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	}
 
 	/**
-	 * !!! This method create BasicTeachAircraftData for a new airliner aircraft
+	 * This method create BasicTeachAircraftData for a new airliner aircraft
 	 * object
 	 * 
 	 * @param fieldsOfAircraft
-	 * @return
+	 * @return BuilderBasicTechAiracft
 	 * @throws NumberFormatException
 	 */
 	private static BuilderBasicTechAiracft createBasicAircraftTechData(String[] fieldsOfAircraft)
@@ -180,11 +180,10 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	}
 
 	/**
-	 * !!! This method create AirlinerTechData for a new airliner aircraft
-	 * object
+	 * This method create AirlinerTechData for a new airliner aircraft object
 	 * 
 	 * @param fieldsOfAircraft
-	 * @return
+	 * @return BuilderAirlinerAircraftTechData
 	 */
 	private static BuilderAirlinerAircraftTechData createAirlinerAircraftTechData(String[] fieldsOfAircraft) {
 
@@ -197,8 +196,8 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	}
 
 	/**
-	 * !!! This method create a cargo aircraft object with the fields, which
-	 * were parsed from text file
+	 * This method create a cargo aircraft object with the fields, which were
+	 * parsed from text file
 	 * 
 	 * @param fieldsOfAircraft
 	 * @return CargorAircraft object
@@ -222,10 +221,10 @@ public class FileAircraftsStringTextReader extends FileAircraftsReader {
 	}
 
 	/**
-	 * !!! This method create CargoTechData for a new airliner aircraft
+	 * This method create CargoTechData for a new airliner aircraft
 	 * 
 	 * @param fieldsOfAircraft
-	 * @return
+	 * @return BuilderCargoAircraftTechData
 	 * @throws NumberFormatException
 	 */
 	private static BuilderCargoAircraftTechData createCargoAircraftTechData(String[] fieldsOfAircraft)

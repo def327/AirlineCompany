@@ -10,6 +10,13 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code SaveAircraftsToFileAction} represents an action to save
+ * aircrafts to data file in OS.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class SaveAircraftsToFileAction {
 
 	/**

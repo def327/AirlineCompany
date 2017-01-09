@@ -15,10 +15,17 @@ import by.zyablov.airlinecompany.exeptions.AircraftEmptyParkException;
 import by.zyablov.airlinecompany.exeptions.NoAirlineCompanyException;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
+/**
+ * Class {@code GetSortAircraftsByParametrAction} represents an action to show a
+ * sorting list of aicraft by parametr.
+ * 
+ * @author Дмитрий
+ *
+ */
 public class GetSortAircraftsByParametrAction {
 
 	/**
-	 * !!! This action show all aircrafts, sorted by parametr
+	 * This action show all aircrafts, sorted by parametr
 	 */
 	public static void runAction(AirlineManageSystem airlineCompanyManager, Scanner consoleReader) {
 		while (true) {
@@ -70,11 +77,12 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method get a type of a sort parametr to show all aircrafts from
+	 * This method get a type of a sort parametr to show all aircrafts from
 	 * airline company park
 	 * 
 	 * @param consoleReader
-	 * @return
+	 * 
+	 * @return a type of sorting for aircraft list
 	 */
 	private static GetSortTypesEnum choseParametrTypeToSortAircrafts(Scanner consoleReader) {
 		System.out.println(MessagesForUserEnum.getMenuActionGetSortAircraftsByParametrMessageInString());
@@ -85,10 +93,10 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts to user console sorted by weight
-	 * capacity
+	 * This method show all aircrafts to user console sorted by weight capacity
 	 * 
 	 * @param airlineCompanyManager
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
@@ -108,10 +116,10 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts to user console sorted by people
-	 * capacity
+	 * This method show all aircrafts to user console sorted by people capacity
 	 * 
 	 * @param airlineCompanyManager
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
@@ -131,10 +139,10 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts to user console sorted by middle
-	 * velocity
+	 * This method show all aircrafts to user console sorted by middle velocity
 	 * 
 	 * @param airlineCompanyManager
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */
@@ -153,10 +161,10 @@ public class GetSortAircraftsByParametrAction {
 	}
 
 	/**
-	 * !!! This method show all aircrafts to user console sorted by fuel
-	 * spending
+	 * This method show all aircrafts to user console sorted by fuel spending
 	 * 
 	 * @param airlineCompanyManager
+	 * 
 	 * @throws NoAirlineCompanyException
 	 * @throws AircraftEmptyParkException
 	 */

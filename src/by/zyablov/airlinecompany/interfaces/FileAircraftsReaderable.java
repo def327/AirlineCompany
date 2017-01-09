@@ -5,12 +5,18 @@ import java.util.List;
 
 import by.zyablov.airlinecompany.beans.aircrafts.Aircraft;
 
+/**
+ * Interface {@code FileAircraftsReaderable} is used to read {@code Aircraft} objects from file.
+ * 
+ * @author Дмитрий
+ */
 public interface FileAircraftsReaderable {
 
 	/**
-	 * This method read a collection of aircrafts from data file
+	 * Returns a collection of {@code Aircraft} objects from data file.
 	 * 
-	 * @return
+	 * @return a list of {@code Aircraft} objects
+	 * 
 	 * @throws IOException
 	 * @throws ClassNotFoundException
 	 */

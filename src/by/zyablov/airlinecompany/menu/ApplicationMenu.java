@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package by.zyablov.airlinecompany.menu;
 
 import static by.zyablov.airlinecompany.enums.comandsenums.MessagesForUserEnum.*;
@@ -23,16 +21,23 @@ import by.zyablov.airlinecompany.menu.actions.SaveAircraftsToFileAction;
 import by.zyablov.airlinecompany.tools.AirlineManageSystem;
 
 /**
+ * Class {@code ApplicationMenu} represents a menu for user console.
  * 
  * @author Дмитрий
  *
  */
 public class ApplicationMenu {
 
+	/**
+	 * This field allows to manage {@code AirlineCompany} object.
+	 * 
+	 * @see by.zyablov.airlinecompany.tools.AirlineManageSystem
+	 * @see by.zyablov.airlinecompany.beans.company.AirlineCompany
+	 */
 	private AirlineManageSystem airlineCompanyManager;
 
 	/**
-	 * !!! This method run aplications menu
+	 * Runs main aplication menu for user via console.
 	 */
 	public void mainMenuRun() {
 
@@ -104,7 +109,9 @@ public class ApplicationMenu {
 	}
 
 	/**
-	 * !!! This a constuctor without parameters
+	 * Constructor.
+	 * 
+	 * @param airlineCompanyManager - allows to manage {@code AirlineCompany} object.
 	 */
 	public ApplicationMenu() {
 		airlineCompanyManager = new AirlineManageSystem();

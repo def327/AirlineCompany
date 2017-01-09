@@ -5,9 +5,10 @@ import by.zyablov.airlinecompany.menu.ApplicationMenu;
 
 /**
  * 
- * <h1>AirlineCompanyApplicationRunner!</h1> 
- * <p>"AirlineCompanyApplicationRunner" program is a console application, where user
- * can manage an airline company via computer console
+ * <h1>AirlineCompanyApplicationRunner!</h1>
+ * <p>
+ * "AirlineCompanyApplicationRunner" program is a console application, where
+ * user can manage an airline company via computer console
  * 
  * @author Дмитрий
  * @version 1.0
@@ -16,12 +17,13 @@ import by.zyablov.airlinecompany.menu.ApplicationMenu;
 public class AirlineCompanyApplicationRunner {
 
 	/**
-	 *Creates and runs an aplication's menu for program user to 
-	 *start to start to use app.
-	 *<p>
-	 *<i>The entry point to the program</i>
+	 * Creates and runs an aplication's menu for program user to start to start
+	 * to use app.
+	 * <p>
+	 * <i>The entry point of the program</i>
 	 * 
-	 * @param args Unused.
+	 * @param args
+	 *            Unused.
 	 * @return Nothing
 	 * 
 	 * @see {@link by.zyablov.airlinecompany.menu.ApplicationMenu};
