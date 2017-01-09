@@ -1,9 +1,6 @@
 # AirlineCompany
 AirlineCompany - а console application on Java SE
 
-
- 	  AirlineCompany - а console application on Java SE.
- 
     by.zyablov.airlinecompany.AirlineCompanyApplicationRunner is an entrance point of the program
  	
    1) WARNING: When you enter a program and need to get Aircrafts objects, please choose:
