@@ -35,25 +35,26 @@ public class FileAircraftsStringTextWriter extends FileAircraftsWriter {
 	 */
 	public void writeAircraftListToFile(List<Aircraft> aircraftsList) throws IOException {
 
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(new File(pathToFileInString))));
+		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(new File(pathToFileInString))))) {
 
-		for (Iterator<Aircraft> iterator = aircraftsList.iterator(); iterator.hasNext();) {
-			Aircraft aircraft = (Aircraft) iterator.next();
+			for (Iterator<Aircraft> iterator = aircraftsList.iterator(); iterator.hasNext();) {
+				Aircraft aircraft = (Aircraft) iterator.next();
 
-			if (aircraft instanceof AirlinerAircraft) {
+				if (aircraft instanceof AirlinerAircraft) {
 
-				AirlinerAircraft airlinerAircraft = (AirlinerAircraft) aircraft;
-				// Write all data of airlinerAircraft to text file in string
-				out.println((String) FileAircraftsStringTextWriter.getParsedAirlinerAircraftFields(airlinerAircraft));
+					AirlinerAircraft airlinerAircraft = (AirlinerAircraft) aircraft;
+					// Write all data of airlinerAircraft to text file in string
+					out.println(
+							(String) FileAircraftsStringTextWriter.getParsedAirlinerAircraftFields(airlinerAircraft));
 
-			} else if (aircraft instanceof CargoAircraft) {
+				} else if (aircraft instanceof CargoAircraft) {
 
-				CargoAircraft cargoAircraft = (CargoAircraft) aircraft;
-				// Write all data of cargoAircraft to text file in string
-				out.println((String) FileAircraftsStringTextWriter.getParsedCargoAircraftFields(cargoAircraft));
+					CargoAircraft cargoAircraft = (CargoAircraft) aircraft;
+					// Write all data of cargoAircraft to text file in string
+					out.println((String) FileAircraftsStringTextWriter.getParsedCargoAircraftFields(cargoAircraft));
+				}
 			}
 		}
-		out.close();
 	}
 
 	/**
